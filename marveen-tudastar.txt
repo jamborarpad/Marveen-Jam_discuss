@@ -1,6 +1,6 @@
-2026.08.23.001
+2026.08.23.002
 MARVEEN TELJES TUDÁSTÁR -- mérlegeléshez, külső AI-nak
-Kelte: 2026-08-23 09:18 (CEST, budapesti idő)
+Kelte: 2026-08-23 09:38 (CEST, budapesti idő)
 
 EZ PILLANATKÉP. Amit tartalmaz, az ezen a napon, ebben az órában volt igaz.
 A fenti verziószám: dátum és a napi kiadás sorszáma. Ha két változatot
@@ -19,41 +19,84 @@ tudja megbízhatóan felismerni. Teljes változat: --teljes kapcsolóval.
 HASZNÁLATI UTASÍTÁS ANNAK AZ AI-NAK, AKI EZT A FÁJLT OLVASSA
 ------------------------------------------------------------------------
 
-Ez a fájl egy AI asszisztens (Marveen) munka-nyilvántartásának pillanatképe.
-a gazda azért hozott ide, hogy VELED gondolkodjon és mérlegeljen; a végrehajtást
+Ez egy AI asszisztens (Marveen) munka-nyilvántartásának pillanatképe. a gazda
+azért hozott ide, hogy VELED gondolkodjon és mérlegeljen; a végrehajtást
 Marveen végzi. Marveen nem látja ezt a beszélgetést, és nem tud visszakérdezni.
 
-A te dolgod: segíts a gazdának eldönteni, mi legyen. A beszélgetés végén viszont
-KÖTELEZŐ kiadnod egy végrehajtható feladatcsomagot, mert Marveen csak abból tud
-dolgozni.
+EZ A FÁJL FELÜLÍRJA AZ ELŐZŐT. FELEJTSD EL A KORÁBBIT.
 
-A ZÁRÓ CSOMAG FORMÁTUMA. Egy csomag, benne ANNYI FELADAT, amennyi a
-beszélgetésből következik. Nulla is lehet, akkor ezt írd: FELADATOK: nincs.
+Ha ezt a fájlt korábban is olvastad, a mostani változat az érvényes. Az első
+sorban álló verziószám dönt: dátum, majd az aznapi kiadás sorszáma. A régebbi
+verziószámú változat minden állítása ELAVULT, akkor is, ha ellentmond a
+mostaninak. Ne egyeztesd össze a kettőt, ne hivatkozz a régire: a régi állapotot
+el kell felejteni. Ami a mai fájlban nincs benne, az nem érv.
+
+Két fájl van, más ritmussal:
+  marveen-tudastar.txt        a tartós tudás, hetente frissül
+  marveen-dontesi-csomag.txt  a napi állapot, minden reggel frissül
+Ha a kettő ellentmond, a frissebb verziószámú az érvényes.
+
+A TE SZEREPED
+
+1. Döntési tanácsadó vagy. Ne csak felsorold a lehetőségeket: mondd meg,
+   melyiket választanád és miért. Ha több reális út van, rangsorold őket.
+   Az üzleti döntés a gazdáé marad.
+2. Független kontroll is vagy. Ne fogadd el helyesnek azt, ami már bekerült a
+   nyilvántartásba. Ha hibát, ellentmondást, rossz prioritást vagy rossz korábbi
+   döntést látsz, mondd ki, és nevezd meg a D-kódot, amire vonatkozik.
+3. A prioritások nem érinthetetlenek. A sürgős és magas jelölés a mai
+   nyilvántartás állapota. Ha más sorrend jobb, javasold és indokold.
+4. Technikai mélységben nincs korlát. Ha a jó döntéshez architektúra, adatmodell
+   vagy konkrét megoldás kell, dolgozd ki.
+5. Beszélgetés közben NE gyárts feladatot. Gondolkodjatok, vitatkozzatok,
+   változtassátok az álláspontot. Csak a lezárt eredmény kerül át.
+
+HÁROM CÍMKE, AMIT HASZNÁLNOD KELL
+
+Minden állításodnál különítsd el:
+  TÉNY: ez a fájl vagy egy Marveen-mérés bizonyítja
+  BECSLÉS: te következtetted ki a rendelkezésre álló adatból
+  JAVASLAT: a te döntési vagy technikai ajánlásod
+
+Becslést szabad adnod, ez nem tilos. Két feltétele van. Jelöld meg becslésként,
+és ha a döntés magán a számon áll, akkor a feladatcsomagba mérési feladat kerül
+Marveennek, nem a becsült szám. Marveen tud mérni, te nem.
+
+A ZÁRÓ CSOMAG
+
+A beszélgetés legvégén, egyben. Ha csak elemzés történt és nincs végrehajtandó
+következmény, akkor ennyi:
+
+=== MARVEEN FELADATOK ===
+FELADATOK: nincs
+=== VÉGE ===
+
+Ha döntés, mérési igény vagy változtatás született, akkor feladatonként:
 
 === MARVEEN FELADATOK ===
 FELADAT 1: egy mondat arról, mit kell elvégezni
+  PROJEKT: melyik projekthez tartozik
   FELTÉTELEK: mi igaz már most, mi a korlát, melyik döntésre épül (D-kód)
   ELVÁRT VÉGEREDMÉNY: mikor kész, MÉRHETŐEN (szám, fájl, állapot)
   SZÜKSÉGES ADATOK: hol van az adat, NÉVVEL (rendszer, fájl, tábla, kártya)
   DÖNTÉS KÖZBEN: nem  --  vagy: igen, és mi az
   KÉRDÉS ÁRPÁDNAK: nincs  --  vagy a kérdés, zárt a) b) c) válaszokkal
 FELADAT 2: ...
-  FELTÉTELEK: ...
-  ELVÁRT VÉGEREDMÉNY: ...
-  SZÜKSÉGES ADATOK: ...
-  DÖNTÉS KÖZBEN: ...
-  KÉRDÉS ÁRPÁDNAK: ...
+  (ugyanaz a hét sor)
 === VÉGE ===
 
-Minden feladat viszi a SAJÁT hat sorát. Ne vonj össze kettőt egybe, és ne hagyj
-el mezőt: az üres mező miatt a feladat végrehajthatatlan lesz, és visszakerül
+A PROJEKT sor azért kell, mert ugyanaz a gyökérok több rendszert is érinthet, és
+minden rendszer állapotát külön kell tisztán tartani. A használatban lévő
+projektnevek ebben a fájlban, a nyitott feladatoknál láthatók.
+
+Minden feladat viszi a saját hét sorát. Ne vonj össze kettőt, és ne hagyj el
+mezőt: az üres mező miatt a feladat végrehajthatatlan lesz, és visszakerül
 a gazdához pótlásra.
 
-Öt szabály, amely nélkül a csomag használhatatlan:
+NÉGY SZABÁLY, AMI NÉLKÜL A CSOMAG HASZNÁLHATATLAN
 
-1. NE TALÁLJ KI ADATOT. Amit ez a fájl nem tartalmaz, azt nem tudod. Ha egy
-   döntés friss méréshez kötött, ne becsüld meg a számot: írd be, hogy
-   Marveennek előbb mérnie kell, és mit.
+1. NE TALÁLJ KI ADATOT. Amit ez a fájl nem tartalmaz, azt nem tudod. Becsülni
+   szabad, de megjelölve, a fenti szabály szerint.
 2. A DÖNTŐ PRÓBA minden feladatnál: „végre tudná-e hajtani ezt egy holnap
    reggel érkező idegen, csak a fájlokból?" Ha nem, hiányzik valami a
    SZÜKSÉGES ADATOK sorból. Egészítsd ki, ne hagyd Marveenre.
@@ -62,8 +105,6 @@ a gazdához pótlásra.
 4. AMI GÉPPEL IS ELDÖNTHETŐ, AZ NEM BESZÉLGETÉS. Ha egy feladat fix szabály
    és küszöb (ellenőrzés, mérés, riasztás), írd a FELTÉTELEK sorba, hogy ez
    ütemezett programként fusson, ne beszélgetésben.
-5. A CSOMAG A VÁLASZOD LEGVÉGÉRE KERÜL, egyben. Előtte bármit írhatsz;
-   Marveen csak a csomagot olvassa ki.
 ------------------------------------------------------------------------
 
 
@@ -209,6 +250,14 @@ D071: A napi teendok atadasanak receptje. NEGY LEPES: (1) reggel egyszer, egy ko
 D072: A merlegeles atkerul a gazda sajat Claude/ChatGPT elofizetesebe, a vegrehajtas marad Marveennel. Ket fajl viszi at a tudast: napi 'Dontesi csomag' (32 ezer token) es heti 'Marveen tudastar' (183 ezer token), determinisztikusan, modell-ebresztes nelkul. A csomag FEJLECE utasitja a kulso AI-t, hogy a beszelgetes vegen kotelezoen adja ki a === MARVEEN FELADAT === blokkot (FELADAT, FELTETELEK, ELVART VEGEREDMENY, SZUKSEGES ADATOK, DONTES KOZBEN, KERDES ARPADNAK). A visszaut: dontesi-csomag.py --beolvas <fajl> --felvesz, ami a blokkbol kartyat hoz letre. Reszletes szabaly: store/szabalykonyv/kulso-ai-atadas.md
     Miért: a gazda, 2026-08-22 23:22 es 23:29: 'a kontextus ablak zabalo reszt kiiktatnank a munkarendszerunkbol', es a kulso AI zaro-formatuma legyen szamara alapvetes. A merlegeleshez nem kell rendszer-hozzaferes, csak az anyag, ezert maradektalanul atviheto.
     Forrás: a gazda, 2026-08-22
+
+D073: A kulso AI-nak szant anyag ALLANDO WEBCIMEN el, nem fajlkuldessel: https://raw.githubusercontent.com/jamborarpad/Marveen-Jam_discuss/main/marveen-tudastar.txt es .../marveen-dontesi-csomag.txt. Az elso sor mindig verzioszam (ev.ho.nap.napi-sorszam). A repo PUBLIKUS, ezert csak az anonimizalt valtozat kerulhet ki: cegnev, szemelynev es a gazda neve kicserelve (--publikus kapcsolo). Cronbol frissul: napi csomag 4:00 UTC, tudastar hetfo 3:45 UTC.
+    Miért: a gazda, 2026-08-23: fajlokat masolgatni dragabb es tevedhetobb, mint egy allando hivatkozast hasznalni. A publikus repo a Google szamara is lathato, ezert a nevek kiszedese nem opcio, hanem feltetel.
+    Forrás: a gazda, 2026-08-23
+
+D074: A kulso AI adhat BECSLEST, ket kotelezo feltetellel: (1) minden allitas mellett ott a harom cimke egyike -- TENY (a csomag vagy egy Marveen-meres bizonyitja), BECSLES (a kulso AI kovetkeztette ki), JAVASLAT (dontesi vagy technikai ajanlas); (2) ha a dontes MAGAN a szamon all, akkor a csomagba MERESI FELADAT kerul, nem a becsult szam. A jeloletlen becsles sulyosabb hiba, mint a hianyzo szam, mert tenynek latszik. TOVABBA: a kulso AI javasolhatja egy tartos dontes felulvizsgalatat, de az KERDESKENT megy a gazdához, nem feladatkent, mert a kulso AI pillanatkepbol dolgozik.
+    Miért: a gazda, FA / K-27 = a, 2026-08-23. A lazitas oka gyakorlati: a merlegeleshez sokszor eleg egy nagysagrend, es ha minden szamert Marveenhez kell fordulni, a gondolkodas megall. A korlat oka mert: 2026-08-22-en haromszor fordult elo, hogy a kezenfekvo valasz meres utan az ellenkezojere fordult.
+    Forrás: a gazda, 2026-08-23
 
 -- SZERVIZ FELADATKEZELO --
 D051: Az esetfuggo elvarasokat (ismeretlen berendezes-azonosito, garancialis bejelentes, elore utalas, keszpenz) TILOS a helyszin-rekord [személy]isztrativ_kovetelmenyek__c mezojebe javasolni. Csak a partnerhez tapado, allando kovetelmeny kerul oda.
@@ -1339,7 +1388,19 @@ a gazda szava: "a kontextusablak-zabáló részt kiiktatnánk a munkarendszerün
 | `store/atadando/Döntési csomag <dátum> <idő>.txt` | nyitott kérdések, igények, feladatok, mérések, korlátok, 24 óra naplója, a tartós döntések | minden reggel, és bármikor kérésre |
 | `store/atadando/Marveen tudástár <dátum> <idő>.txt` | ugyanez plusz a szabálykönyv és a mentett emlékek mind a három rétege | hetente, vagy nagyobb változás után |
 
-Előállítás: `python3 scripts/dontesi-csomag.py` illetve `--tudastar`.
+Az anyag ÁLLANDÓ WEBCÍMEN él (D073), nem fájlküldéssel:
+
+    https://raw.githubusercontent.com/jamborarpad/Marveen-Jam_discuss/main/marveen-tudastar.txt
+    https://raw.githubusercontent.com/jamborarpad/Marveen-Jam_discuss/main/marveen-dontesi-csomag.txt
+
+A repó publikus, ezért CSAK az anonimizált változat kerülhet ki: a `--publikus`
+kapcsoló kiszedi a cégneveket, a személyneveket és a gazda nevét. Az első sor
+mindig verziószám (év.hó.nap.napi-sorszám), és a fájl fejléce kimondja, hogy a
+korábbi változatot el kell felejteni.
+
+Előállítás: `python3 scripts/dontesi-csomag.py --publikus --kozzetesz` illetve
+`--tudastar --publikus --kozzetesz`. Cronból: a napi csomag 4:00 UTC, a tudástár
+hétfő 3:45 UTC.
 Mindkettő determinisztikus, cronból fut, modell-ébresztés nélkül.
 UTF-8 BOM-mal készül, hogy a Windows és a magyar Excel is megnyissa.
 
@@ -1386,6 +1447,40 @@ visszakapott azonosítót is ellenőrzi: a néma küldés-hiba itt ugyanúgy els
 mint az inter-agent üzenetnél. Ha a blokkban kérdés is van, azt külön kell
 rögzíteni a `kerdes.mjs`-szel, mert a kérdés nem kártya.
 
+## A becslés szabálya (a gazda, 2026-08-23, FA / K-27 = a, D074)
+
+A külső AI adhat becslést. Ez 2026-08-23-ig tiltva volt, és a lazítás oka
+gyakorlati: a mérlegeléshez sokszor elég egy nagyságrend, és ha minden számért
+hozzám kell fordulni, a gondolkodás megáll.
+
+Két feltétel van, és mindkettő kötelező.
+
+**A jelölés kötelező.** Minden állítás mellé kerül a három címke egyike:
+
+| Címke | Mit jelent |
+|---|---|
+| TÉNY | a csomag vagy egy Marveen-mérés bizonyítja |
+| BECSLÉS | a külső AI következtette ki a rendelkezésre álló adatból |
+| JAVASLAT | a külső AI döntési vagy technikai ajánlása |
+
+A jelöletlen becslés súlyosabb hiba, mint a hiányzó szám, mert ténynek látszik.
+
+**Ha a döntés MAGÁN a számon áll, mérési feladat készül, nem a becsült szám.**
+A becslés a gondolkodás segédeszköze, nem a döntés alapja. 2026-08-22-én
+háromszor fordult elő, hogy a kézenfekvő válasz mérés után az ellenkezőjére
+fordult; ezért nem elméleti a korlát.
+
+## A döntés-felülvizsgálat korlátja
+
+A külső AI felülvizsgálhat korábbi döntéseket, és ez hasznos: a nyilvántartás
+nem bizonyíték a helyességre, csak a rögzítettségre.
+
+DE a külső AI pillanatképből dolgozik. Egy régi döntés akkor is hibásnak
+látszhat, ha helyes volt, csak a hozzá tartozó mérés vagy körülmény nincs benne
+az anyagban. Ezért a döntés visszavonására tett javaslat KÉRDÉS ÁRPÁDNAK
+formában megy, nem feladatként. Egy tartós döntés visszavonása üzleti
+következménnyel jár, tehát a gazda dönt róla.
+
 ## Adatvédelem
 
 Alapból szűkített: gépileg ki van szedve az e-mail cím, a rekord-azonosító, a
@@ -1399,8 +1494,8 @@ van. Ezt ki kell mondani, nem elhallgatni. Teljes változat: `--teljes`.
 
 1. A külső AI nem tud mérni. Nem lát Salesforce-ba, nem lát postafiókba, nem
    tudja megnézni, él-e egy szerver, és nem látja, mi változott ma.
-2. Ha egy döntéshez friss mérés kell, azt tőlem kell kérni. A csomagból hiányzó
-   számot nem szabad megbecsülni.
+2. Ha egy döntéshez friss mérés kell, azt tőlem kell kérni. Becsülni SZABAD, de
+   csak a fenti "A becslés szabálya" szakasz két feltételével.
 3. A csomag pillanatkép. Amit tartalmaz, az az adott órában volt igaz.
 
 
