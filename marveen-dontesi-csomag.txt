@@ -1,6 +1,6 @@
-2026.08.23.005
+2026.08.23.006
 MARVEEN DÖNTÉSI CSOMAG -- mérlegeléshez, külső AI-nak
-Kelte: 2026-08-23 09:17 (CEST, budapesti idő)
+Kelte: 2026-08-23 09:33 (CEST, budapesti idő)
 
 EZ PILLANATKÉP. Amit tartalmaz, az ezen a napon, ebben az órában volt igaz.
 A fenti verziószám: dátum és a napi kiadás sorszáma. Ha két változatot
@@ -19,41 +19,84 @@ tudja megbízhatóan felismerni. Teljes változat: --teljes kapcsolóval.
 HASZNÁLATI UTASÍTÁS ANNAK AZ AI-NAK, AKI EZT A FÁJLT OLVASSA
 ------------------------------------------------------------------------
 
-Ez a fájl egy AI asszisztens (Marveen) munka-nyilvántartásának pillanatképe.
-a gazda azért hozott ide, hogy VELED gondolkodjon és mérlegeljen; a végrehajtást
+Ez egy AI asszisztens (Marveen) munka-nyilvántartásának pillanatképe. a gazda
+azért hozott ide, hogy VELED gondolkodjon és mérlegeljen; a végrehajtást
 Marveen végzi. Marveen nem látja ezt a beszélgetést, és nem tud visszakérdezni.
 
-A te dolgod: segíts a gazdának eldönteni, mi legyen. A beszélgetés végén viszont
-KÖTELEZŐ kiadnod egy végrehajtható feladatcsomagot, mert Marveen csak abból tud
-dolgozni.
+EZ A FÁJL FELÜLÍRJA AZ ELŐZŐT. FELEJTSD EL A KORÁBBIT.
 
-A ZÁRÓ CSOMAG FORMÁTUMA. Egy csomag, benne ANNYI FELADAT, amennyi a
-beszélgetésből következik. Nulla is lehet, akkor ezt írd: FELADATOK: nincs.
+Ha ezt a fájlt korábban is olvastad, a mostani változat az érvényes. Az első
+sorban álló verziószám dönt: dátum, majd az aznapi kiadás sorszáma. A régebbi
+verziószámú változat minden állítása ELAVULT, akkor is, ha ellentmond a
+mostaninak. Ne egyeztesd össze a kettőt, ne hivatkozz a régire: a régi állapotot
+el kell felejteni. Ami a mai fájlban nincs benne, az nem érv.
+
+Két fájl van, más ritmussal:
+  marveen-tudastar.txt        a tartós tudás, hetente frissül
+  marveen-dontesi-csomag.txt  a napi állapot, minden reggel frissül
+Ha a kettő ellentmond, a frissebb verziószámú az érvényes.
+
+A TE SZEREPED
+
+1. Döntési tanácsadó vagy. Ne csak felsorold a lehetőségeket: mondd meg,
+   melyiket választanád és miért. Ha több reális út van, rangsorold őket.
+   Az üzleti döntés a gazdáé marad.
+2. Független kontroll is vagy. Ne fogadd el helyesnek azt, ami már bekerült a
+   nyilvántartásba. Ha hibát, ellentmondást, rossz prioritást vagy rossz korábbi
+   döntést látsz, mondd ki, és nevezd meg a D-kódot, amire vonatkozik.
+3. A prioritások nem érinthetetlenek. A sürgős és magas jelölés a mai
+   nyilvántartás állapota. Ha más sorrend jobb, javasold és indokold.
+4. Technikai mélységben nincs korlát. Ha a jó döntéshez architektúra, adatmodell
+   vagy konkrét megoldás kell, dolgozd ki.
+5. Beszélgetés közben NE gyárts feladatot. Gondolkodjatok, vitatkozzatok,
+   változtassátok az álláspontot. Csak a lezárt eredmény kerül át.
+
+HÁROM CÍMKE, AMIT HASZNÁLNOD KELL
+
+Minden állításodnál különítsd el:
+  TÉNY: ez a fájl vagy egy Marveen-mérés bizonyítja
+  BECSLÉS: te következtetted ki a rendelkezésre álló adatból
+  JAVASLAT: a te döntési vagy technikai ajánlásod
+
+Becslést szabad adnod, ez nem tilos. Két feltétele van. Jelöld meg becslésként,
+és ha a döntés magán a számon áll, akkor a feladatcsomagba mérési feladat kerül
+Marveennek, nem a becsült szám. Marveen tud mérni, te nem.
+
+A ZÁRÓ CSOMAG
+
+A beszélgetés legvégén, egyben. Ha csak elemzés történt és nincs végrehajtandó
+következmény, akkor ennyi:
+
+=== MARVEEN FELADATOK ===
+FELADATOK: nincs
+=== VÉGE ===
+
+Ha döntés, mérési igény vagy változtatás született, akkor feladatonként:
 
 === MARVEEN FELADATOK ===
 FELADAT 1: egy mondat arról, mit kell elvégezni
+  PROJEKT: melyik projekthez tartozik
   FELTÉTELEK: mi igaz már most, mi a korlát, melyik döntésre épül (D-kód)
   ELVÁRT VÉGEREDMÉNY: mikor kész, MÉRHETŐEN (szám, fájl, állapot)
   SZÜKSÉGES ADATOK: hol van az adat, NÉVVEL (rendszer, fájl, tábla, kártya)
   DÖNTÉS KÖZBEN: nem  --  vagy: igen, és mi az
   KÉRDÉS ÁRPÁDNAK: nincs  --  vagy a kérdés, zárt a) b) c) válaszokkal
 FELADAT 2: ...
-  FELTÉTELEK: ...
-  ELVÁRT VÉGEREDMÉNY: ...
-  SZÜKSÉGES ADATOK: ...
-  DÖNTÉS KÖZBEN: ...
-  KÉRDÉS ÁRPÁDNAK: ...
+  (ugyanaz a hét sor)
 === VÉGE ===
 
-Minden feladat viszi a SAJÁT hat sorát. Ne vonj össze kettőt egybe, és ne hagyj
-el mezőt: az üres mező miatt a feladat végrehajthatatlan lesz, és visszakerül
+A PROJEKT sor azért kell, mert ugyanaz a gyökérok több rendszert is érinthet, és
+minden rendszer állapotát külön kell tisztán tartani. A használatban lévő
+projektnevek ebben a fájlban, a nyitott feladatoknál láthatók.
+
+Minden feladat viszi a saját hét sorát. Ne vonj össze kettőt, és ne hagyj el
+mezőt: az üres mező miatt a feladat végrehajthatatlan lesz, és visszakerül
 a gazdához pótlásra.
 
-Öt szabály, amely nélkül a csomag használhatatlan:
+NÉGY SZABÁLY, AMI NÉLKÜL A CSOMAG HASZNÁLHATATLAN
 
-1. NE TALÁLJ KI ADATOT. Amit ez a fájl nem tartalmaz, azt nem tudod. Ha egy
-   döntés friss méréshez kötött, ne becsüld meg a számot: írd be, hogy
-   Marveennek előbb mérnie kell, és mit.
+1. NE TALÁLJ KI ADATOT. Amit ez a fájl nem tartalmaz, azt nem tudod. Becsülni
+   szabad, de megjelölve, a fenti szabály szerint.
 2. A DÖNTŐ PRÓBA minden feladatnál: „végre tudná-e hajtani ezt egy holnap
    reggel érkező idegen, csak a fájlokból?" Ha nem, hiányzik valami a
    SZÜKSÉGES ADATOK sorból. Egészítsd ki, ne hagyd Marveenre.
@@ -62,8 +105,6 @@ a gazdához pótlásra.
 4. AMI GÉPPEL IS ELDÖNTHETŐ, AZ NEM BESZÉLGETÉS. Ha egy feladat fix szabály
    és küszöb (ellenőrzés, mérés, riasztás), írd a FELTÉTELEK sorba, hogy ez
    ütemezett programként fusson, ne beszélgetésben.
-5. A CSOMAG A VÁLASZOD LEGVÉGÉRE KERÜL, egyben. Előtte bármit írhatsz;
-   Marveen csak a csomagot olvassa ki.
 ------------------------------------------------------------------------
 
 
@@ -209,6 +250,10 @@ D071: A napi teendok atadasanak receptje. NEGY LEPES: (1) reggel egyszer, egy ko
 D072: A merlegeles atkerul a gazda sajat Claude/ChatGPT elofizetesebe, a vegrehajtas marad Marveennel. Ket fajl viszi at a tudast: napi 'Dontesi csomag' (32 ezer token) es heti 'Marveen tudastar' (183 ezer token), determinisztikusan, modell-ebresztes nelkul. A csomag FEJLECE utasitja a kulso AI-t, hogy a beszelgetes vegen kotelezoen adja ki a === MARVEEN FELADAT === blokkot (FELADAT, FELTETELEK, ELVART VEGEREDMENY, SZUKSEGES ADATOK, DONTES KOZBEN, KERDES ARPADNAK). A visszaut: dontesi-csomag.py --beolvas <fajl> --felvesz, ami a blokkbol kartyat hoz letre. Reszletes szabaly: store/szabalykonyv/kulso-ai-atadas.md
     Miért: a gazda, 2026-08-22 23:22 es 23:29: 'a kontextus ablak zabalo reszt kiiktatnank a munkarendszerunkbol', es a kulso AI zaro-formatuma legyen szamara alapvetes. A merlegeleshez nem kell rendszer-hozzaferes, csak az anyag, ezert maradektalanul atviheto.
     Forrás: a gazda, 2026-08-22
+
+D073: A kulso AI-nak szant anyag ALLANDO WEBCIMEN el, nem fajlkuldessel: https://raw.githubusercontent.com/jamborarpad/Marveen-Jam_discuss/main/marveen-tudastar.txt es .../marveen-dontesi-csomag.txt. Az elso sor mindig verzioszam (ev.ho.nap.napi-sorszam). A repo PUBLIKUS, ezert csak az anonimizalt valtozat kerulhet ki: cegnev, szemelynev es a gazda neve kicserelve (--publikus kapcsolo). Cronbol frissul: napi csomag 4:00 UTC, tudastar hetfo 3:45 UTC.
+    Miért: a gazda, 2026-08-23: fajlokat masolgatni dragabb es tevedhetobb, mint egy allando hivatkozast hasznalni. A publikus repo a Google szamara is lathato, ezert a nevek kiszedese nem opcio, hanem feltetel.
+    Forrás: a gazda, 2026-08-23
 
 -- SZERVIZ FELADATKEZELO --
 D051: Az esetfuggo elvarasokat (ismeretlen berendezes-azonosito, garancialis bejelentes, elore utalas, keszpenz) TILOS a helyszin-rekord [személy]isztrativ_kovetelmenyek__c mezojebe javasolni. Csak a partnerhez tapado, allando kovetelmeny kerul oda.
@@ -443,6 +488,12 @@ FA / K-26 (DM (rendszerszintu), feltéve: 2026-08-23 08:21)
     b) Letrehozol egy PUBLIKUS GitHub repot erre a celra, es a tokennek irasi jogot adsz ra. Ugyanaz az eredmeny, de a tartalom barki szamara kereshetо lesz, nem csak a linket ismeroknek
     c) Marad a fajl-kuldes Telegramon, ahogy ma
 
+FA / K-27 (DM (rendszerszintu), feltéve: 2026-08-23 09:33)
+  A kulso AI azt javasolja, hogy adhasson BECSLEST is, ha egyertelmuen becslesnek jeloli. A mai szabaly (kulso-ai-atadas.md) ezt tiltja: 'a csomagbol hianyzo szamot nem szabad megbecsulni'. Egyetertek a lazitassal ket feltetellel: a jeloles kotelezo, es ha a dontes MAGAN a szamon all, akkor merési feladat keszul, nem a becsult szam kerul be. Modosithatom igy a szabalykonyvet?
+    a) Igen, a ket feltetellel egyutt. Atirom a szabalykonyvet es rogzitem dontesnek
+    b) Nem, maradjon a szigoru szabaly: becsles egyaltalan nem kerulhet at
+    c) Igen, de feltetel nelkul: a becsles jelolve barmire hasznalhato
+
 
 ========================================================================
 3. KÉRT IGÉNYEK, amikből még nem lett feladat
@@ -616,7 +667,6 @@ Nincs ilyen. (minden kért igény kártyává vált)
 ========================================================================
 
 -- 2026-08-20 (csak a bejegyzések címe) --
-09:30 -- J-12 megvalaszolva, es kozben egy 52000 Ft-os lelet
 10:00 -- Szerzodes-kimutatas atadva, szabalykonyv megepitve, harom lista helyreallitva
 10:10 -- Allapotjelzes + beszelgetes-mentes
 10:35 -- A szabalykonyv eles, a gyujto 1.7.2, es a ket nap terve
@@ -702,9 +752,7 @@ Nincs ilyen. (minden kért igény kártyává vált)
 08:20 -- Hiányzó SF-mezők: a táblázat kész, a kiküldés egy kérdésen áll
 09:00 -- a gazda hat kérése egy üzenetben, mind lekezelve
 09:12 -- Tiszta lap
-## 09:40 -- Manus-atadas
-a gazda kerte, hogy a nyitott feladatokbol adjam at a Manusnak, amit lehet. Ket feladatlap ment ki elfogadasi feltetelekkel: MissionLock (B2xyJpvpaFp5HVX7EVB9t9) a kiadassal, a geofence es feladatszoveg visszamerésével, a dwell-idovel es a gazda admin belepesevel; JamEmail (X9kBA87pcxqrHt6upuMcZj) negy szerveroldali hibaval (megosztott postafiok parositasa, manager szerep, boilerplate insert, salesforce.com cegprofil). Nyolc kartya kapott kommentet a task-linkkel. NEM indult: MeetDirector (M-1=b, koltozes utanra) es Speewo (nyitott kerdes, FA/K-22) -- mindketto feladatlapja elokeszitve a store/manus-atadas-2026-08-22 mappaban. Kozben kiderult, hogy a lokalis email-analyzer main masolatom 13 committel elavult volt: a Manus mar kiadta az ef11966-ot, az eles HEAD 7ded187. Uj dontes: D065 (okafogyott keres -> modosito level).
-
+09:40 -- Manus-atadas
 ## 10:20 -- A Manus-kor visszamerve, es ket uj lelet
 
 VISSZAMERES (sajat meres, nem az o jelentesuk atvetele):
@@ -1013,6 +1061,21 @@ a gazda kerte, hogy a publikus kozzetetelhez vegyem ki a cegneveket es szemelyne
 VISSZAMERVE a mai csomagon: 40 cegnev, 44 szemelynev, 288 gazda-emlites cserelve; utana 0 maradek cegforma, 0 [cég], 0 a gazda. A nevlista forrasa a Salesforce 68 aktiv felhasznaloja plusz kezi lista. A gazda neve szerepre valt (a gazda), a magyar toldalekokkal egyutt (gazdanak, gazdatol, gazdahoz stb.), mert a puszta csere olvashatatlan szoveget adott.
 
 TOKEN-EXPOZICIO: a gazda a GitHub tokent a Claude Code ablakaba gepelte be, nem kulon terminalba, igy az bekerult a session naplojaba. Ket alkalommal is a cd parancsot is ide irta. Kertem a token [titok kiszedve] visszavonasat es ujat. Utana SSH-val (PowerShell, -L 3420 alagut) bejelentkezett a szerverre, es most abban az ablakban viszi be a vaul [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+
+## 09:20 -- Allando webcim el: a dontesi csomag es a tudastar publikus repobol elerheto
+a gazda kerese szerint fajl-kuldes helyett allando hivatkozas. Megvan.
+
+CIMEK (nem valtoznak):
+https://raw.githubusercontent.com/jamborarpad/Marveen-Jam_discuss/main/marveen-tudastar.txt
+https://raw.githubusercontent.com/jamborarpad/Marveen-Jam_discuss/main/marveen-dontesi-csomag.txt
+
+A repo neve NEM az altalam javasolt marveen-tudastar lett, hanem Marveen-Jam_discuss. Ezert a szkript nem nevet talalgat: a token altal LATOTT elso repot hasznalja (a fine-grained token csak arra az egyre lat).
+
+VISSZAMERVE: mindket cim kivulrol HTTP 200, a csomag 131605 bajt, a tudastar 778449 bajt. Az elso sor a verzioszam (2026.08.23.005 illetve .001).
+
+ANONIMIZALAS a publikus valtozatban, visszamerve a nagy fajlon is: 0 cegforma, 0 [cég], 0 a gazda, 0 kollega-nev. A gazda neve szerepre valt, magyar ragozassal.
+
+CRON: a na [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
 
 
 ========================================================================
