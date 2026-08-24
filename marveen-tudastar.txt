@@ -1,6 +1,6 @@
-2026.08.23.002
+2026.08.24.001
 MARVEEN TELJES TUDÁSTÁR -- mérlegeléshez, külső AI-nak
-Kelte: 2026-08-23 09:38 (CEST, budapesti idő)
+Kelte: 2026-08-24 05:45 (CEST, budapesti idő)
 
 EZ PILLANATKÉP. Amit tartalmaz, az ezen a napon, ebben az órában volt igaz.
 A fenti verziószám: dátum és a napi kiadás sorszáma. Ha két változatot
@@ -480,18 +480,7 @@ D035: A szerviz hibagyűjtő napi levelének tárgya fix: 'Szerviz hibagyűjtő 
 2. NYITOTT KÉRDÉSEK ÁRPÁDHOZ, pontosan ahogy fel lettek téve
 ========================================================================
 
-FA / K-25 (DM (rendszerszintu), feltéve: 2026-08-22 23:42)
-  A teljes tudastar 184 ezer token (741 kB). Ez a hataron van: a Claude Project tudasbazisaba meg befer, egy sima beszelgetesbe mar nem. Melyik uton visszed be?
-    a) Claude Project, a tudastar a projekt-tudasba egyszer feltoltve, a napi csomagot cserelem
-    b) ChatGPT projekt, ugyanigy
-    c) Nem projektet hasznalok, hanem beszelgetesenkent toltom fel: akkor daraboljam a tudastarat 3 reszre
-
-FA / K-26 (DM (rendszerszintu), feltéve: 2026-08-23 08:21)
-  Allando webcimet kertel a fajlok helyett. Megepitettem, de a meglevo GitHub tokennek NINCS gist-joga (meres: HTTP 403, 'Resource not accessible by personal access token'), es a het elerheto repo mind privat, tehat azok nyers cime kivulrol nem olvashato. Melyik utat valasszuk?
-    a) Adsz egy GitHub tokent gist-joggal (fine-grained: Gists Read and write, vagy classic: gist scope). Ket perc, es a cim onnantol allando: gist.githubusercontent.com/.../raw/marveen-tudastar.txt
-    b) Letrehozol egy PUBLIKUS GitHub repot erre a celra, es a tokennek irasi jogot adsz ra. Ugyanaz az eredmeny, de a tartalom barki szamara kereshetо lesz, nem csak a linket ismeroknek
-    c) Marad a fajl-kuldes Telegramon, ahogy ma
-
+Nincs ilyen. (minden feltett kérdésem meg van válaszolva)
 
 ========================================================================
 3. KÉRT IGÉNYEK, amikből még nem lett feladat
@@ -506,7 +495,7 @@ Nincs ilyen. (minden kért igény kártyává vált)
 -- Nincs projekt (20 nyitott) --
 #36 [planned/high] Napi levelezes-brief a gazdának (Gabriella mint kezbesito, jamemail elemzesbol + ics)
     ARPAD KERESE 2026-08-09 22:12 (DM msg 933). Ki akarja valtani a kollegano munkajanak nagy reszet. K-3: MIND A NEGY (szetosztas, szamla-tovabbitas, rutinvalaszok, idopontok). K-4: "a" -- Gabriella ELOKESZIT, a gazda kuld az Outlookbol (igy NEM kell ceges hozzaferes). K-5: NEM, cegtol hozzaferest NEM tud kerni. *** A FELISMERES, amit kimondtam: a nehez [...]
-#43 [in_progress/high] Teljes atvilagitas: 5 projekt, mukodes + biztonsag
+#43 [waiting/high] Teljes atvilagitas: 5 projekt, mukodes + biztonsag
     a gazda kerese 2026-08-14 13:07: minden projekt teljes atvilagitasa es javitasa, mukodesi ES biztonsagi oldalrol. Eloszor projektenkenti atvilagitasi+javitasi terv, utana a javitasok.  ERINTETT KODTARAK (mind, push joggal): missionlock, szervizstat, email-analyzer, faac-quote-form ([cég]HD), bni-meeting-controller (MeetDirector).  SORREND: biztonsag e [...]
 #67 [planned/high] Mail rendezo: cegenkenti Attekintes gomb es osszefoglalo
     J-2 megvalaszolva 2026-08-18: c) Salesforce. A helyszin- es berendezes-szintu adat (cim, tipus, gyarto, beavatkozas-szam, technikus) a Salesforce-bol jon, scripts/sf-query.mjs. NEM blokkol tovabb.
@@ -671,20 +660,20 @@ Ott mindig a legutóbbi két nap szerepel. Ez a fájl a tartós tudás.
 6. ÉRVÉNYES MÉRÉSEK (keret, kötegelés, költség)
 ========================================================================
 
-Kötegelés (2026-08-23, merve 2026-08-23T08:50:01+02:00): FEGYELMEZETLEN
-  124 tool-hivas, ebbol 73 lett volna összevonható (58.9%). Leghosszabb összevonható lánc: 14.
+Kötegelés (2026-08-24, merve 2026-08-24T04:50:01+02:00): FEGYELMEZETLEN
+  4 tool-hivas, ebbol 3 lett volna összevonható (75.0%). Leghosszabb összevonható lánc: 4.
 
 Keret-őr utolsó mérései:
-  2026-08-22 21:00:09Z Current week (Fable): OK 0% -- nincs ismert nullazasi idopont, az utem nem ertekelheto ehhez a metrikahoz
-  2026-08-23 07:00:09Z Current session: OK 4% -- az utem (2.4 szazalekpont/nap) mellett kitart a nullazasig (0.1 nap van hatra)
-  2026-08-23 07:00:09Z Current week (all models): OK 7% -- az utem (2.4 szazalekpont/nap) mellett kitart a nullazasig (1.9 nap van hatra)
-  2026-08-23 07:00:09Z Current week (Fable): OK 0% -- nincs ismert nullazasi idopont, az utem nem ertekelheto ehhez a metrikahoz
+  2026-08-23 14:00:08Z Current week (Fable): OK 0% -- nincs ismert nullazasi idopont, az utem nem ertekelheto ehhez a metrikahoz
+  2026-08-23 21:00:09Z Current session: OK 2% -- az utem (6.9 szazalekpont/nap) mellett kitart a nullazasig (0.1 nap van hatra)
+  2026-08-23 21:00:09Z Current week (all models): OK 9% -- az utem (3.4 szazalekpont/nap) mellett kitart a nullazasig (1.3 nap van hatra)
+  2026-08-23 21:00:09Z Current week (Fable): OK 0% -- nincs ismert nullazasi idopont, az utem nem ertekelheto ehhez a metrikahoz
 
 Keret-fék utolsó mérései:
-  2026-08-23 04:00:08Z OK -- a keret nincs kifutas-veszelyben: Current session=0%, Current week (all models)=7%, Current week (Fable)=0%
-  2026-08-23 05:00:08Z OK -- a keret nincs kifutas-veszelyben: Current session=2%, Current week (all models)=7%, Current week (Fable)=0%
-  2026-08-23 06:00:08Z OK -- a keret nincs kifutas-veszelyben: Current session=2%, Current week (all models)=7%, Current week (Fable)=0%
-  2026-08-23 07:00:09Z OK -- a keret nincs kifutas-veszelyben: Current session=4%, Current week (all models)=7%, Current week (Fable)=0%
+  2026-08-24 00:00:09Z OK -- a keret nincs kifutas-veszelyben: Current session=0%, Current week (all models)=9%, Current week (Fable)=0%
+  2026-08-24 01:00:09Z OK -- a keret nincs kifutas-veszelyben: Current session=1%, Current week (all models)=9%, Current week (Fable)=0%
+  2026-08-24 02:00:09Z OK -- a keret nincs kifutas-veszelyben: Current session=1%, Current week (all models)=9%, Current week (Fable)=0%
+  2026-08-24 03:00:09Z OK -- a keret nincs kifutas-veszelyben: Current session=1%, Current week (all models)=9%, Current week (Fable)=0%
 
 Árfolyam: {
  "usdHuf": 310.52,
@@ -698,6 +687,8 @@ Keret-fék utolsó mérései:
 7. ISMERT KORLÁTOK ÉS BLOKKOLÓK
 ========================================================================
 
+#43 [nincs projekt/high] Teljes atvilagitas: 5 projekt, mukodes + biztonsag
+    Mire var: a gazda kerese 2026-08-14 13:07: minden projekt teljes atvilagitasa es javitasa, mukodesi ES biztonsagi oldalrol. Eloszor projektenkenti atvilagitasi+javitasi terv, utana a javitasok.  ERINTETT KODTARAK (mind, push joggal): missionlock, szervizstat, email-analyzer, faac-quote-form ([cég]HD), bni-meeting-controller (MeetDirector).  SORREND: biztonsag eloszor (a szervizstat mintaja: mukodo beleptetes m [...]
 #72 [nincs projekt/high] Szerviz: sorompo-alkatreszek hianyoznak a kalkulatorbol
     Mire var: MERVE 2026-08-18: az 1750 bejelentesbol 286-ban van teteles alkatreszlista, osszesen 555 tetel. Ebbol csak 122 illeszkedik a kalkulator 49 alkatreszere, 433 NEM. A hianyzok nagy resze egy egesz termekcsalad: a sorompok (620 barrier egysegei, fogaslec, alaplemez, sorompokar, fotocellak, hurokdetektorok). A kalkulator automata ajtokra keszult. TERV: store/salesforce/terv/jelolok-terv.html. a gazdára v [...]
 #81 [nincs projekt/high] Mail rendezo: cegek veszelyessegi elemzese a levelek HANGULATABOL
@@ -1503,7 +1494,7 @@ van. Ezt ki kell mondani, nem elhallgatni. Teljes változat: `--teljes`.
 9. MENTETT TUDÁS (emlékek réteg szerint)
 ========================================================================
 
--- WARM -- stabil konfiguráció, preferencia, projekt-kontextus (214 tetel) --
+-- WARM -- stabil konfiguráció, preferencia, projekt-kontextus (216 tetel) --
 
 [2026-08-03 / marveen] a gazda céges Security osztálya NEM engedi a közvetlen kapcsolatot a Microsoft Outlook/Exchange felé, ezért nincs direkt email integráció. Levél-másolatok eljuttatása alternatív úton: (1) Telegram forward (preferált, nulla integráció), (2) semleges köztes email cím IMAP-pal - de a külső auto-forward lehet céges policy-tiltott, előbb tisztázni kell, (3) .eml/PDF fájl feltöltés. Nyitott döntés: melyik utat választja.
     kulcsszavak: email, outlook, exchange, security, forward, imap, integráció, céges
@@ -2187,7 +2178,17 @@ AMIRE FIGYELNI KELL: minden olyan mutatonal, ami ugyfel-oldali (szerzodeses aran
 [2026-08-22 / marveen] A merlegeles a gazda sajat Claude/ChatGPT elofizetesebe kerult at (D072). Ket fajl viszi at a tudast, determinisztikusan: napi Dontesi csomag (kb. 32 ezer token) es heti Marveen tudastar (kb. 184 ezer token), a scripts/dontesi-csomag.py-vel. A csomag fejleceben all a kulso AI-nak szolo kotelezo zaro-formatum: === MARVEEN FELADAT === blokk (FELADAT, FELTETELEK, ELVART VEGEREDMENY, SZUKSEGES ADATOK, DONTES KOZBEN, KERDES ARPADNAK). En ebbol dolgozom, a beszelgetest nem latom. Visszaut: --beolvas <fajl> --felvesz. Teljes szabaly: store/szabalykonyv/kulso-ai-atadas.md
     kulcsszavak: dontesi csomag, tudastar, kulso AI, D072, marveen feladat blokk, kontextus koltseg
 
--- COLD -- tanulság, történeti döntés, archívum (244 tetel) --
+[2026-08-23 / marveen] A kulso AI-nak szant anyag HAROM allando webcimen el, mindharmat a scripts/dontesi-csomag.py allitja elo es teszi ki (D073, D074):
+1. .../marveen-inditas.txt -- ez inditja az uj beszelgetest: megmondja a kulso AI-nak, mit toltson le, mi a szerepe, mi a zaro formatum. Ezt kell a gazdának egy uj chat elejen megadnia.
+2. .../marveen-tudastar.txt -- tartos tudas, hetente.
+3. .../marveen-dontesi-csomag.txt -- napi allapot, minden reggel.
+A repo: github.com/jamborarpad/Marveen-Jam_discuss (PUBLIKUS). Ezert csak a --publikus (anonimizalt) valtozat kerulhet ki. Minden fajl elso sora verzioszam (ev.ho.nap.napi-sorszam), fajltipusonkent KULON szamlaloval, es a fejlec kimondja, hogy a korabbi valtozatot el kell felejteni. Cron: csomag 4:00 UTC, tudastar es inditofajl hetfo 3:45 es 3:50 UTC.
+    kulcsszavak: kulso AI, webcim, github, inditofajl, tudastar, dontesi csomag, D073, D074, publikus repo
+
+[2026-08-23 / marveen] Kanban API: a kartya modositasa PUT /api/kanban/<id>, NEM PATCH. A PATCH 404-et ad (nincs ilyen route), ami konnyen felreertheto ugy, hogy a kartya nem letezik. Reszmezo eleg a bodyban, pl. {"project":"szervizstat"}, es {"ok":true} a valasz. 2026-08-23-an ezen bukott el eloszor a harom szervizstat-kartya projekt-cimkejenek normalizalasa.
+    kulcsszavak: kanban, API, PUT, PATCH, 404, kartya modositas, dashboard
+
+-- COLD -- tanulság, történeti döntés, archívum (247 tetel) --
 
 [2026-08-03 / marveen] Telegram channel plugin nem reagalt (MCP reconnect hiba: -32000), a marveen-channels session hard restartra ment. Ha ujra elofordul: ellenorizd a plugin server allapotat es a ~/.claude/channels/telegram configot. Restart utan a csatorna vissza kell alljon.
     kulcsszavak: telegram, plugin, mcp, -32000, channel, restart, reconnect
@@ -3004,6 +3005,15 @@ MERT PELDA: 2026-08-21-en harom Manus-fiok volt erintve ([cég], [cég], j.ambor
 
 [2026-08-23 / marveen] A Salesforce org TOBB DEVIZAT kezel (97726 HUF es 3246 EUR nyitott lehetoseg). A rekord Amount mezoje a SAJAT devizajaban all, ezert a letoltott rekordok nyers osszeadasa HAMIS: 84,4 milliard jon ki az 528,2 milliard helyett. Helyes megoldas a SOQL-ben: convertCurrency(Amount). A SOQL SUM(Amount) mar konvertaltan ad vissza, ezert ellentmond a rekordonkenti osszeadasnak -- ez a kulonbseg volt a hiba jelzese. TOVABBA: a Salesforce sajat arfolyamtablaja 263,2 Ft/EUR-val szamol, ami elavult (2026-08-23-i USD 310,5), tehat minden eurós tetel ertéke alulbecsult a rendszerben.
     kulcsszavak: salesforce, deviza, multi-currency, convertCurrency, arfolyam, opportunity, amount, hamis osszeg
+
+[2026-08-23 / marveen] A raw.githubusercontent.com nyers cimeit a halozat 5 percig gyorsitotarazza: a valasz fejlece cache-control: max-age=300 (merve 2026-08-23). Egy frissites utan percekig a REGI tartalom johet vissza. Kerulout: a cim vegere query string (?v=N), az mas cache-node-ot fog. Ezert a publikalas utani visszameres onmagaban nem bizonyitja, hogy a masik fel is a friss valtozatot latja -- a fajl ELSO SORABAN allo verzioszam dont, es azt kell osszevetni. Egy kulso AI 2026-08-23-an ebbol vont le hamis kovetkeztetest: azt hitte, regi valtozatot kap, holott a ket fajlnak KULON verzio-szamlaloja van, es a helyeset kapta.
+    kulcsszavak: github raw, cache, max-age, gyorsitotar, verzioszam, publikalas, visszameres
+
+[2026-08-23 / marveen] Allapotjelzes valtozas-kapu: a DARABSZAM NEM UJJLENYOMAT. 2026-08-23 16:00-kor a nyitott kartyak szama valtozatlanul 69 volt, de kozben egy kartya futobol varakozora kerult (81774161, 12:04). Darabszam-osszehasonlitassal a kapu hamisan nincs-valtozast mondott volna es a jelzes elmarad. Az ujjlenyomat az (id, status, priority) harmasokbol kepzodik. Masodik szabaly: ha az elozo jelzes ota nem tortent erdemi munka, azt MEG KELL MERNI (napi naplo utolso bejegyzese + kartyak updated_at) es ki kell mondani a jelentesben, nem elhallgatni. Atvezetve a ~/.claude/scheduled-tasks/allapotjelzes-oranta/SKILL.md Buktatok szekciojaba.
+    kulcsszavak: allapotjelzes, valtozas-kapu, ujjlenyomat, darabszam, kanban, heartbeat, mereses jelentes
+
+[2026-08-23 / marveen] A kulso AI csomagja MASOLAS-BEILLESZTESKOR ket helyen romlik el, es mindketto NEMAN buktatta a beolvasot: (1) sortores kerul a jelolok es cimkek BETUI koze (=== MAR/VEEN, PROJE/KT, ELVAR/T), (2) a cimkek a sor BELSEJEBEN maradnak, nem sor elejen. A dontesi-csomag.py 2026-08-23-an ezert utasitotta el a Szervizstat harmas blokkot, pedig a tartalom hibatlan volt. Javitva a forrasbol: normalizal() fuggveny, ami a cimket betunkent \\s*-gal illeszti es sor elejere teszi, kis-nagybetu-erzekenyen (kulonben a prozaban levo a feladat: is feladatfejnek latszana). Visszamerve: 3 feladat, 7/7 mezo. TANULSAG: ha a kulso fel formatuma latszolag jo, de a parser nemet mond, a masolasi torest gyanusitsd, es a forrasbol javitsd, ne a gazdat kerd meg mas masolasra.
+    kulcsszavak: dontesi-csomag, parser, masolas, sortores, cimke, MARVEEN FELADATOK, normalizal, kulso AI
 
 -- SHARED -- több ágensnek is releváns (105 tetel) --
 
