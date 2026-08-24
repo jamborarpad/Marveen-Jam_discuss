@@ -1,6 +1,6 @@
-2026.08.23.006
+2026.08.24.001
 MARVEEN DÖNTÉSI CSOMAG -- mérlegeléshez, külső AI-nak
-Kelte: 2026-08-23 09:33 (CEST, budapesti idő)
+Kelte: 2026-08-24 06:00 (CEST, budapesti idő)
 
 EZ PILLANATKÉP. Amit tartalmaz, az ezen a napon, ebben az órában volt igaz.
 A fenti verziószám: dátum és a napi kiadás sorszáma. Ha két változatot
@@ -255,6 +255,10 @@ D073: A kulso AI-nak szant anyag ALLANDO WEBCIMEN el, nem fajlkuldessel: https:/
     Miért: a gazda, 2026-08-23: fajlokat masolgatni dragabb es tevedhetobb, mint egy allando hivatkozast hasznalni. A publikus repo a Google szamara is lathato, ezert a nevek kiszedese nem opcio, hanem feltetel.
     Forrás: a gazda, 2026-08-23
 
+D074: A kulso AI adhat BECSLEST, ket kotelezo feltetellel: (1) minden allitas mellett ott a harom cimke egyike -- TENY (a csomag vagy egy Marveen-meres bizonyitja), BECSLES (a kulso AI kovetkeztette ki), JAVASLAT (dontesi vagy technikai ajanlas); (2) ha a dontes MAGAN a szamon all, akkor a csomagba MERESI FELADAT kerul, nem a becsult szam. A jeloletlen becsles sulyosabb hiba, mint a hianyzo szam, mert tenynek latszik. TOVABBA: a kulso AI javasolhatja egy tartos dontes felulvizsgalatat, de az KERDESKENT megy a gazdához, nem feladatkent, mert a kulso AI pillanatkepbol dolgozik.
+    Miért: a gazda, FA / K-27 = a, 2026-08-23. A lazitas oka gyakorlati: a merlegeleshez sokszor eleg egy nagysagrend, es ha minden szamert Marveenhez kell fordulni, a gondolkodas megall. A korlat oka mert: 2026-08-22-en haromszor fordult elo, hogy a kezenfekvo valasz meres utan az ellenkezojere fordult.
+    Forrás: a gazda, 2026-08-23
+
 -- SZERVIZ FELADATKEZELO --
 D051: Az esetfuggo elvarasokat (ismeretlen berendezes-azonosito, garancialis bejelentes, elore utalas, keszpenz) TILOS a helyszin-rekord [személy]isztrativ_kovetelmenyek__c mezojebe javasolni. Csak a partnerhez tapado, allando kovetelmeny kerul oda.
     Miért: Merve 2026-08-21: 120 nap alatt 643 kezzel irt szekcio, ebbol a 4 leggyakoribb (291+200+44+20) esetfuggo. Ha a helyszinre kerulnek, minden jovobeli munkara ratapadnak. A visszafejtheto partner-kovetelmeny valojaban csak 12 helyszinen maradt, nem 302-n -- ez az SZ-22 kerdesnel mondott feltevesem helyesbitese.
@@ -476,24 +480,7 @@ D035: A szerviz hibagyűjtő napi levelének tárgya fix: 'Szerviz hibagyűjtő 
 2. NYITOTT KÉRDÉSEK ÁRPÁDHOZ, pontosan ahogy fel lettek téve
 ========================================================================
 
-FA / K-25 (DM (rendszerszintu), feltéve: 2026-08-22 23:42)
-  A teljes tudastar 184 ezer token (741 kB). Ez a hataron van: a Claude Project tudasbazisaba meg befer, egy sima beszelgetesbe mar nem. Melyik uton visszed be?
-    a) Claude Project, a tudastar a projekt-tudasba egyszer feltoltve, a napi csomagot cserelem
-    b) ChatGPT projekt, ugyanigy
-    c) Nem projektet hasznalok, hanem beszelgetesenkent toltom fel: akkor daraboljam a tudastarat 3 reszre
-
-FA / K-26 (DM (rendszerszintu), feltéve: 2026-08-23 08:21)
-  Allando webcimet kertel a fajlok helyett. Megepitettem, de a meglevo GitHub tokennek NINCS gist-joga (meres: HTTP 403, 'Resource not accessible by personal access token'), es a het elerheto repo mind privat, tehat azok nyers cime kivulrol nem olvashato. Melyik utat valasszuk?
-    a) Adsz egy GitHub tokent gist-joggal (fine-grained: Gists Read and write, vagy classic: gist scope). Ket perc, es a cim onnantol allando: gist.githubusercontent.com/.../raw/marveen-tudastar.txt
-    b) Letrehozol egy PUBLIKUS GitHub repot erre a celra, es a tokennek irasi jogot adsz ra. Ugyanaz az eredmeny, de a tartalom barki szamara kereshetо lesz, nem csak a linket ismeroknek
-    c) Marad a fajl-kuldes Telegramon, ahogy ma
-
-FA / K-27 (DM (rendszerszintu), feltéve: 2026-08-23 09:33)
-  A kulso AI azt javasolja, hogy adhasson BECSLEST is, ha egyertelmuen becslesnek jeloli. A mai szabaly (kulso-ai-atadas.md) ezt tiltja: 'a csomagbol hianyzo szamot nem szabad megbecsulni'. Egyetertek a lazitassal ket feltetellel: a jeloles kotelezo, es ha a dontes MAGAN a szamon all, akkor merési feladat keszul, nem a becsult szam kerul be. Modosithatom igy a szabalykonyvet?
-    a) Igen, a ket feltetellel egyutt. Atirom a szabalykonyvet es rogzitem dontesnek
-    b) Nem, maradjon a szigoru szabaly: becsles egyaltalan nem kerulhet at
-    c) Igen, de feltetel nelkul: a becsles jelolve barmire hasznalhato
-
+Nincs ilyen. (minden feltett kérdésem meg van válaszolva)
 
 ========================================================================
 3. KÉRT IGÉNYEK, amikből még nem lett feladat
@@ -508,7 +495,7 @@ Nincs ilyen. (minden kért igény kártyává vált)
 -- Nincs projekt (20 nyitott) --
 #36 [planned/high] Napi levelezes-brief a gazdának (Gabriella mint kezbesito, jamemail elemzesbol + ics)
     ARPAD KERESE 2026-08-09 22:12 (DM msg 933). Ki akarja valtani a kollegano munkajanak nagy reszet. K-3: MIND A NEGY (szetosztas, szamla-tovabbitas, rutinvalaszok, idopontok). K-4: "a" -- Gabriella ELOKESZIT, a gazda kuld az Outlookbol (igy NEM kell ceges hozzaferes). K-5: NEM, cegtol hozzaferest NEM tud kerni. *** A FELISMERES, amit kimondtam: a nehez [...]
-#43 [in_progress/high] Teljes atvilagitas: 5 projekt, mukodes + biztonsag
+#43 [waiting/high] Teljes atvilagitas: 5 projekt, mukodes + biztonsag
     a gazda kerese 2026-08-14 13:07: minden projekt teljes atvilagitasa es javitasa, mukodesi ES biztonsagi oldalrol. Eloszor projektenkenti atvilagitasi+javitasi terv, utana a javitasok.  ERINTETT KODTARAK (mind, push joggal): missionlock, szervizstat, email-analyzer, faac-quote-form ([cég]HD), bni-meeting-controller (MeetDirector).  SORREND: biztonsag e [...]
 #67 [planned/high] Mail rendezo: cegenkenti Attekintes gomb es osszefoglalo
     J-2 megvalaszolva 2026-08-18: c) Salesforce. A helyszin- es berendezes-szintu adat (cim, tipus, gyarto, beavatkozas-szam, technikus) a Salesforce-bol jon, scripts/sf-query.mjs. NEM blokkol tovabb.
@@ -666,31 +653,7 @@ Nincs ilyen. (minden kért igény kártyává vált)
 5. NAPLÓ -- 24 óra teljesen, előtte címszavakban
 ========================================================================
 
--- 2026-08-20 (csak a bejegyzések címe) --
-10:00 -- Szerzodes-kimutatas atadva, szabalykonyv megepitve, harom lista helyreallitva
-10:10 -- Allapotjelzes + beszelgetes-mentes
-10:35 -- A szabalykonyv eles, a gyujto 1.7.2, es a ket nap terve
-11:00 -- Gyujto-or, naplo-azonositas, VIP domainek
-11:20 -- Az Excel cegadat-betoltes: elkeszult, es ket hibat fogott meg a szaraz menet
-11:35 -- Felemas kiadas HARMADSZOR, es a koltseg-kep tisztazva
-12:05 -- A koltseg 61 szazaleka a modell gondolkodasa, nem a felesleges levelek
-12:15 -- A PROBA-FUTAS MEGFOGTA A VALODI OKOT: a Szerviz fiok fele olvashatatlan
-13:20 -- MissionLock: egy blokkolo mar nem letezett, a masikat megjavitottam
-16:00 -- A takaritas fuggetlenul megerositette a reggeli koltseg-becslest
-17:00 -- A takaritas kesz, es ket sajat hibat is talaltam kozben
-18:05 -- Megvan az elso megvalaszolatlan-lista, es harom ellenorzes tartotta oszinten
-18:20 -- [személy] gyujtoje el sem indult, es a hibauzenet kiszivarogtatta a kulcsat
-18:55 -- Ket leallas, es a nap mintaja: a kod kimegy, a migracio nem fut le
-19:15 -- Az erkezesi ido helyre teve: 34291 sor
-19:35 -- a gazda korrekcioja: az idobeliseg onmagaban keves, es igaza lett
-19:55 -- NEMLEGES eredmeny a tunet-alkatresz lancon, es ez a hasznos
-20:20 -- Szerelői tájékoztató: a lap elkészült
-20:17 -- Állapotjelzés kiment
-20:45 -- Szerelői tájékoztató: a gazda hat hiánya átvezetve, PDF lett
-21:01 -- Állapotjelzés kiment
-22:00 -- Szerelői tájékoztató v2
 -- 2026-08-21 (csak a bejegyzések címe) --
-02:07-04:10 -- Éjszakai kör a gazda megbízásából
 06:35 -- Reggeli napindító és állapotjelzés kiment
 06:45 -- Szerződéses-szinkron és javítandó adatok
 06:50 -- A javítandó adatok mintája kiment a gazdának
@@ -753,261 +716,46 @@ Nincs ilyen. (minden kért igény kártyává vált)
 09:00 -- a gazda hat kérése egy üzenetben, mind lekezelve
 09:12 -- Tiszta lap
 09:40 -- Manus-atadas
-## 10:20 -- A Manus-kor visszamerve, es ket uj lelet
-
-VISSZAMERES (sajat meres, nem az o jelentesuk atvetele):
-- Speewo P1 ELFOGADVA (ac9a3b3): ket bongeszos integracios futas, konfliktus-egyesites, kepernyokepek. P2 tudatosan nem indult, minta-engedely hianyaban -- ez helyes. Helyesbites: 93 beepitett kartya van, nem 33.
-- JamEmail: P2 (manager) es P4 (Salesforce) kesz. UJ LELET: a mail.salesforce.com ALDOMAIN atcsuszott a szuron, 720007 profil megmaradt. 736 cegprofilbol 1. Javitas atadva: mqjtRho7moTEfLwphLNgbt.
-- MissionLock: a kiadas MEGTORTENT (a mai Home.tsx az eles bundle-ben van), de a kiadasjelzo erteke "ismeretlen", mert a vite.config a git rev-parse-bol venne, es a Manus kiado kornyezeteben nincs git.
-- UJ, SULYOSABB LELET: a MissionLock helyi beleptetese MINDEN tarolt fiokra 401-et ad, a sajat mero-fiokomra is, ami 08-17-en meg belepett. Nem elfelejtett jelszo. Atadva 2. kor [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 11:55 -- a gazda het pontja feldolgozva
-
-1. MANUS-ANYAG GITHUBRA (D066): a gyujto 1.8.4 (harom commit) es utana az 1.9.0 felkerult a
-   jamborarpad/email-analyzer fooagra, kulon worktreebol, hogy a folyamatban levo szerveroldali
-   munkam ne keveredjen bele. PowerShell-parse es 31 Pester-teszt zold.
-2. A j.amborarpad Manus-fiok NEM letezik (a gazda kozolte) -- f288c665 kartya lezarva, memoria
-   javitva (manus-fiokok-melyik-el.md).
-3. D067: a Claude.com-levelek beepitese a tudasba. Gabriella ertesitve, visszaigazolta (msg 518/519).
-4-5. GYUJTO 1.9.0: mar elszamolt levelek atugrasa (jamemail-elszamolt.txt, harom csapda ellen vedve)
-   es rendezett megallitas (LEALLITAS.txt). A 10:22-es futas merese indokolta: 7021 level, 21 perc,
-   3 uj. 12 uj egysegteszt.
-6. JAM-NAPLO (D068): scripts/jam.mjs + artifact 702041c1-683e-4977-950d-2f15eddeb3b2. A tartalom
-   sosem kerul vissza a modellbe. Ket [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 12:20 -- A megosztott postafiok BLOKKOLOJA elharult
-
-a gazda kezzel inditott futasabol (10:22, gyujto 1.8.2) merve, ket fuggetlen jelbol:
-- a teljes naploban EGYETLEN "a szerver nem ismerte fel ezt a postafiokot" sor sincs (korabban minden kotegnel),
-- a szerveren a [cég] Hungary Szerviz (60001) fiokhoz megerkezett a total=64430, ami pontosan egyezik a naploval.
-7fd6c00f LEZARVA. 1a96372e reszben teljesult (a darabszamok megvannak, a mailboxId meg meresre var).
-
-KET TISZTAZAS, amit memoriaba is irtam:
-- A GitHub-szinkron NEM indul magatol: a gazdának kezzel kellett elinditania (akkor mind a 4 commitot behuzta).
-- A gyujto NEM a szerver resze: az o gepen fut, a szinkron nem cvereli le. Atadtam a 1.9.0 ket fajljat
-  Telegramon, szamozott lepesekkel.
-
-UJ TUNET: a Szerviz fioknal 11:00-tol MINDEN koteg ures ("ures koteg, nem kuldom el"), 14 ezer level hatra.
-A fiok a gazda gepen is online modban [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 13:15 -- Vagas elott, a nap merlege
-
-a gazda felhatalmazasaval vagok. Checkpoint: store/checkpoint-2026-08-22-1315.md,
-projektallapot: store/projekt-allapot-2026-08-22-1315.txt.
-
-A NAP LEGFONTOSABB LELETE: az API-bol inditott Manus-task NEM TUD PUBLIKALNI. A
-task.create-nek nincs projekt-parametere, ezert a munka a kulonallo Tasks listaba kerul,
-es az a munkamenet nincs bejelentkezve a projekt Manus-fiokjaba. a gazda kepernyokepen a
-Manus sajat szavaival: "a kozzeteteli felulet hitelesitest ker". Hat kor bizonyitja.
-Ebbol lett a D069: a Manus ir, a gazda ad ki.
-
-TIZ Manus-kort inditottam ma ket fiokba. Negy kartya lezarva sajat meressel, egy
-ujranyitva (Speewo: kesz, de nincs elesben). Harom gyujto-verzio ment ki a fooagra
-(1.8.4, 1.9.0, 1.9.1), az utolso a gazda lassusag-jelzesere.
-
-KET SAJAT HIBAT HELYESBITETTEM: (1) "minden fiok 401" -- a tarolt cimemben egy pont
-allt, a belepes vegig muko [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 13:18 -- Manus projekten kívüli feladatkezelés, a gazda szembesítése
-a gazda rákérdezett a Manusnál, miért kezeli a projektek futó feladatait a projekten kívül. A Manus bocsánatot kért és sajátjának vallotta a hibát ("hibásan önálló feladatként indítottam"), ami TÉVES: az API task.create-nek nincs projekt-mezője, ezért minden általam indított feladat kényszerűen a Tasks listába kerül. Most 8 feladat újrafuttatását és közzétételét vállalta ugyanabból a munkamenetből, amiről 6 kör mérése mondja, hogy nincs bejelentkezve a projekt fiókjába.
-Mérés 13:18: MissionLock incident-recover 403 JSON (végpont még bent), Speewo bundle 0 találat. Egyik sem mozdult.
-D069 áll: a Manus ír, a gazda ad ki. Ha bebizonyítja, hogy ki tud adni, felülvizsgáljuk.
-
-## 13:30 -- Gyűjtő 1.9.2, Manus-átadható lista, csatorna-fegyelem
-**1.9.2 (ae0e73c)**: a gazda kérdése (miért 5 mp és nem 1) valódi hibát hozott ki: az 1.9.1-ben a HIBÁS köteg is nulla új levelet állít be, ezért a hibás köteg is a rövid sávba esett -- egy elutasító szervert 5 mp-enként hívogattunk volna. Új szabály: nem ment el kérés = 0 mp, elment de nulla új = 1 mp, hiba = növekvő visszalépés (30/60/120, max 300, sikeres köteg nullázza). 40 Pester-teszt zöld, mindkét fájl parse-ol. 350 köteg: 29 perc helyett 5,8 perc. A fájlok a Mail rendező sávba mentek, az 1.9.1-et NEM kell bemásolni.
-**Manus-átadható lista** (a gazda kérése, a Manus ma ingyen dolgozik): 10 pont a saját appjaiban -- MissionLock 5, Speewo 1, MeetDirector 3, WhisperClone 1. Nem adható át: gyűjtő (az ő gépe), Salesforce (kulcs nálunk), email-analyzer szerver, keret-őr/ütemezés. Feltétel: mérhető elfogadási feltétel pontonké [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 13:33 -- D070: automatikus javaslattétel kikapcsolva (Mail rendező)
-a gazda egyetértett és kérte, hogy egyelőre engedjük el az automatikus javaslattételt. A szűrő- és törlési szabályok kézzel készülnek, gépi javaslat nem áll elő magának. Ok: a tanult szabály torz mintán sült el. Rögzítve a döntés-nyilvántartásban, visszaigazolva a Mail rendező sávban.
-
-## 13:55 -- Speewo Telegram-sáv bekötve (-5071786239)
-a gazda először Csatornát (broadcast) hozott létre, ami SOSEM működött volna: a plugin server.ts 0.0.7-ben csak message:* kezelők vannak, channel_post egy sem, tehát a csatorna bejegyzései soha nem érnek el hozzám. [személy]ná tétel sem segít, csatornából csoportot a Telegram nem tud csinálni. Új Csoportként létrehozva.
-Második buktató: a /telegram:access parancsban szóköz volt a kettőspont után, ezért a CLI "/telegram:" néven kereste. Egybeírva ment.
-A csoport felvéve (requireMention false). Próbaüzenet megérkezett, válaszoltam benne, a lánc teljes. FIGYELEM: ennél a sávnál az allowFrom ÜRES (a parancsban nem volt --allow), a másik 8-nál a gazda azonosítója szerepel. Jeleztem neki.
-A telegram-projekt-csatorna-szetvalasztas skill megpatchelve a Csatorna-vs-Csoport buktatóval és a mérés módjával (grep -n "bot.on(" server.ts).
-
-## 13:58 -- MissionLock: félben maradt kiadás, mérve
-A Manus kiadott, de CSAK a frontend ment ki. A bundle-ben az incident-recover 0 találat, a szerveren a route ÉL: 403 JSON. Kontroll a saját mérés ellen: két kitalált /api útvonal 200-at ad HTML-ben (SPA-visszaesés), tehát a JSON-válasz bizonyítja a route létezését.
-A kiadásjelző sem oldódott meg: a bundle-be beégetve "kiadás: kiadás-metaadat hiányzik · ellenőrzött kiadás". Az ismeretlen szó helyére másik helykitöltő került, commit azonosító nincs.
-A MissionLock sávba kiment a két mérhető elfogadási feltétel a következő körre.
-
-## 14:15 -- Három sáv mérése: Speewo, MissionLock, Mail rendező
-**Speewo**: a Manus jelentése IGAZ, de ROSSZ CÍMRE adta ki. speewo2.manus.space: 12 csomag, 693 kártya (a bejelentett szám pontosan egyezik), a 600 P2-kártya bent. A RÉGI speewo.manus.space változatlan: ugyanaz a bundle (index-RenImaJn.js), 33 kártya, P2 nulla. Két élő példány, az eredeti cím a régit szolgálja ki. SP-1 kérdés nyitva, javaslatom b) (a régi címre adja ki).
-**MissionLock**: harmadik publikálás (index-B9bHS0IM.js), a végpont MÉG MINDIG bent (403 JSON, kontroll: nem létező út 200 HTML). A kiadásjelző viszont javult: "kiadás: 2026.08.22-r4" -- nem commit, de a célt teljesíti, elfogadtam.
-**Mail rendező**: J-27 lezárva (batch 20 marad). A JSON-behúzás nem számít. Az Outbox kihagyása HELYES: az a még el nem küldött levelek átmeneti sora, az Elküldött elemek NINCS a kihagyottak közt. Mai levelek: 7 (6 bejövő, 1 kimen [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 14:27 -- JamEmail feladatlap a Manusnak, Speewo gyökér-ok
-**Feladatlap kiadva** (store/atadando/JamEmail feladatlap 2026-08-22.txt, BOM-os txt): 3 pont mért kiindulással és mérhető elfogadási feltétellel. Költségszám (emailAnalysis.ts, 40 helyett 247 Ft/millió token, konfigba), zajszűrés (kihagyandó lista + 7000 salesforce-os sablonlevél AI nélkül), cégenkénti Áttekintés. a gazda döntése: a Manus ír (ma ingyen), én mérek. Ok: a költségem 96%-a a kontextus újraolvasása, tehát a sok kis kör a drága.
-**Speewo gyökér-ok megvan**: a template.json web-static, "no backend server", capabilities:[static]. A server/index.ts a főágban TARTALMAZZA a 6 végpontot (register/login/logout/session/progress GET+PUT), de sosem fut. Nem kód kell, hanem deploy-típus váltás + adattár. a gazdának megadtam a Manusnak felteendő egy mondatot.
-**Új kártya**: a Szerviz.Hu KÉT mailboxId-n (1 és 30001), és 383 levélnek [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 14:33 -- MissionLock LEZÁRVA, gyűjtő 1.9.3, hiányzó levelek
-**MissionLock kész**: 14:32:37-kor mérve a POST /api/auth/local/incident-recover 200 text/html, a törzs a belépőoldal, last-modified 12:27:16 GMT. A kontroll (nem létező /api út) KARAKTERRE ugyanaz. A route törölve, a 0c274cc élesben. Két órája még 403 JSON volt.
-**Gyűjtő 1.9.3 (39dec7c)**: a gazda 25 percig néma szakaszt látott a Szerviz fióknál (83 mappa, 64430 levél) és leállította. Nem állt meg: a mappánkénti bontást a $mappaSorok gyűjtötte és CSAK a ciklus végén írtuk ki. Mostantól minden mappa után azonnal megy egy sor sorszámmal (12/83) és a jelöltek addigi számával. 40 teszt zöld.
-**NYITOTT, SÚLYOS**: mai levelek hiányoznak a rendszerből. Tesztlevél 13:02, Hiányzó Salesforce-mezők 3x 9:03, Ellenőrizendő kiszállások 8:57 -- egyik sincs benne, MIKÖZBEN a fiók 5311/5311-gyel végigfutott és 0 új levelet adott. Kontroll: a M [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 15:59 -- Hiányzó levelek: a hiba a KIVÁLASZTÁSNÁL van
-a gazda megnézte: a gyűjtő naplójában nincs találat a Tesztlevélre, tehát a levél a jelöltek közé se került be. Három ok maradt (Restrict szűrő / elszámolt-lista / Class-ReceivedTime). Találgatás helyett átadtam egy CSAK OLVASÓ diagnosztikát (store/gyujto-diag/JamEmail-Diagnosztika.ps1), ami mind a négy feltételt megméri a keresett levelekre és megmondja, melyiken esik ki. Nem kell hozzá a gyűjtőt bemásolni. a gazda az 1.9.3 bemásolását addig visszatartja, amíg a javítás kész -- egyben adom majd.
-
-## 16:20 -- A hiányzó levelek oka megvan, gyűjtő 1.9.4
-**AZ OK AZ ÉN SZABÁLYOMBAN VOLT.** A diagnosztika: mind a hat levél (a 13:01-es Tesztlevél is) szerepel a helyi elszámolt-listában. A régi szabály csak a szerver HIBA-számát nézte, a szerver viszont hiba nélkül is kihagy: üres sor (nincs olvasható törzs), tiltólistás feladó, napi korlát, kor-szűrő. Ezek skipped-be mennek, errors=0, a köteg elszámolt lett, a levél véglegesen elveszett.
-**A két ügy összekapcsolódik**: amíg a Megosztott mappák letöltése nincs bekapcsolva, a törzs olvashatatlan -> üres sor -> kimarad ÉS elszámolt lesz. A beállítás későbbi bekapcsolása sem hozta volna vissza őket.
-**1.9.4 (ef00323)**: uploaded + duplicates + potoltAzonosito >= küldött darabszám, különben az EGÉSZ köteg újra sorra kerül. A hiba nélküli kihagyás hangos lett. 48 teszt zöld. A push non-fast-forward volt: a Manus közben pusholt (523b746, a Jam [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 16:28 -- Az üres-sor mechanizmus BIZONYÍTVA, Szervizstat feladatlap
-**BIZONYÍTÉK a szerver futásnaplóiból** (admin.gyujtoFutasok): MINDEN futásban a kihagyva == uresSor, karakterre. HUBUD1WKSL0030 (a gazda gépe): 29436, 29436, 29436, 27655, 22453. HUBUD1LPTL0051: 6997, 6827, 6. A szerver tehát minden kihagyást ugyanazzal indokol: üres sor, nincs feladó és nincs törzs. NEM tiltólista, NEM korlát, NEM kor-szűrő. DÖNTŐ EGYEZÉS: a 6997 pontosan annyi, amennyi azonosító a jamemail-elszamolt.txt-ben van -- az a futás 6997 levelet üres sorként kihagyott és mind bekerült az elszámolt-listába. Ez a hurok, amit az 1.9.4 megtör.
-**KÉT KÜLÖN OK KÉT GÉPEN**: a Szerviz fióknál a Megosztott mappák letöltése (a gazda képén ÜRES a négyzet, ő a fölötte lévő gyorsítótáras sort látta bepipálva). A SAJÁT fiókjánál más ok, mert az nem megosztott mappa -- 29436 levél megy fel törzs nélkül. Külön mérendő.
-**J-28 [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 16:36 -- Speewo backend ÉL, saját mérési hiba elkapva
-A Manus jelentése ezúttal igaz: az API a /api/trpc útvonalon szolgál, auth.me 200 JSON, progress.get 401 JSON, kitalált eljárás 404 JSON. A három válasz megkülönböztethető, tehát valódi szerver.
-**SAJÁT MÉRÉSI HIBA, jelentés ELŐTT elkapva**: elsőre a régi REST utakat mértem (/api/auth/login), azok most a belépőoldalt adják, és majdnem azt írtam, hogy nem működik. A bundle-ből derült ki, hogy az app tRPC-re állt át. Tanulság: kiadás után ELŐSZÖR a bundle-ből kell kiolvasni, milyen útvonalat hív a frontend.
-Tartalom sértetlen: 12 csomag, 693 kártya, 600 P2. Hátra: a régi speewo.manus.space törlése (SP-1=a).
-
-## 16:52 -- Manus-átadható lista: NÉGY kártya kódja már kész, csak kiadás kell
-a gazda kérdésére végignéztem a repókat (a délutáni tanulság szerint: feladatlap előtt mérni).
-**MÁR MEGÍRVA, csak nincs élesben:**
-- JamEmail: a Manus 523b746 alatt mind a 3 pontot commitolta (egységár/árfolyam adminból, zajszűrő migrációval, cégáttekintés). MÉRVE: az éles bundle-ben az Üzemeltetés, árfolyam, Áttekintés szó egyike sem szerepel -> nincs kint. Migráció 0012+0013 is van benne.
-- MissionLock 93dd149e: ac44527 + ea625ce (helyszínnév-ismétlés).
-- MissionLock 469fc9b9: 741794a + 02544ea (geofence/GPS bizonyíték).
-- MeetDirector 14e9390d: 18cdc56 + 5fccff4 (MD-05 központi védelem, M-4 háttérkép 35 mp).
-**VALÓDI ÚJ MUNKA**: a Mail rendező DASHBOARD ÁTALAKÍTÁS (286342e5, a gazda 2026-08-12-i specifikációja, postafiók-kártyák méret-információval) és a WhisperClone átvizsgálás (a97f2c7a).
-Javaslat a gazdának:  [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 17:00 -- MissionLock 2 kártya lezárva, dashboard feladatlap kiadva
-**93dd149e és 469fc9b9 LEZÁRVA**, méréssel: az ac44527, ea625ce, 741794a és 02544ea commit mind a 0c274cc ŐSE, a 0c274cc a főág csúcsa, és 14:32:37-kor mérve élesben van. Ami egy kiadott commit előtt áll a történetben, az vele együtt megy ki. a gazdának igaza volt, hogy a MissionLock kész.
-**Dashboard feladatlap kiadva** (store/atadando/JamEmail feladatlap 2026-08-22 dashboard.txt): a 2026-08-12-i specifikáció feladattá formálva. A két előfeltétel (mailboxId, mailbox_total) MÉRVE teljesül, ezért volt értelme most elővenni. Két saját kiegészítés: a napi költség ugyanazt a konfigurációs egységárat használja mint a költség-kimutatás (különben szétcsúsznak), és a két Szerviz-bejegyzés + a 383 mailboxId nélküli levél NE legyen elrejtve, hanem külön kártyán látszódjon.
-**MeetDirector jövő hétre halasztva** (a gazda döntése). Spe [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 17:05 -- Gyűjtő-őr riasztás [személy] gépéről + saját hiba javítva
-**ÚJ BAJ**: HUBUD1WKSL0030 / [e-mail cím kiszedve] -- 33770-ből 22453 üres burok (66,5%), 4 órája nincs összegző, 1 hibás köteg ("Nem lehet csatlakozni a távoli kiszolgálóhoz"), a [cég] Hungary Szerviz fiókot nem ismeri fel, és 1.8.1 fut nála. Az 1.8.1-ben a RÉGI elszámolási szabály fut, tehát a 22453 levél véglegesen elvész. Kártya felvéve, urgent.
-**SAJÁT HIBA JAVÍTVA**: délután a 29436/22453 üres-számokat tévesen ÁRPÁD gépének tulajdonítottam. Az a gép Csabáé. a gazda gépén (HUBUD1LPTL0051) 7024-ből 6 az üres, 0,1%. Az ok: a 90001 azonosító egyszer owner[személy]Id ([személy]), egyszer mailboxId (a gazda [cég] postafiókja) -- összemostam a kettőt. Kimondtam neki.
-**Manus költség-kérdés**: a 15410,97 Ft-ot NEM fogadjuk el bázisnak, mert az app saját számából jön, és pont az volt a hiba. Mérve: adat nem veszett el (29969 levél), a kimut [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 17:08 -- Manus API: nincs publikálás, DE van project.list
-A Manus kérte, hogy a gazda küldje el neki az API-kulcsot, hogy maga publikálhasson. Megmértem: a Manus API-ban NINCS publikálásra való végpont (deployment.list, deployment.publish, site.list, site.publish, website.list, task.deployment mind 404). A kulcs tehát nem is oldaná meg, viszont a teljes fiókhoz ad hozzáférést és egy csevegésben maradna. Megmondtam, hogy ne küldje el.
-**PONTOSÍTÁS a reggeli állításomhoz**: a /v2/project.list MŰKÖDIK és 17 projektet ad vissza (JamEmail, ML, Speewo_2, Szerviz adatfeldolgozás, Whisper clone, ISUSY, FHD...). Reggel azt mondtam, az API nem tud projektekről -- listázni tud. Hogy task.create elfogad-e projekt-azonosítót, még nyitott; kártya felvéve a kipróbálásra (Teszt projekt azonosítójával). Ha igen, a mai legnagyobb súrlódás megszűnhet.
-
-## 17:12 -- Levél Csabának a gyűjtő javításáról
-a gazda kérésére én írtam Csabának, Gabriella néven (id 1a02a0508a65e739). Négy számozott lépés: Outlook offline megőrzés 6 hónap + Megosztott mappák letöltése, a két ps1 cseréje 1.9.4-re, az elszámolt-fájl átnevezése, indítás.
-A fájlokat DRIVE-LINKKEL adtam át, nem csatolva -- a Gmail a futtatható fájlt zipben is tiltja, és a kollégáknak nincs Google fiókjuk. Link-megosztás bekapcsolva mindkettőn.
-ÁGNES: a rendszerünkbe az ő gépéről MÉG SOHA nem érkezett futásjelentés, tehát ott a gyűjtő nincs telepítve. Csabának azt írtam, előbb nézze meg, van-e C:\JamEmail mappa; telepítési útmutatót nem küldtem rá, mert nem tudom, hogy az ő dolga-e. a gazdának jeleztem, hogy szóljon, ha [személy]nél is kell gyűjtő.
-
-## 17:17 -- Telepítési levél [személy] gépéhez, a JamEmail app épp nem él
-Második levél Csabának (1a02a0d49d281e4b): 6 lépéses telepítési útmutató [személy] gépére. A próbaüzemmódot szándékosan bekapcsolva hagytam, és képernyőképet kértem élesítés előtt. [személy] API-kulcsát NEM adtam Csabának -- külön levél megy [személy]nek, mert az az ő azonosítója.
-**BLOKKOLÓ**: a kulcsot nem tudtam előállítani, mert a jamemail.manus.space 17:15-kor NEM ÉLT: minden kérésre "Site U..." kezdetű oldal jött, GET / és a tRPC login is. Valószínűleg a Manus épp publikálja a mai kiadást. Kártya felvéve; amint visszajön, kulcs + a 3 pont visszamérése (Üzemeltetés sor, árfolyam, Áttekintés gomb).
-
-## 17:50 -- Manus-mentesek ellenorzese a Google Drive-on
-a gazda kerte, nezzem meg, rendben vannak-e a Drive-ra mentett Manus-csomagok. Mind a 13 fajl ep: a mai 8 ([cég] 2, [cég] 6, osszesen 8,2 GB) plusz a 08-18-i es 08-20-i [cég] csomagok. Nem a feltoltes tenyet neztem: ZIP-zaro rekord a legutolso bajton, manifest stored_bytes egyezik a tarolt merettel, szegmensek hezag nelkul lefedik a fajlt, es csomagonkent 7 szegmens SHA256-ja visszamerve. Mind egyezett.
-Egy anomalia: a [cég] export zsugorodik, 2565 -> 2429 -> 1969 MB (08-18/08-20/08-22), 23 szazalek 4 nap alatt. Ok meg nem tisztazott, a feladatszam visszameres fut.
-Hatarido: a hatralevo mentes ma ejjel 01:59-ig (magyar ido), visszaallitas 08-25 02:00-tol, a fajl visszatoltesevel. Kulcsot nem kell orizni, a visszafejtes a Manusnal fut.
-
-## 18:05 -- A [cég] export zsugorodasa tisztazva
-Nem feladatveszteseg. A teljes [cég] feladatlista visszamerve az API-bol (258 lap, 5151 feladat): a 08-18-i mentes 5122 azonositojabol MIND az 5122 megvan ma is, plusz 29 uj. Kredit 193 666 -> 205 167. A csomag sulyat a feladatokhoz tartozo tartalom adja, azt a Manus takaritja, ezert lett 2565 MB-bol 1969 MB. Kovetkezmeny: a 08-18-i [cég] csomagot nem szabad torolni a Drive-rol, 596 MB-tal tobbet tartalmaz es ep. Kanban 920b6d6a lezarva.
-
-## 18:15 -- Manus szunet 08-24-ig, es a keret-or PATH-hibaja
-a gazda 18:05: a Manusnak fizetesi problemaja van, amit nem tud korrigalni, holnaputan nezzuk. Kerese: ne figyeljek semmit. Leallitottam a szerver-figyelot, kiuritettem a Manus task-figyelo listat, es szuneteltettem 3 jamemail-ellenorzest (visszakapcsolni 08-24-en).
-a gazda 18:09: dolgozzak tovabb, de csak az elofizetesbol, es alljak le, ha elfogy a keret. Atneztem a 69 nyitott kartyat: 27 olyan van, amihez nem kell Manus. Az elso a 66a25a0a (urgent, friss kontextusablak, 490 ezer Ft/ho).
-MUNKA KOZBEN TALALT ELES HIBA: a keret-or es a keret-fek cronbol MINDEN futasnal elhasalt ejfeltol 16 orain at, mert a claude binaris a ~/.local/bin-ben van, a cron PATH-jan pedig nincs rajta. Kezbol mukodott, ezert lathatatlan volt, es a naplo felrevezetoen 'nem valaszolt'-ot irt. Javitva (claudeBinaris + usageLekerdezReszletes), uj teszttel (4 p [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 18:22 -- Keret-fek elesbe, es tiszta lap
-A cron PATH-hibaja javitva (claudeBinaris + usageLekerdezReszletes, uj teszt 4 pass, a 42 meglevo keret-teszt is pass), cron-kornyezetben visszamerve. Crontab: PATH= sor bekerult, es a keret-fek --arnyek 3 orankent helyett --eles ORANKENT fut. Mentes: scratchpad/crontab-2026-08-22.bak. A feloldas-ag (feloldasEsedekes/fekFeloldas) be van kotve, tehat a fek nem hagyja tartosan kikapcsolva a feladatokat.
-Keret 18:19-kor: session 4%, het (all models) 5%, nullazas 08-25 05:59 (budapesti), utem 4,2 szazalekpont/nap.
-Projektallapot kimentve: store/projekt-allapot-2026-08-22.txt (242 sor). a gazda ketszer kerte a vagast, most kovetkezik a tiszta-lap.sh.
-
-## 19:35 -- A /tmp RAM, es 1,5 orara kiutotte Gabriellat
-a gazda kerdezte, miert kuldtem 19:21-kor memoria-uzenetet, ha 18:21-kor vagtam. NEM en kuldtem: a scripts/fleet-memory-gate.sh irta ki, kozvetlenul a Bot API-n, session nelkul. Ezert nem erinti a vagas.
-
-Ami mogotte volt: a /tmp ezen a hoston tmpfs, tehat RAM. 2,9 GB-ot foglaltak a MAR HALOTT sessionok scratchpad mappai (a legnagyobb 1,4 GB: az [cég] Manus-mentes reszletei, amiket a Drive-ellenorzeshez toltottem le 17:38-kor). A RAM 88 szazalekon allt, a memoria-kapu safe-mode-ba ment 17:55-kor, es azota PERCENKENT blokkolta Gabriella ujraindulasat. 96 percig nem futott, es errol semmilyen kulon riasztas nem ment ki -- csak a generikus memoria-uzenet.
-
-Takaritas: minden nem-elo session scratchpadja torolve (2 elo maradt). /tmp 2,9 GB -> 215 MB, RAM 88% -> 53%, elerheto 881 MB -> 3674 MB. A safe-mode jelzo magatol torlodot [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 19:45 -- A friss kontextusablak elso eles probaja: blokkolo talalat
-a gazda kerte az 1-es tetel inditasat (kartya 66a25a0a, ~490 ezer Ft/ho). A kanban-audit mar type=fresh volt, de a determinisztikus kapu ma mind a harom futast (08:00, 12:00, 16:00) skipped-re tette, tehat eles meres nem szuletett. Ezert kezzel inditottam egy valodi runFreshTask futast a produkcios uton.
-
-EREDMENY: a friss futas kiuti a fo agens Telegram-csatornajat. A friss `claude -p` sajat telegram-plugint indit gyermekfolyamatkent (4052073 node -> 4052096 claude -p -> 4052145 bun plugin), es a plugin server.ts 56-68. sora SZANDEKOSAN SIGTERM-et kuld a bot.pid-ben talalt elozo pollerre. A bot.pid a friss futas indulasakor irodott at (17:39 UTC). A fo session MCP-je nem jott vissza magatol: hard restart kellett a marveen-channels sessionon.
-
-Ugyanez a tunet volt 08-22 00:10-kor, akkor ok nelkul maradt. Most bizonyitva [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 19:45 -- Kanban-audit (friss ablak) + keret-fek visszameres
-
-AUDIT: 0 beakadt in_progress, 0 archivalando done (7+ nap), 2 gazdatlan kartya (kuszob 3,
-ezert nincs Telegram). A kapu (precheck.sh) a mai 8, 12 es 16 orai futast mind SKIP-elte,
-ezert allt a state-fajl 08-21 20:09-en. Frissitve.
-
-ALLAPOT-KORREKCIO harom sajat kartyan:
-- Whisper clone atvizsgalasa: planned -> done (a munka 08-21 18:31-kor keszult el).
-- Keret-fek (D064): planned -> done, meressel.
-- Keret-or: planned -> waiting, a 23:00 CEST-i cron-futas visszameresere.
-Premissza-komment ket Manus-kartyara (2. fiok kredit, project.list kiprobalas): a fizetesi
-gond es a 08-23..08-25 kozotti adattorles miatt 08-24-ig nem akciokepesek.
-
-KERET-FEK: az elso sikeres automatikus ELES futas 19:00-kor lement (session 5, heti 6
-szazalek, fek nem kapcsolt be). Elotte a mai osszes futas elhasalt a cron PATH-hiba miatt.
-
-UJ HIBA, JAVITV [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 20:00 -- Kanban-audit (friss ablak), premissza-korrekcio ket sajat kartyan
-A kapu 2 nem mozdult in_progress kartyat adott, mindketto a sajate, tehat ping nem kellett (kanban_stuck_nudge level 1). 0 archivalando done, 2 gazdatlan kartya (kuszob 3), waiting >48h: harom regi tetel, egyik sem uj blokkolo. Telegram nem ment.
-
-A ket kartya statusza IGAZ (mindketton en dolgozom), de az egyiknek megvaltozott a premisszaja, ezert kommentet kaptak:
-- Teljes atvilagitas (81774161): a "aminek szinkron kell, annak 08-22-ig kint kell lennie" hatarido ma lejar, es nemlegesen dolt el. A Manus fizetesi gondja miatt a kiadasi csatorna 08-24-ig zarva, 08-23 02:00-tol 08-25-ig az appok sem elerhetok. A kesz, de ki nem adott javitasok bent maradnak. A kartya priorizalasat nem szabad tovabb erre a hataridore alapozni.
-- AI koltseg-csokkentes (4f0c3426): a legnagyobb tetel (friss ablak, 490 ezer Ft/ho) blok [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 20:05 -- Manus mentes, utolso kor a 01:59-es hatarido elott
-Az utemezett feladat lefutott. [cég]: 5171 feladat (49 uj a 08-18-i menteshez kepest, a regi 5122 azonositobol egy sem hianyzik -- a szkript append-only es id-re dedupel). [cég] (manus-mentes-2fiok.mjs, MANUS_API_KEY_2): 153 feladat, 4 uj, 0 elveszett (a regi fajlt .bak-2026-08-22 nevre mentettem es azonosito-halmazt hasonlitottam, nem darabszamot). Uj ellenorzo osszeg: store/manus-mentes-2026-08/ellenorzo-osszeg-2026-08-22.txt.
-
-A TARTALOM EXPORT KERDESE MERESSEL LEZARVA, nem a gazda szavara vartam: a Drive-on 15 Manus-csomag van, es MIND A KET elo fiokra van MAI tasks-data. [cég]: tasks-data-faac-08-22_15-32-48 (17:40-18:03 CEST). [cég]: tasks-data-in-time-software-08-22_14-48-33, ot reszben (16:52-16:59 CEST). Tehat a gazdának 01:59-ig nincs teendoje; ezt kuldtem ki, nem kerdest.
-
-CSATORNA: a Telegram MCP l [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 20:08 -- Mentes hard restart elott (Jambroos session)
-A csatorna plugin nem reagalt, kb egy percem volt. Negy emlek ment el: 603 (Telegram-kuldes MCP nelkul, a fallback szkript es az ures .env token [titok kiszedve] 604 hot (aktiv allapot: keret-or 23:00-s visszamerese, a friss ablak megoldatlan poller-utkozese, [személy] 1.8.1-es gepe, a scratchpad-takarito, a Manus-szunet 08-24-ig es a harom kikapcsolt utemezes), 605 warm (a 08-18-i [cég] csomagot nem szabad torolni, 596 MB-tal bovebb), 606 cold (ismetelt mentesnel azonositot hasonlits, ne darabszamot).
-A Manus-mentes ELOTTE lezarult, arra nincs fuggo teendo.
-
-## Anthropic-szamla-tovabbitas heartbeat futas
-Autonomia szint: 3 (autonom). Uj (Kinga-cimke nelkuli) szamla: 0 talalat -> csendes heartbeat, nincs kuldes. 0/b utolerés-ellenorzes: minden approved allapotu jovahagyashoz mar rajta van mindket cimke (Kinga es Zsuzsa) -> nincs elmaradt kuldes. Talalt 14 regebbi (2026-08-06 - 2026-08-09) szamlat Zsuzsa-cimke nelkul, de ezekhez nincs approval-rekord (a Zsuzsa-tovabbitasi szabaly bevezetese elottiek) -> szandekosan nem nyultam hozzajuk, nincs mai feladatkorben.
-
-## Szamla-fizeto-alapu-tovabbitas heartbeat futas
-Autonomia szint: 3. Ket kereses (7 napos ablak + belepes-kello backlog) csak Anthropic-szamlakat (mas task kezeli, kihagyva), sajat allapotjelzest, es mar feldolgozott teteleket adott: Gamma #2461-5754 (Kinga, named-service szabaly) es Manus AI 3875-9498 visszaterites ([cég] -> csak Zsuzsa) mindketto mar rajta a Szamla-Attekintve + megfelelo tovabbitva-cimke. 0/b utolerés: az egyetlen nem-Anthropic approved tetel (Gamma) mar vegrehajtva es cimkezve. Uj tennivalo: 0, csendes heartbeat.
-
-## 20:45 -- A friss ablak gyoker-oka megvan, a javitas megirva (hard restart elott mentve)
-a gazda 20:24-kor kerdezte, mi a kovetkezo es sikerult-e a koltsegcsokkentes. Meres kozben eles probaval reprodukaltam a friss ablak blokkolojat: egy friss claude -p futas betolti a telegram plugint, az SIGTERM-mel elveszi a pollert a bot.pid alapjan, majd kilepeskor torli a fajlt. A --setting-sources project,local NEM segit, mert a plugin a repo .claude/settings.json-jeben IS engedelyezve van. A proba a sajat csatornamat is leutotte 20:31-kor, ezert a gazdának meg NEM ment valasz.
-A javitas megirva a src/web/fresh-task.ts-be, COMMITOLATLAN es LEFORDITATLAN: a friss alfolyamat TELEGRAM_STATE_DIR-je egy ures konyvtarra mutat, igy a plugin token nelkul exit(1)-gyel all le a pid-blokk elott. A freshTaskPrefix mostantol a Bot API helpert adja a friss ablaknak reply tool helyett. Hatra: teszt, build, restar [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 21:00 -- A friss ablak elesben, es egy cron-mero a kotegelesre
-
-KET DOLOG KESZULT EL.
-
-1. A FRISS ABLAK BLOKKOLOJA MEGSZUNT (66a25a0a, urgent, 490 ezer Ft/ho). A gyoker-ok elesben, ketszer merve: minden friss 'claude -p' futas betolti a telegram plugint, az SIGTERM-mel elveszi a pollert a bot.pid alapjan, majd kilepeskor torli a fajlt. A --setting-sources project,local NEM segit, mert a plugin a repo .claude/settings.json-jeben IS engedelyezve van -- ezt a sajat csatornam elvesztesevel mertem meg 20:31-kor. A megoldas: a friss alfolyamat TELEGRAM_STATE_DIR-je ures konyvtarra mutat, igy a plugin token nelkul exit(1)-gyel all le a pid-blokk elott. 25 teszt zold, build es dashboard-restart kesz, es egy eles friss futas lement ugy, hogy a bot.pid pidje es mtime-ja valtozatlan maradt.
-
-2. KOTEGELES-MERO (e11b5acb), a gazda kerese: 'olyan megoldast valassz, ami az ujraindulasok utan is mukodi [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 23:25 -- Tiszta lap, a gazda utasitasara
-
-A VAGAS ELOTT MENTVE: store/projekt-allapot-2026-08-22-2325.txt (24 386 bajt) es store/feladat-dontesi-csomag-spec.md (a holnap reggeli elso feladat teljes specifikacioja).
-
-A MAI ESTE MERLEGE. Ket dolog kesz es visszamerve: a friss ablak blokkoloja megszunt (a telegram plugin poller-atvetele; a megoldas egy ures TELEGRAM_STATE_DIR, 25 teszt, eles visszameres a bot.pid valtozatlansagaval), es a kotegeles-mero fut cronbol orankent (20 teszt, cron-kornyezetbol merve, elso szam: 67,5 szazalek osszevonhato).
-
-ARPAD HET FOGALMI KERDEST TETT FEL (bash, cron, keret-or, tool-hivas, kapu, memoria ketfele ertelme, csendes nap, napi recept). Ezekbol lett a 'Marveen uzemkonyve' artifact, es a D071 dontes. Kimondtam neki, hogy ezek a kerdesek a legrosszabbul illeszkedok: a valaszuk nem fugg a napi beszelgetestol, megis a legdragabb savban keszulnek.
-
-EBBOL S [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
-## 23:45 -- Kesz a dontesi csomag es a tudastar, a kulso AI-nak szolo kotelezo zaro-formatummal (D072)
-a gazda kerese 23:22 es 23:29: a merlegeles keruljon at az o sajat Claude/ChatGPT elofizetesebe, es a kulso AI-nak legyen ALAPVETES, hogy a beszelgetes vegen pontos feladatatadast ad ki.
-
-Megepitve: scripts/dontesi-csomag.py, determinisztikus, modell-ebresztes nelkul, cronbol.
-- Napi csomag: 129 ezer karakter, kb. 32 ezer token. Reggel 6:00, a napindito elott.
-- Teljes tudastar: 741 kB, kb. 184 ezer token. Hetfo 5:45, es kezzel barmikor.
-- Mindketto UTF-8 BOM-mal.
-
-A fejlecben a HASZNALATI UTASITAS: a kulso AI KOTELEZOEN kiadja a === MARVEEN FELADAT === blokkot (FELADAT, FELTETELEK, ELVART VEGEREDMENY, SZUKSEGES ADATOK, DONTES KOZBEN, KERDES ARPADNAK), plusz negy szabaly: ne talalj ki adatot; donto proba (vegre tudna-e hajtani egy holnap reggel erkezo idegen, csak a fajlokbol); ami a gazdar [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
-
--- 2026-08-23 (teljes szöveggel) --
-## Kotegeles-mero -- 2026-08-23 (NINCS_ADAT)
-Osszes tool-hivas: 0. Egymas utani azonos-tool lanc: 0, ezekben elvileg osszevonhato lett volna 0 hivas (0.0 szazalek). Leghosszabb lanc: 0. Legtobb osszevonhato: nincs.
-FELSO BECSLES, nem a valos veszteseg: a lancok egy reszeben az elozo kimenete dontotte el a kovetkezot, azok nem vonhatok ossze.
-
+10:20 -- A Manus-kor visszamerve, es ket uj lelet
+11:55 -- a gazda het pontja feldolgozva
+12:20 -- A megosztott postafiok BLOKKOLOJA elharult
+13:15 -- Vagas elott, a nap merlege
+13:18 -- Manus projekten kívüli feladatkezelés, a gazda szembesítése
+13:30 -- Gyűjtő 1.9.2, Manus-átadható lista, csatorna-fegyelem
+13:33 -- D070: automatikus javaslattétel kikapcsolva (Mail rendező)
+13:55 -- Speewo Telegram-sáv bekötve (-5071786239)
+13:58 -- MissionLock: félben maradt kiadás, mérve
+14:15 -- Három sáv mérése: Speewo, MissionLock, Mail rendező
+14:27 -- JamEmail feladatlap a Manusnak, Speewo gyökér-ok
+14:33 -- MissionLock LEZÁRVA, gyűjtő 1.9.3, hiányzó levelek
+15:59 -- Hiányzó levelek: a hiba a KIVÁLASZTÁSNÁL van
+16:20 -- A hiányzó levelek oka megvan, gyűjtő 1.9.4
+16:28 -- Az üres-sor mechanizmus BIZONYÍTVA, Szervizstat feladatlap
+16:36 -- Speewo backend ÉL, saját mérési hiba elkapva
+16:52 -- Manus-átadható lista: NÉGY kártya kódja már kész, csak kiadás kell
+17:00 -- MissionLock 2 kártya lezárva, dashboard feladatlap kiadva
+17:05 -- Gyűjtő-őr riasztás [személy] gépéről + saját hiba javítva
+17:08 -- Manus API: nincs publikálás, DE van project.list
+17:12 -- Levél Csabának a gyűjtő javításáról
+17:17 -- Telepítési levél [személy] gépéhez, a JamEmail app épp nem él
+17:50 -- Manus-mentesek ellenorzese a Google Drive-on
+18:05 -- A [cég] export zsugorodasa tisztazva
+18:15 -- Manus szunet 08-24-ig, es a keret-or PATH-hibaja
+18:22 -- Keret-fek elesbe, es tiszta lap
+19:35 -- A /tmp RAM, es 1,5 orara kiutotte Gabriellat
+19:45 -- A friss kontextusablak elso eles probaja: blokkolo talalat
+19:45 -- Kanban-audit (friss ablak) + keret-fek visszameres
+20:00 -- Kanban-audit (friss ablak), premissza-korrekcio ket sajat kartyan
+20:05 -- Manus mentes, utolso kor a 01:59-es hatarido elott
+20:08 -- Mentes hard restart elott (Jambroos session)
+Anthropic-szamla-tovabbitas heartbeat futas
+Szamla-fizeto-alapu-tovabbitas heartbeat futas
+20:45 -- A friss ablak gyoker-oka megvan, a javitas megirva (hard restart elott mentve)
+21:00 -- A friss ablak elesben, es egy cron-mero a kotegelesre
+23:25 -- Tiszta lap, a gazda utasitasara
+23:45 -- Kesz a dontesi csomag es a tudastar, a kulso AI-nak szolo kotelezo zaro-formatummal (D072)
+-- 2026-08-23 (csak a bejegyzések címe) --
+Kotegeles-mero -- 2026-08-23 (NINCS_ADAT)
 ## 06:20 -- Reggeli napindito, es egy sajat idozona-hiba javitasa merssel
 A napindito kiment Telegramon (3 reszben) es levelben (id 1a02cdab71338de2, Bcc a ceges fiokba), csatolva az allapotjelzes es a mai dontesi csomag.
 
@@ -1077,25 +825,87 @@ ANONIMIZALAS a publikus valtozatban, visszamerve a nagy fajlon is: 0 cegforma, 0
 
 CRON: a na [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
 
+## 09:35 -- Az elso valodi kulso-AI csomag megerkezett es mukodott
+a gazda a ChatGPT-vel megbeszelte a mukodest, es a valasz vegen tenyleg kijott a === MARVEEN FELADATOK === csomag. Gepileg feldolgoztam: kiolvasta mind a het mezot, es magatol jelezte a hianyzot (PROJEKT). Ez a teljes lanc elso eles bizonyitasa.
+
+ALLASFOGLALAS: a tiz pontbol nyolc valtoztatas nelkul belefer. Ketto modositast igenyel: (1) a becsles -- egyetertek a lazitassal, de a jeloles kotelezo es ha a dontes MAGAN a szamon all, meresi feladat keszul; (2) a PROJEKT mezo hianyzott a formatumbol, potolva.
+
+TENYBELI TEVEDES a megallapodasban: a ChatGPT azt hitte, a tudastar naponta frissul. Nem: tudastar hetente, csomag naponta. A fejlecben tisztazva.
+
+KOCKAZAT, amit korlatoztam: a dontes-felulvizsgalat javaslata KERDESKENT menjen a gazdához, ne feladatkent, mert a kulso AI pillanatkepbol dolgozik, es egy regi dontes ugy is hi [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+
+## 09:45 -- Inditofajl kesz, es a cache-kerdes megmerve
+A kulso AI (ChatGPT) jelezte, hogy a tudastar 2026.08.23.001 valtozatat latja, mikozben szerinte .006 van fent, es ebbol gyorsitotar-hibara kovetkeztetett.
+
+MERES: reszben tevedett, reszben igaza volt.
+- TEVEDES: a ket fajlnak KULON verzio-szamlaloja van. A .006 a napi CSOMAG verzioja, a tudastare akkor .001 volt. Amit latott, az a helyes es aktualis allapot volt.
+- IGAZA VOLT ABBAN, hogy van cache: a raw.githubusercontent.com cache-control: max-age=300, tehat 5 percig gyorsitotarazza. Query stringgel (?v=N) mas cache-node-ot lehet fogni.
+
+MEGEPITVE: harmadik allando cim, az INDITOFAJL. Ezt azert kell kulon, mert a ket nagy fajl fejlecet a kulso AI csak a LETOLTES UTAN olvassa -- valakinek meg kell mondania neki, hogy toltse le oket. Egy link inditja az egeszet:
+https://raw.githubusercontent.com/jamborarpad/Marveen-Jam_discuss/main/ [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+
+## 12:50 -- Vagas elott: a mai delelott osszefoglaloja
+a gazda kerte a vagast. Mentve: store/projekt-allapot-2026-08-23-1250.txt (26 kB).
+
+AMI MA ELKESZULT ES VISSZA IS VAN MERVE:
+1. Reggeli napindito + 08:00-s es 12:00-s allapotjelzes, mind DM-ben es levelben.
+2. Javitando adatok: 617 tetel, ELSO eles kikuldes valodi cimekre ([személy], Agnes, a gazda).
+3. Ertekesitesi lehetosegek allapot-ertekelese: 100972 tetel, ELO 4317 / LASSUL 4187 / MEGALLT 23660 / HOLT 68808. Szkript: scripts/lehetoseg-ertekeles.py.
+4. Ketéves rendszerhasznalati elemzes: 38255 lehetoseg, kulso/belso bontasban. Szkript: scripts/rendszerhasznalat-elemzes.py. Harom mezo 100%-ban ures (Type, LeadSource, NextStep).
+5. ALLANDO WEBCIM harom fajllal (inditas, tudastar, dontesi csomag), anonimizalva, cronbol frissul. Az elso valodi kulso-AI csomag megerkezett es gepileg feldolgozodott.
+6. Inditofajl + hasznalati leiras elkuldve a [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+
+## Szamla-fizeto-alapu-tovabbitas heartbeat futas
+Autonomia szint: 3. Ket kereses: 7 napos ablak csak sajat kimeno leveleket (allapotjelzesek, Marveen indito csomag, Salesforce elemzesek, Javitando adatok, Manus-visszaterites tovabbitasa) es Anthropic-szamlakat adott (mas task kezeli). Belepes-kello backlog: 0 talalat. Uj tennivalo: 0, csendes heartbeat.
+
+## 19:15 -- Szervizstat csomag feldolgozva, es a beolvaso javitva a forrasbol
+a gazda atkuldte a kulso AI harom feladatos blokkjat (Salesforce szerviz tudasbazis) es azt kerdezte, mennyire ertheto.
+
+A BEOLVASO ELSORE ELUTASITOTTA, es nem a tartalom miatt. A masolas sortorest szur a jelolok es cimkek BETUI koze (=== MAR/VEEN, PROJE/KT, ELVAR/T), es a cimkeket a sor belsejeben hagyja. Javitva a forrasbol: normalizal() fuggveny a dontesi-csomag.py-ban, kis-nagybetu-erzekeny cimke-illesztessel. Visszamerve: 3 feladat, 7/7 mezo. Mellette pontosabb hibauzenet a CSONKA masolasra (nyito jelolo megvan, zaro nincs), mert a regi ilyenkor tevesen azt allitotta, hogy a kulso AI nem adott csomagot.
+
+A TARTALOM ELLENORIZVE, nem elhive: repo/szervizstat megvan; a Naplo__c-s allitas egyezik a 08-20-i meressel; a berendezes a WorkOrderLineItem.AssetId-n van; az FTF-definicio rogzitve (SZ-11: 7 nap, beszerze [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+
+## 20:00 -- Kanban audit (csendes)
+Archiválva 2 db 7+ napos done kártya (SSO átjárás, whspr input overflow), kanban_archive_done level 3.
+Beakadt: 1 db, a saját AI költség-csökkentés kártyám, 7,9 óra. Az állapota IGAZ: a hátralévő rész (becslés igazolása friss futás token-mérésével) rajtam áll, és a 12:04-es komment óta nem változott semmi, ezért nem írtam újabb kommentet. Marad in_progress.
+Delegálatlan volt 2 kártya (km-pótlás, számlázási előkészítés), mindkettő rám vár a külső adat megérkezése után -- assignee marveen. Delegálatlan most 0.
+48 órát az utolsó audit óta 3 waiting kártya lépett át, mindhárom jogosan vár külső bemenetre (km-táblázat, [személy] jövő hét, FA/K-8 válasz), ezért nem Telegram-esemény.
+Nyitott kártya 133.
+
+## Szamla-fizeto-alapu-tovabbitas heartbeat futas
+Autonomia szint: 3. Uj tetelek: sajat kimeno levelek + Anthropic-szamlak (mas task) + 2 db NEM szamla jellegu, eros bizalmas maganugyleti/jogi level (kep-mellekletekkel, nem PDF szamlaval), amiben a gazda cimzett resztvevo, nem teves cimzett -- ezeket szandekosan NEM cimkeztem es NEM tovabbitottam, kivul esnek a feladat hataskoren es tovabbitasuk (pl. Kinganak/Zsuzsanak) bizalmassagi problemat okozna. Belepes-kello backlog: 0 talalat. Uj tennivalo szamla-ugyben: 0, csendes heartbeat.
+
+## 21:10 -- Szervizstat: a harom feladat kesz, egy vasarnapi API-keret alatt
+a gazda szolt, hogy ma nincs munkanap, tehat szabad a Salesforce napi API-keret, es holnap mar a kollegak hasznaljak. Ehhez igazitottam a sorrendet: eloszor a keretes reszek (sema-terkep, teljes kihuzas), utana a helyben szamolhato reteg.
+
+EREDMENY: 992228 rekord helyben, 4,1 GB, 16 objektum. Teljes kihuzas 3266 API-hivas, a keretbol 34102 maradt szabad. 13 uzleti tabla + 7 szarmaztatott. 12 ellenorzo lekerdezes fut nulla SF-hivassal, mind ad eredmenyt. Novekmenyes szinkron cronban 2:30 UTC-re, ures kornyezetben visszamerve.
+
+HAROM CSENDES HIBA, MERESSEL: (1) az SQLite datumfuggvenye NULL-t ad a Salesforce +0000 formatumara, ezert egy 177495 soros ismetelt-kiszallas tabla MINDEN napkulonbsege ures volt, es a tabla mukodonek latszott; (2) az FTF nevezoje belso joinnal csak a kovetkezmennyel biro beavatkozasokat tar [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+
+-- 2026-08-24 (teljes szöveggel) --
+## Kotegeles-mero -- 2026-08-24 (NINCS_ADAT)
+Osszes tool-hivas: 0. Egymas utani azonos-tool lanc: 0, ezekben elvileg osszevonhato lett volna 0 hivas (0.0 szazalek). Leghosszabb lanc: 0. Legtobb osszevonhato: nincs.
+FELSO BECSLES, nem a valos veszteseg: a lancok egy reszeben az elozo kimenete dontotte el a kovetkezot, azok nem vonhatok ossze.
+
 
 ========================================================================
 6. ÉRVÉNYES MÉRÉSEK (keret, kötegelés, költség)
 ========================================================================
 
-Kötegelés (2026-08-23, merve 2026-08-23T08:50:01+02:00): FEGYELMEZETLEN
-  124 tool-hivas, ebbol 73 lett volna összevonható (58.9%). Leghosszabb összevonható lánc: 14.
+Kötegelés (2026-08-24, merve 2026-08-24T05:50:01+02:00): FEGYELMEZETLEN
+  4 tool-hivas, ebbol 3 lett volna összevonható (75.0%). Leghosszabb összevonható lánc: 4.
 
 Keret-őr utolsó mérései:
-  2026-08-22 21:00:09Z Current week (Fable): OK 0% -- nincs ismert nullazasi idopont, az utem nem ertekelheto ehhez a metrikahoz
-  2026-08-23 07:00:09Z Current session: OK 4% -- az utem (2.4 szazalekpont/nap) mellett kitart a nullazasig (0.1 nap van hatra)
-  2026-08-23 07:00:09Z Current week (all models): OK 7% -- az utem (2.4 szazalekpont/nap) mellett kitart a nullazasig (1.9 nap van hatra)
-  2026-08-23 07:00:09Z Current week (Fable): OK 0% -- nincs ismert nullazasi idopont, az utem nem ertekelheto ehhez a metrikahoz
+  2026-08-23 14:00:08Z Current week (Fable): OK 0% -- nincs ismert nullazasi idopont, az utem nem ertekelheto ehhez a metrikahoz
+  2026-08-23 21:00:09Z Current session: OK 2% -- az utem (6.9 szazalekpont/nap) mellett kitart a nullazasig (0.1 nap van hatra)
+  2026-08-23 21:00:09Z Current week (all models): OK 9% -- az utem (3.4 szazalekpont/nap) mellett kitart a nullazasig (1.3 nap van hatra)
+  2026-08-23 21:00:09Z Current week (Fable): OK 0% -- nincs ismert nullazasi idopont, az utem nem ertekelheto ehhez a metrikahoz
 
 Keret-fék utolsó mérései:
-  2026-08-23 04:00:08Z OK -- a keret nincs kifutas-veszelyben: Current session=0%, Current week (all models)=7%, Current week (Fable)=0%
-  2026-08-23 05:00:08Z OK -- a keret nincs kifutas-veszelyben: Current session=2%, Current week (all models)=7%, Current week (Fable)=0%
-  2026-08-23 06:00:08Z OK -- a keret nincs kifutas-veszelyben: Current session=2%, Current week (all models)=7%, Current week (Fable)=0%
-  2026-08-23 07:00:09Z OK -- a keret nincs kifutas-veszelyben: Current session=4%, Current week (all models)=7%, Current week (Fable)=0%
+  2026-08-24 00:00:09Z OK -- a keret nincs kifutas-veszelyben: Current session=0%, Current week (all models)=9%, Current week (Fable)=0%
+  2026-08-24 01:00:09Z OK -- a keret nincs kifutas-veszelyben: Current session=1%, Current week (all models)=9%, Current week (Fable)=0%
+  2026-08-24 02:00:09Z OK -- a keret nincs kifutas-veszelyben: Current session=1%, Current week (all models)=9%, Current week (Fable)=0%
+  2026-08-24 03:00:09Z OK -- a keret nincs kifutas-veszelyben: Current session=1%, Current week (all models)=9%, Current week (Fable)=0%
 
 Árfolyam: {
  "usdHuf": 310.52,
@@ -1109,6 +919,8 @@ Keret-fék utolsó mérései:
 7. ISMERT KORLÁTOK ÉS BLOKKOLÓK
 ========================================================================
 
+#43 [nincs projekt/high] Teljes atvilagitas: 5 projekt, mukodes + biztonsag
+    Mire var: a gazda kerese 2026-08-14 13:07: minden projekt teljes atvilagitasa es javitasa, mukodesi ES biztonsagi oldalrol. Eloszor projektenkenti atvilagitasi+javitasi terv, utana a javitasok.  ERINTETT KODTARAK (mind, push joggal): missionlock, szervizstat, email-analyzer, faac-quote-form ([cég]HD), bni-meeting-controller (MeetDirector).  SORREND: biztonsag eloszor (a szervizstat mintaja: mukodo beleptetes m [...]
 #72 [nincs projekt/high] Szerviz: sorompo-alkatreszek hianyoznak a kalkulatorbol
     Mire var: MERVE 2026-08-18: az 1750 bejelentesbol 286-ban van teteles alkatreszlista, osszesen 555 tetel. Ebbol csak 122 illeszkedik a kalkulator 49 alkatreszere, 433 NEM. A hianyzok nagy resze egy egesz termekcsalad: a sorompok (620 barrier egysegei, fogaslec, alaplemez, sorompokar, fotocellak, hurokdetektorok). A kalkulator automata ajtokra keszult. TERV: store/salesforce/terv/jelolok-terv.html. a gazdára v [...]
 #81 [nincs projekt/high] Mail rendezo: cegek veszelyessegi elemzese a levelek HANGULATABOL
