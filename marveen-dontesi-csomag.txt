@@ -1,6 +1,6 @@
-2026.09.16.001
+2026.09.17.001
 MARVEEN DÖNTÉSI CSOMAG -- mérlegeléshez, külső AI-nak
-Kelte: 2026-09-16 06:00 (CEST, budapesti idő)
+Kelte: 2026-09-17 06:00 (CEST, budapesti idő)
 
 EZ PILLANATKÉP. Amit tartalmaz, az ezen a napon, ebben az órában volt igaz.
 A fenti verziószám: dátum és a napi kiadás sorszáma. Ha két változatot
@@ -222,6 +222,10 @@ D273: TELJESÍTÉSI IDŐPONT ÉS HÁROMFOKOZATÚ SZÁMONKÉRÉS: minden kiküld�
     Miért: a gazda, M1017, 2026-09-15: a kiküldött kérések addig álltak válasz nélkül, hogy senki nem kérte számon őket. A három fokozat kimondja, meddig várok és mikor eszkalálok.
     Forrás: a gazda, 2026-09-15 23:06 (Szerviz munkák elemzése sáv, M1017)
 
+D284: A stilus-tablaba CSAK az kerulhet, aki szerepel a MAGYAR NEVJEGYZEKBEN (store/kollegak/nyilvantartas.json: sajat_kollegak vagy alvallalkozok), vagy aki indokkal rajta van a kivetel-listan (store/level-stilus-kivetel.json). Aki egyikben sincs -- kulonosen a [cég] olasz es mas kulfoldi kollegai --, annak TILOS levelet kuldeni, akkor is, ha faactechnologies.com cime van. Az SZ-173 'vegyel fel mindenkit' valasza A MAGYAR KOLLEGAKRA vonatkozik. A temakor mindenkinel: amit a gazda ker. Gepi or: scripts/__tests__/level-stilus-kor.test.py.
+    Miért: a gazda, Telegram 7622, 2026-09-16: 'az olasz kollegakat nem kell ide venni. Nekik tilos levelet kuldeni. Ez mindenkire igaz aki nem szerepelt eddig a magyar nevjegyzekben vagy az alvallalkozoi listankban.' En az SZ-173-at tul tagan olvastam, es 29-rol 144-re duzzasztottam a tablat, benne 65 angolul es 5 olaszul levelezo kulfoldi kollegaval.
+    Forrás: a gazda, Telegram 7622, 2026-09-16
+
 -- Asszisztensi levelezés --
 D216: Az értékesítési vezető Bíró [személy], DE minden ilyen típusú, az értékesítést érintő körlevél LÉVÁRT GYÖRGYNEK megy (Kereskedelmi vezető), mert ő a részleg gyakorlati vezetője. A stílus-táblában minden [cég]-os kollégánál a hangvétel 'közvetlen, barátságos, nyílt kommunikáció', a viszony tegeződés.
     Miért: a gazda, 2026-09-06: 'minden kollégámmal barátságos és nyílt kommunikációt folytatok, mindenkit tegezek. Az értékesítési vezető valójában Bíró [személy], de minden ilyen típusú levelet [személy]nek kell küldeni, mert Ő a gyakorlati vezetője a részlegnek.'
@@ -324,6 +328,10 @@ D064: KERET-FEK: amikor az elofizetesben levo keret elfogy, a fejlesztes es a na
     Miért: a gazda, FA/K-19 = b, 2026-08-21 22:20. Az indok: a fejlesztes elhalaszthato, egy megvalaszolatlan kollegalevel nem. A fek azert kell, mert 08-21-en a 2500 EUR-os plafon 91 szazalekon allt, 1,4 napra volt eleg, es errol csak a gazda kepernyokepebol szereztem tudomast.
     Forrás: a gazda, 2026-08-21
 
+D286: A Helyszin (Account) inaktivalasa az Aktiv_migr__c = false mezovel tortenik, NEM az Aktiv__c-vel. Az Aktiv__c FORMULA mezo, egyetlen permission seten sem irhato: (Nyert_lehetosegek__c > 0 && Letiltva__c = False) || (Aktiv_migr__c = TRUE && Letiltva__c = False). A Letiltva__c = true szinten inaktival, de az ritka, kulon jelentesu allapot, ne azt hasznald.
+    Miért: Merve 2026-09-16-an: a 6070 inaktiv Helyszinbol 6000 (98,8 szazalek) Aktiv_migr__c=false uton inaktiv, csak 70 (1,2 szazalek) a Letiltva__c=true uton. Az Aktiv__c-re adott PATCH mind a 9 teszt-rekordon INVALID_FIELD_FOR_INSERT_UPDATE-tel bukott.
+    Forrás: a5901b3a kartya, munkakor, 2026-09-16
+
 -- [cég]HD --
 D037: A szervezeti struktura VALODI FA-szerkezettel epul: a teruletek kapnak szulo-mezot, es a beosztas kulon tarolodik. Nem lapos, nem 14 kulon terulet.
     Miért: FH-3 (b), a gazda 2026-08-18. A Szerviz valoban tartalmazza a Szervizirodat, az pedig a Projektet. Kod-valtoztatas es Manus-kiadas kell hozza.
@@ -355,6 +363,10 @@ D149: A DM-be nem kerul kerdes-szoveg, csak a kerdes-lap linkje. Az uzenet vegen
 D268: A JamEmail-nek NEM lesz sajat fogado e-mail cime: a level-beerkezes marad a Manuson. Ez SZUKITI a D158-at, ami a beerkezes-oldal ket epitendo reszet (sajat fogado cim + sajat modell-kulcs) egyutt irta elo -- a fogado cim resze ezzel lekerult a napirendrol. A mar megepult es tesztelt fogado, valamint a 443-as port merese nem vesz karba, de nem kap domaint es tanusitvanyt.
     Miért: FA / K-62 = c (a gazda, kerdes-lapon, 2026-09-05 08:54): 'Ne legyen sajat fogado cim, maradjon minden a Manuson.' A kerdes azert allt elo, mert tanusitvanyt csak nevre lehet kerni, IP-cimre nem, es a nev volt az egyetlen hianyzo elem.
     Forrás: FA / K-62, a gazda, 2026-09-05
+
+D281: A visszamenoleges level-adag IS elemzesre kerul, egyszeri kb. 14 500 Ft-ert (SZ-187 = a, a gazda 2026-09-16). Nem kell kulon inditani: az app auto-process kore magatol viszi. Merve 2026-09-16 08:00-kor a helyi tukron (03:36-os allapot): 76 700 levelbol 50 603 kesz, 21 566 spam, 376 kihagyva, es 4155 var elemzesre -- a tegnapi 4982-rol, tehat kb. 55 level/ora, nagyjabol harom nap a hatralek.
+    Miért: a gazda SZ-187 = a: 'Mindent elemezzunk, a visszamenoleges anyagot is.'
+    Forrás: SZ-187, kerdes-lap, 2026-09-16 07:29
 
 -- Jelentes --
 D208: A napi jelentes ARROL szol, ami ARPADNAL LATHATOAN megvaltozott, nem arrol, amit en csinaltam. Projektenkent egy sor: (1) mi valtozott meg nala es hol nezheti meg, (2) mi keszult el, de meg NEM latszik nala, es mi blokkolja (jellemzoen Manus-kiadas vagy az o valasza), (3) mi all rajta. A sajat rendszerem javitasai, a tesztek, az orok es a karbantartas NEM kerulnek a jelentesbe: azok az en dolgom, a nyomuk a munkalapon van. A munkalap nyom, nem feladatlista; a feladatlista a kanban.
@@ -537,6 +549,11 @@ D209: A rendszer szerkezete: az alkalmazasok KULON maradnak, de EGY kozos bejele
     Miért: a gazda, M406, 2026-09-06: 'Elfogadom, maradjon a c. De a rendszer kezeleset es karbantartasat valahogy egysegesitsd, hogy szamomra is egyertelmu legyen, hogy mikor, mivel, mit kell csinalni.'
     Forrás: a gazda, Telegram 6259, 2026-09-06
 
+-- Rendszer es uzemeltetes --
+D285: A kerdes-lapon minden kerdesnel ott a 'Terjunk ra vissza' gomb: a gazda megadja, hany nap mulva kerdezzem ujra (gyors gombok 3 / 7 / 14 / 30 nap, plusz szabad mezo 1-365 kozott). A halasztott kerdes allapota 'halasztva', NEM 'nyitott' -- ezert esik ki magatol mind a tizenhet fogyasztoból (lista, csv, napi level, blokk-eloszures, munkakor-kapu, uzemeltetesi lap, rakerdezes-or). A lejaratot cron hozza vissza (scripts/kerdes-halasztas-lejar.mjs, 03:30 UTC), es a postaladan at KERI a lap ujrapublikalasat, kulonben a visszatero kerdes nem latszik a gazdanal. A halasztott kerdesre a lejarat elott is szabad valaszolni.
+    Miért: a gazda kerese (Telegram 7636, 2026-09-16): 'keszits minden kerdesre egy Terjunk ra vissza gombot, es meg kelljen adni, hogy hany nap mulva. Addig az idopontig ne kerdezze ujra a rendszer es ne szerepeljen a nyitott kerdesek kozott a kerdes.' Az allapot-mezo azert a valasztott ut, mert kulon halasztas-mezonel mind a tizenhet szurot at kellett volna irni, es amelyik kimarad, az tovabb kerdezne.
+    Forrás: a gazda, Telegram 7636, 2026-09-16
+
 -- Rendszer és üzemeltetés --
 D180: A '0. Marveen - Jam' csatorna AZONOS a DM-mel: a 8635660881 azonositoju kozvetlen beszelgetes a bottal (getChat: type=private, a gazda Jambor). Nincs kulon nulladik csoport, tehat a rendszer-temak oda mennek, ahova eddig is, csak a neve mas a ket oldalon.
     Miért: a gazda, 2026-09-05 13:40: 'Marmint hogy a 0. Marveen - Jam csatornat hivtuk eddig DM-nek'. Elotte azt jelentettem, hogy a nulladik csatornat nem latom -- a tevedes abbol jott, hogy a sav-nyilvantartasban 'a gazda' nev alatt allt.
@@ -581,6 +598,10 @@ D269: MODELL-LÉPCSŐ: alapból a legkisebb modell. Eggyel feljebb váltani akko
 D270: MANUS-PROGRAMOZÁS ÖNÁLLÓAN: ha valamit le kell programoztatni a Manussal, add ki magadtól, ne várj jóváhagyásra. Minden projektre vonatkozik, nem csak arra, amiben elhangzott.
     Miért: a gazda, M998, 2026-09-15: 'Itt és máshol is alkalmazd.' A Manus-feladat kiadása eddig megállt a jóváhagyás-váráson.
     Forrás: a gazda, 2026-09-15 22:53 (DM, M998)
+
+D279: Az iSusy 'AI automatizmus' fiók jelszava (vault ISUSY_PASSWORD) NEM kerül lecserélésre. A 2026-08-21-én Telegramon kapott jelszó marad érvényben. Aki mégis cserélni akarja, annak a gazda új döntése kell: a fiókon nincs jelszómező sem a /user/create, sem a /user/13894/edit lapon, és saját profil- vagy jelszólap sincs (/profile, /password, /jelszo mind 404), tehát az egyetlen út a /password/reset e-mailes visszaállítás a gazda gmail-fiókján keresztül. Csere esetén a napi szereloi-brief-feltoltes.mjs (13:20/14:20 UTC) belépése is tört volna, ezért a csere nem eshetne a futás idejére.
+    Miért: SZ-159 = c) 'maradjon így' (a gazda, 2026-09-12 08:00). A kérdés azt tette fel, lecserélhetem-e a jelszót az e-mailes visszaállítással, és a válasz nem: maradjon.
+    Forrás: SZ-159, a gazda, 2026-09-12
 
 -- SAJAT RENDSZER --
 D254: A jovahagyas NYOMA harom mezobol all: granted_channel (hol adta meg a gazda), granted_quote (mit mondott SZO SZERINT), card_id (mihez tartozik). Ket ut irja: (1) POST /api/approvals/granted a mar megadott engedelyt rogziti, azonnal approved allapotban; (2) POST /api/approvals/<id>/grant a meglevo API-sorra tenyeli ra a bizonyitekot. A kimeno level-kuldo mind a NYOLC kivetel-kapcsolojara (stop-kivetel, kulso-engedelyezve, hetvege-nelkul, plafon-nelkul, elsobbseg-nelkul, ismetles-engedve, stilus-jovahagyva, stilus-nelkul) magatol rogzit egy sort a KULDES UTAN, a vegrehajtas belyegevel egyutt, es SOHA nem tilt: egy elmaradt nyom rossz, egy ki nem ment level rosszabb (D138). A kapcsolo --indok erteke AZ EN mondatom, ezert a leirasba megy, NEM az idezetbe; az idezet kizarolag az --jovahagyas-idezet kapcsolobol jon. Az elgepelt csatorna 400-at kap, nem csendes NULL-t; a helykitolto jel ('-') nem idezet; a nem letezo kartyara nincs rogzites. Az idezet ELSO IRO NYER alapon vedett, mezonkent. Hatarnap: 2026-09-15 12:53, a korabbi 47 sor visszamenoleg nem tolthető.
@@ -743,6 +764,19 @@ D156: A hianyzo belepesi engedely vagy dolgozoi bejelentes NEM akadalyozhatja me
     Miért: A bejutasi kovetelmeny ma gocpont, de a kiosztas gepi tiltasa tobb kart okozna, mint amennyit hasznal.
     Forrás: a gazda levele Gergonek, 2026-09-03 19:27
 
+-- Szerviz munkak elemzese --
+D280: Az anyagigenyes munkak szervezesenek megitelese a gazda ot szabalya szerint. Nincs anyagigeny: RENDBEN, akar megoldodik akar nem. Van anyagigeny: (a) felvette es o vegezte, felhasznalta = rendben; (b) felvette es o vegezte, de nem hasznalta fel = rendben szervezes oldalrol, a technikus hibazik; (c) felvette X, mas vegezte, de megoldodott = rendben; (d) nem az ment ki, aki felvette, es nem oldodott meg = NINCS RENDBEN; (e) nem vettek fel az anyagot es ugy zarodott, hogy vissza kell menni = NINCS RENDBEN. A hivatalos mutato ezt EGYESITI a kiszallas aganak C kategoriajaval. Merve 2026-03..09: 96,5 szazalek, 257 rossz a 7261 ertekelhetobol (219 C + 57 anyagigeny, 19 atfedes). A felvevot az Anyagigeny__c.Atadaskori_munkavegzo__c adja (2026-ban 652 atadason), a kiszallo szerelovel rendszam, telephelyi kod vagy nev koti ossze. Felulirja a D274-et.
+    Miért: a gazda, M1036, 2026-09-16: a D274 csak az 'osszekeszitve, de el nem vitte' esetet nezte, es a felvevo szemelyet egyaltalan nem. A felvevo es a kiszallo azonossaga a szabaly kozepe.
+    Forrás: a gazda, Telegram 7601, 2026-09-16 07:15
+
+D282: A szabalyok kialakitasa es a visszaellenorzesek CSAK 2026-os adaton allnak; a korabbi evek adata kizarolag statisztikahoz nezheto. Merve, miert indokolt: az Atadva jelolo 2019-2023 kozott osszesen EGYSZER van kitoltve, 2024-ben egyszer, 2025-ben 24-szer, 2026-ban 1620-szor; a 'Megvan az alkatresz' mezo 103 483 kiszallasbol negyen; az atvevo neve (Atadaskori_munkavegzo) 2026 marciusaban 9, augusztusban 87 szazalekon all. Egy 2025-os adatra epitett szabaly tehat nem a valosagot irna le, hanem a jeloles hianyat.
+    Miért: a gazda, Telegram 7606, 2026-09-16: 'a mostani szabalyok kialakitasanal es vissza ellenorzeseknel csak 2026-os adatokat vegyel alapul, a regebbieket csak statisztikakhoz nezd.'
+    Forrás: a gazda, Telegram 7606, 2026-09-16
+
+D283: A diszpecseri ([személy]nak szolo) delutani level KET UJ SZAKASZT visz, es mindketto a levelen belul all, nem kulon levelben: (1) A HOLNAPI MUNKAK KOZUL EZEK VANNAK VESZELYBEN -- letszam-hiany, ossze nem keszitett vagy ki nem adott anyagigeny, bejutasi feltetel; (2) TEGNAP SZERENCSESEN MEGOLDODOTT, PEDIG NEM IGY TERVEZTUK -- ahol mas ment ki, mint aki az anyagot felvette, vagy ahol el sem vittek az anyagot, es a munka megis megoldodott. A korabbi kulon 'Masnapi ellenorzes' level megszunt (cron kikommentezve), mert egy embernek EGY level megy (D163) es a napi plafon ketto.
+    Miért: a gazda, M1038, 2026-09-16.
+    Forrás: a gazda, Telegram 7606, 2026-09-16
+
 -- Szerviz munkák elemzése --
 D173: A nyitott kiszallasoknal csak a kovetkezo OT NAPBAN esedekes tetelek szamitanak. A tavolabbi nyitott munka nem elmaradas: a karbantartasokat elore kell utemezni, ezert a teljes nyitott darabszam (ma 453) onmagaban nem jelzoszam.
     Miért: a gazda, 2026-09-05, M273-ra valaszolva.
@@ -755,10 +789,6 @@ D207: A helyszínek Tavolsag_km__c mezője ODA-VISSZA távolságot tárol, és a
 D243: A munkaszervezés hivatalos jósági mutatója a SZERVEZÉSI HIBA kategória, és csak az: a kiszállás akkor rosszul szervezett, ha a szerelő kiment és érdemben nem tudott dolgozni, zárva volt a helyszín, a helyszínen lemondták, vagy hiányzott az alkatrész. Az ajánlat-megrendelésre váró (üzleti ok) és a részben kész, új időpontot igénylő (a munka mérete) eset NEM számít rossz szervezésnek, de a jelentésben külön soron látszik. A mutatót a scripts/munkaszervezes-elemzes.py Hivatalos arany lapja adja, egy helyen, hogy ne legyen három versengő szám.
     Miért: SM-4 = a (a gazda, 2026-09-06 12:10). Három határ közül választott: 94,9 (csak szervezési), 91,2 (plusz részben kész) vagy 81,3 százalék (minden, ami nem lett egy kiszállásból kész).
     Forrás: SM-4, a gazda, 2026-09-06
-
-D274: A hiányzó alkatrész ÖNMAGÁBAN nem szervezési hiba. Szervezési hiba az, ahol a feladathoz tartozó anyagigény ÖSSZE VOLT KÉSZÍTVE, és a szerelő úgy szállt ki, hogy nem vitte el (átadva = nem, felhasznált = nem). Ha egyszerűen nem volt anyag a javításhoz, az előfordul, de nem a szervezés hibája: külön kategóriában (F) áll, és nem rontja a hivatalos mutatót. Ez SZŰKÍTI a D243-at, ami még mind a négy okot a C kategóriába tette. Az anyagigény külön objektum (Anyagigeny__c), jelölői Osszekeszitve__c, Atadva__c, Felhasznalva__c; a Kell_e_alkatresz__c mező NEM az anyagigény.
-    Miért: a gazda, M1032, 2026-09-15 23:42. Mérve 2026-09-16: a 2026-03-01 óta mért 148 alkatrészes kiszállásból 3 felel meg ennek a meghatározásnak, 125-höz egyáltalán nem tartozott anyagigény. A hivatalos arány ezzel 95,0 százalékról 97,0-re változik (C: 363 helyett 219 a 7194 értékelhető kiszálláson).
-    Forrás: a gazda, M1032, Telegram, 2026-09-15
 
 -- Szerviz szervezes --
 D266: A diszpecseri kiosztas-segito lista MINDEN nap 15:00 budapesti falioraidoben megy ki, a kovetkezo ot nap munkaira. A cron ket UTC-orakor indul (13:00 es 14:00), es a scripts/falido-kapu.sh engedi at azt, amelyik eppen 15:00 Budapest -- igy a nyari-teli oraatallitas nem tolja el a kikuldest. A kikuldes-or hatara ezert 17 ora, nem 15: a riasztasi kuszob nem lehet azonos a vegrehajtas idejevel.
@@ -1078,6 +1108,10 @@ D246: A megvalaszolt kerdesnek KET allapota van: 'megvalaszolt' (a valasz rogzul
     Miért: a gazda 2026-09-08 06:24-kor megvalaszolta az FA / K-82 es K-83 kerdest, a valasz rogzult, a kerdes lezarodott a lapon -- es OT NAPIG semmi nem tortent belole (12 036 Ft/ho, kb. 2000 Ft keses-koltseg). A 'megvalaszolt' allapot lezarja a kerdest a listakon, tehat onnantol senki nem nezi. Merve 2026-09-14: a 2026-09-01 ota megvalaszolt 219 kerdesbol 113 (51,6 szazalek) utan nem keletkezett sem D-kod, sem kartya-komment.
     Forrás: kartya 2891f91d, 2026-09-14
 
+D287: A kerdes-kartya kotes KOTELEZO a kerdes feltevesekor. A kerdes.mjs uj kotes nelkul kilep (exit 2) es a kerdes NEM szuletik meg; pontosan egy kell: --kartya <id> (letezes-ellenorzessel), --uj-kartya "<cim>" (kartya-nyit.mjs-en at, forras-jelolessel), vagy --nincs-kartya dontes|adat|kesobb. A rekord ket uj mezot kap: kartya es kartya_nelkul, mindig mindketto, akkor is ha null. A 'kesobb' indok kovetkezmennyel jar: ha a kerdes megvalaszolt es megsem lett kartyaja, a kerdes-kartya-merleg takaritas listaja visszakerdezi.
+    Miért: Merve 2026-09-16-an a 2026-09-01 ota megvalaszolt 261 kerdesen: 170 (65,1 szazalek) volt kartyahoz kotve mar a valasz ELOTT, 33 (12,6 szazalek) csak utolag kapott nyomot, 58 (22,2 szazalek) UGY zarult le, hogy SOHA nem tartozott hozza kartya. A munkakor-kapu kartyat valaszt, tehat annak az 58-nak a valaszabol nem lehetett munka. A kotes eddig REGEX volt (kod-szoveg a kartya cimeben, leirasaban, kommentjeiben), vagyis utolagos talalgatas. Ugyanaz az osztaly, mint amiert a kerdes.mjs letezik: a kerdes FELTEVESE es ROGZITESE volt ket kulon muvelet -- itt a feltevés es a MUNKAHOZ KOTES volt ketto. Opcionalis mezo nem oldotta volna meg: azt senki nem tolti ki. JAVITAS ugyanaznap: az elso meres 49-et adott, mert a bevezetes-or SAJAT hatralek-kartyaja (fb69f5c1) felsorolja a kodokat a leirasaban, es a mero azt kotesnek olvasta -- a mero onmagat igazolta ([[negativ-kontroll]]). A merleg azota kizarja a [hatralek-lista] jelolest viselo kartyakat, kartyastul-kommentestul; a javitott szam 58 (22,2 szazalek).
+    Forrás: kartya e087fe55, munkakor, 2026-09-16
+
 -- salesforce --
 D019: A becsült időtartam kalkulátora NINCS a Salesforce-ban, külön programban él.
     Miért: Ezért a napi admin-levél nem tud rá hivatkozni: csak jelzi, hogy hiányzik az időbecslés, linket nem ad.
@@ -1314,42 +1348,6 @@ SZ-168 (Seora, feltéve: 2026-09-12 21:32)
     c) Kétlépcsős: a szervizíroda jelöl, majd egy vezetői jóváhagyás is kell egy összeghatár fölött (mondd meg a határt)
     d) Egyelőre ne épüljön automatikus számlázás, csak a hiányzó adatokat töltsük fel
 
-SM-12 (Szerviz munkák elemzése, feltéve: 2026-09-13 15:31)
-  Az M5 öt Salesforce-mezője létrehozásra kész (kártya d58e7272). A D229 szerint én futtatom, Ricsi ([személy]) tudtával. Ricsi viszont nincs benne a 'Kinek hogyan írjak' táblában, ezért a küldő szkript ma megtagadná a levelet neki. Hogyan menjen a tájékoztatás?
-    a) Te szólsz neki, én csak futtatom a létrehozást
-    b) Vedd fel Ricsit a stílus-táblába (küldd el a címét és azt, miről írhatok neki), és én írom meg neki a lépéssort
-    c) Senkinek nem kell szólni előre, futtasd
-
-SZ-185 (Seora, feltéve: 2026-09-15 00:41)
-  Ha a tervező a beosztó lapon áttesz egy még el nem végzett munkát egy másik napra, változzon-e ettől a Salesforce ütemezése is, amit a szerelők és a diszpécserek látnak?
-    a) Igen, magától: a lap átírja a kiszállás napját a Salesforce-ban, és a naplóban látszik, ki és mikor kérte.
-    b) Igen, de csak jóváhagyás után: a lap kéréseket gyűjt, és egy SF-admin nézi át és tölti be kötegben.
-    c) Nem: a Salesforce ütemezését továbbra is a mai úton változtatjátok, a lap csak a beosztást viszi.
-
-SZ-186 (Seora, feltéve: 2026-09-15 01:21)
-  A beépítendő ajtó mérete (szélesség, magasság, súly) a Salesforce-ba kerüljön-e, vagy maradjon a tervező lap szövegében?
-    a) A Salesforce legyen a hely: a beépítés lezárásához kötelező az A/F/G méret és a súly, és a tervező lap onnan olvassa. Ez SF-admin munkát és egy szabályt kíván a szerelők felé.
-    b) Maradjon a lap szövegében: a Salesforce-ba ne töltsük be, a méret a beosztó lapon él, ahogy ma a táblában.
-    c) Köztes: a lap beírja a Salesforce-ba, de CSAK ott, ahol ma üres (279 berendezés), meglévő értéket soha nem ír felül, és kötelezővé sem tesszük.
-
-SZ-187 (Seora, feltéve: 2026-09-15 12:04)
-  A JamEmail gyűjtő a gépeden újraindult, és 5484 levél jött be teljes tartalommal; ebből 4982 vár elemzésre, ami 2,92 Ft/levél alapon körülbelül 14 500 Ft, és 91 százaléka visszamenőleges anyag 2026 március és augusztus közöttről. Elemezzük-e a visszamenőleges adagot is?
-    a) Mindent elemezzünk, a visszamenőleges anyagot is, egyszeri kb. 14 500 Ft-ért
-    b) Csak a friss anyagot (2026 szeptembertől), a visszamenőleges maradjon elemzés nélkül
-    c) Visszamenőleg is, de szakaszosan, havi adagokban, hogy a költség szétterüljön
-
-SZ-188 (Seora, feltéve: 2026-09-15 14:57)
-  A Salesforce Kozponti email mezoje ma EGYEDI: ugyanaz a cim csak egy ugyfelrekordon allhat. A 2026-09-02-i korben 115 cim maradt le emiatt, es a 2026-09-15-i visszameres szerint 85-nel KET KULON ceg osztozik egy cimen (mindket oldalon ervenyes, elteres adoszam -- cegcsoport, kozos ugyved vagy uzemelteto: KESZ, Docler, Bayer, Leonardo Hotels). Ezeknel az osszevonas hiba lenne. Maradjon-e a mezo egyedi?
-    a) Maradjon egyedi. A kozos cimet csak az egyik rekord kapja meg, a masik 85 marad uresen.
-    b) Szunjon meg az egyedisege, es a kozos cim felkerulhessen minden olyan cegre, amelyikhez tartozik.
-    c) Maradjon egyedi, de a kozos cim egy uj, NEM egyedi mezobe kerul (pl. Cegcsoport kozos email), es a Kozponti email tovabbra is cegenkent sajat marad.
-
-SZ-189 (Seora, feltéve: 2026-09-15 16:41)
-  Hetvenkét élő, km-alapú szerződésen a Ft/km mezőben átalánydíj áll (28 900, 15 000, 13 900, 33 000 Ft), és emiatt mind a 399 hozzájuk tartozó kiszállás pontosan a beégetett 40 000 Ft-os plafonon számol, összesen 15 960 000 Ft. Melyik olvasat a helyes, és mi legyen a javítás?
-    a) Elírás: a szerződés valójában km-alapú, csak az átalány kiszállási díj került a Ft/km mezőbe. Ekkor a valódi Ft/km tarifát kell beírni, és azt a szervizirodától kell megkapni
-    b) Szándékos: ezek átalánydíjas szerződések, csak a kiszállási díj típusa maradt Km. Ekkor a típus javítandó, és a díj nem szorzódik a távolsággal
-    c) Vegyes, szerződésenként kell eldönteni: a kimutatás utolsó két oszlopában Ági vagy [személy] jelöli tételesen
-
 FA / K-115 (DM (rendszerszintu), feltéve: 2026-09-15 17:33)
   A gpt-5.6-luna előszűrő-mérés 2026-09-03 óta áll a K-55 »nem most« válasza miatt. Azóta a mérhető megtakarítás 1,83-szorosára nőtt. Nyissunk most OpenAI-fiókot a méréshez, vagy előbb a már elérhető Haiku 4.5-tel mérjük ugyanezt?
     a) Nyiss OpenAI-fiókot pár ezer forint kerettel, és mérd meg a lunát
@@ -1368,11 +1366,6 @@ FA / K-116 (DM (rendszerszintu), feltéve: 2026-09-15 22:31)
     b) A gondolkodás-szint mérése MELLETT indítsd el a saját kulcsot is, mert a rendelkezésre állás megéri a plusz 100 ezer forintot havonta.
     c) Marad minden ahogy van, a Manus-leállás kockázatát elfogadjuk.
 
-SZ-193 (Seora, feltéve: 2026-09-15 23:11)
-  A Voyasoftnak szóló kérdést közvetlenül küldjem ki nekik, vagy te továbbítod?
-    a) Küldd ki közvetlenül a [e-mail cím kiszedve] címre, feloldom erre az esetre a külsős tiltást
-    b) Továbbítom én, ahogy most megkaptad a levelet
-
 EA-21 (Értékesítési adatok elemzése, feltéve: 2026-09-16 01:43)
   Az EA-17 újrafogalmazva, a szakasznevekkel. Az üzleti lehetőség szakaszai a Salesforce SAJÁT sorrendjében, mögötte a mai darabszám (100 972 tétel): 1. Igényfelmérés 306, 2. Egyeztetés 412, 3. Ajánlatkészítés 1557, 4. Utókövetés 10 115, 5. Ajánlat elfogadva 8887, 6. Átadva szerződésre 4, 7. Szerződés elkészült 2, 8. Szerződésre/előlegre vár 58, 9. Szerződés megkötve 0, 10. Átadva gyártásnak 320, 11. Átadva előkészítésre 85, 12. Átadva műszaki ellenőrzésre 6, 13. Szerződésre/előlegre vár (2) 25, 14. Beépíthető 158, 15. Beéptés megkezdve 91, 16. Beépítve 74 867, 17. Készre jelentve 0, 18. Átadva 3153, 19. TIG-re vár 0, 20. Számla kiküldve 0, 21. Számla kifizetve 0, 22. Vesztett 0, 23. Szerződés kiküldve 592, 24. Automatikus lezárás 0. Melyeket kell KÖTELEZŐEN érinteni, mielőtt egy tétel lezárható?
     a) Írd le a kötelező szakaszok sorszámát vagy nevét, sorrendben
@@ -1390,6 +1383,83 @@ UP-3 (Ügyfélportál, feltéve: 2026-09-16 01:48)
     b) Felvesszük ugyanúgy, a link csak egy lehetőség marad, nem kötelező
     c) Sürgős esetben felvesszük link nélkül (ezt már mondtad), minden másnál visszairányítjuk a linkre
 
+FA / K-117 (DM (rendszerszintu), feltéve: 2026-09-16 06:18)
+  A JamEmail makró 1.0.6 kész, és a kimeneti mappa mostantól minden gépen C:\JamEmail. Egy dolgot nem tudok innen megmérni: a C:\JamEmail mappát a gépen MINDEN felhasználó látja, a profilmappa ezt magától megoldotta. Van olyan gép, amin nem csak egy ember dolgozik?
+    a) nincs, mindenki a saját gépén dolgozik: mehet a C:\JamEmail, nincs több teendő
+    b) van ilyen gép: tegyek a mappára külön jogosultságot, hogy csak az adott felhasználó és a rendszergazda olvashassa
+    c) az osztott gépeken maradjon a profilmappa, a többin legyen C:\JamEmail
+
+SZ-194 (Seora, feltéve: 2026-09-16 07:39)
+  Egy e-mail cím ma csak EGY ügyfélnél állhat a Salesforce Központi e-mail mezőjében. 85 esetben viszont két valódi, különböző cég használja ugyanazt a címet, és emiatt az egyiknél a mező üresen marad. Melyik legyen a szabály?
+    a) Maradjon úgy, ahogy ma van: a közös címet csak az egyik cég kapja meg, a másik 85-nél a mező üres marad
+    b) Szűnjön meg a korlátozás, és a közös cím felkerülhessen mindegyik céghez, amelyik tényleg használja
+    c) Maradjon a korlátozás a mai mezőn, de a közös cím kerüljön egy ÚJ, külön mezőbe (például Cégcsoport közös e-mail), és a Központi e-mail maradjon cégenként saját
+
+FA / K-119 (DM (rendszerszintu), feltéve: 2026-09-16 09:48)
+  Az alvállalkozói névjegyzék 83 emberéből 2026-ban csak 8-nak van kiszállás-nyoma a szervizben (Dörömbözy 478, Király Viktor 361, Varga Iván 330, Lantos [személy] 211, Hegedűs [személy] 147, Winkler [személy] 96, Fitus [személy] 61, Kormányos [személy] 9). A többi 75 vagy beépítésen dolgozik (ott a beosztás beceneveket tárol, ezért név szerint nem mérhető), vagy már nem dolgozik nálatok. Melyik listát vegyem a mai alvállalkozói körnek?
+    a) A te 2026-09-13-i listád (23 tétel: 14 megnevezett ember és 9 cég) a kanonikus, a 83-as névjegyzék csak beléptetési háttér marad
+    b) Kérjek friss listát arról, ki él ma alvállalkozói szerződéssel (kitől: [személy], Kinga vagy ifj. a gazda)
+    c) Jelöljem inaktívnak azt a 75-öt, akinek 2026-ban nincs nyoma, és te átnézed a listát
+
+SZ-195 (Seora, feltéve: 2026-09-16 10:34)
+  A kiszálláson KÉT kiszállási díj mező van, és nem ugyanazt mondják. Melyik a mérvadó a munkalapon és a számlán?
+    a) a tárolt »Kiszállási díj« (Kiszallas_modja_kiszallasi_dij__c). Ekkor a D256 lényegében már él, mert ez a mező a szerződéses min-max szerinti kalkulált díj pillanatképe, és a teendő a legacy képlet kivezetése
+    b) a képlet »Kiszállási díj összege« (Kiszallas_dij__c). Ekkor a képletet át kell írni a szerződéses min-maxra, de tárolt mezővé alakítva, különben 4071 már kiküldött munkalap díja is megváltozik
+    c) ezt [személy]től vagy Csabától kell megkérdezni, add át nekik
+
+SZ-196 (Seora, feltéve: 2026-09-16 11:08)
+  A szerelői lapon lévő Tételek leírásai (T_telek_le_r_sai__c) mező nem elromlott, hanem 2022-ben leváltották: a munka leírása azóta a Description__c mezőben van. Mérés a helyi Salesforce-másolaton (103486 kiszállás): a régi mező 2020-ban a kiszállások 73 százalékában volt kitöltve, 2022-ben 20,3, 2023-ban 0,2, 2026-ban 15959-ből 1 (0,01 százalék), az utolsó 60 napban 0/2830. Ugyanezen az időszakon a Description__c 2022-ben 52,9-ről 2023-ra 92 százalékra ugrott, 2026-ban a Munkalapok kiküldve állapotú kiszállások 92,7 százalékában, a Completed-eknél 97,3 százalékában ki van töltve, átlagosan 512 karakterrel. A szerelő tehát MEGKAPJA a munka leírását, csak egy negyedik éve halott mező is ott van mellette mindhárom oldalelrendezésen. Melyik utat vigyem az SF-admin felé?
+    a) Vetesd le a halott T_telek_le_r_sai__c mezőt mind a három oldalelrendezésről, a Description__c marad az egyetlen leírás-mező
+    b) Javíttasd meg az Apex handlert, hogy a régi mező is újra töltődjön (ekkor ugyanaz a szöveg két mezőben áll)
+    c) Maradjon így, a szerelőt nem zavarja az üres mező
+
+SZ-197 (Seora, feltéve: 2026-09-16 11:47)
+  A 155 helyszínen a tárolt kiszállási távolság mérhetően hibás: felülírhatom a lemért közúti oda-vissza kilométerrel?
+    a) Igen, írd be mind a 155-öt, és utána szólj, melyik szerződésnél mennyit mozdult a díj
+    b) Csak azt a 15-öt, amelyiken élő km-szerződés van, a többi 140 maradjon
+    c) Előbb Ági mondja meg, hogy a tárolt távolság nálunk mérés-e vagy üzleti megállapodás, és csak utána írjunk
+    d) Ne írjunk semmit, a 40 000 forintos plafon úgyis elfedi
+
+SZ-198 (Seora, feltéve: 2026-09-16 12:56)
+  43 kiszállás áll 'Új' (None) státuszon úgy, hogy a szülő munkalapját LEMONDTÁK (Canceled). A kiszállás státusza nem követte a lemondást, ezért a Salesforce nyitott-listáin ma is felúsznak. Melyik értékkel zárjam le őket?
+    a) Mind a 43 'Nem lett elvégezve'. Ez az SZ-128 és SZ-164 szerinti bejáratott záró érték, egységesen, egyetlen automatizmus nélkül.
+    b) Mind a 43 'Lemondva'. Ez követi a szülő munkalapot, de a 17 elvégzettnél nem igaz állítás.
+    c) Kettébontva: a 26 nyom nélküli 'Lemondva', a 17 elvégzett 'Végeztem az adott címen' (Completed). A Completed viszont 17 jutalék-számítást indít el, ezt előbb egy rekordon kimérem és visszaállítom.
+    d) Ne írjunk a Salesforce-ba. A lista menjen át Alexandrának, ahogy az SZ-92-nél kérted, és ők rendezzék adminisztratív oldalról.
+
+FA / K-120 (DM (rendszerszintu), feltéve: 2026-09-16 14:14)
+  A Szerviz megosztott postafiók 27817 levele ma a te "Központi Outlook import" fiókod alatt áll, ami annak a fióknak az 55,4 százaléka. Kapjon saját postafiókot a JamEmailben, és ha igen, a meglévő levelekre visszamenőleg is?
+    a) Kapjon saját postafiókot, és a 27817 meglévő levelet is soroljuk át oda -- a postafiók-bontás visszamenőleg is igaz lesz
+    b) Kapjon saját postafiókot, de csak a mostantól érkező levelekre; a régiek maradnak a központi import alatt
+    c) Maradjon minden a központi import alatt, és az őr jelzését némítom el
+    d) Ne gyűjtsük a megosztott fiókok leveleit egyáltalán: kikerülnek a gyűjtő konfigjából, és a meglévő 27817 levélről külön döntünk
+
+SM-18 (Szerviz munkák elemzése, feltéve: 2026-09-16 16:10)
+  A javítás és a karbantartás összemérésére melyik mutató legyen az érvényes: a súlyozott darabszám (1 javítás = 2,5 karbantartás), vagy a norma-mutató (a normaidő és a ténylegesen ráfordított idő aránya)?
+    a) súlyozott darabszám -- egy mondatban kimondható, a mai darabszám helyére betehető, de a javításon belüli nehézség-szórást nem kezeli
+    b) norma-mutató -- pontosabb, súly nem is kell hozzá, de előbb berendezés-típusig kell bontani a normát, és a technikusnak nehezebb elmagyarázni
+    c) mindkettő, a súlyozott darabszám megy ki a technikusnak, a norma-mutató marad belső elemzésnek
+
+SZ-199 (Seora, feltéve: 2026-09-16 16:45)
+  A szerelőknek szóló levél (felelősség és időre teljesítés, a 2026-09-13-i kérésed) meg van írva. Kinek menjen ki?
+    a) mind a 27 terepi kollégának, akinek van címünk, [személy] és [személy] másolatban
+    b) csak a 22 karbantartónak, mert a szerelői tájékoztató elsősorban rájuk vonatkozik
+    c) Csabának egyben, ő továbbítja a csapatnak
+    d) más kör, írd le kinek
+
+SZ-200 (Seora, feltéve: 2026-09-16 17:24)
+  A Salesforce-tisztításnál mivel kezdjem: a gépi feltöltéssel vagy a szabályok rögzítésével?
+    a) Előbb gépi feltöltés: megmérem, mely üres mezőkhöz van meg az adat máshol a rendszerben, és azokat feltöltöm. Utána kérdezlek a maradékról.
+    b) Előbb a szabályok: mezőnként megmondjátok (te, [személy], [személy]), mi kötelező és mit jelent az érték, és csak azután nyúlok az adathoz.
+    c) Párhuzamosan: a gépi feltöltést elkezdem, közben kimegy a mező-lista véleményezésre
+
+FA / K-121 (DM (rendszerszintu), feltéve: 2026-09-16 23:04)
+  A [személy]nek szóló levél kiküldhető-e a berendezés-szerződés kötés két szabály kérdésével? A szöveg és a csatolt tábla kész, a mérés ma friss: 1004 élő berendezés lejárt szerződéshez kötve (127 szerződés, 37 ügyfél), és 151 berendezésen a két szerződés mező más szerződésre mutat, 147-nél más-más ügyfélhez. A stílus tábla szerint [személy]nél nem kell jóváhagyás, de a kártya leírása a te jóváhagyásodhoz kötötte, ezért kérdezek.
+    a) Menjen ki így, ahogy van
+    b) Menjen ki, de előbb olvasd át, elküldöm a szöveget
+    c) Ne [személy]nek menjen, hanem másnak
+    d) Ne menjen ki most
+
 
 ========================================================================
 3. KÉRT IGÉNYEK, amikből még nem lett feladat
@@ -1401,7 +1471,7 @@ Nincs ilyen. (minden kért igény kártyává vált)
 4. NYITOTT FELADATOK projektenként
 ========================================================================
 
--- Nincs projekt (40 nyitott) --
+-- Nincs projekt (55 nyitott) --
 #214 [waiting/high] Helyszíni belépési feltételek: büntetlen előélet, oktatás, munkaruha
     [személy] 2026-08-31: 10-15 helyszínre (például REHAU, NATO) csak büntetlen előéletű kolléga léphet be. Ez ma SEHOL nincs nyilvántartva, sem a helyszínekről, sem a kollégákról: fejben van. A cég soha nem kért erkölcsi bizonyítványt, ezért egyetlen kollégáról sincs. Ugyanide tartozik a tűzvédelmi oktatás, a drága oktatás miatti létszámkorlát (2- [...]
 #227 [waiting/high] Ugyfel-onkitolto urlap a hibabejelentesez (a gazda: 'mar regota meg szerettem volna csinalni')
@@ -1442,8 +1512,8 @@ Nincs ilyen. (minden kért igény kártyává vált)
     A JAMEMAIL-GYUJTO MINDKET GEPEN ALL (merve 2026-09-14 15:45, gyujto-or).  a gazda laptopja HUBUD1LPTL0051, gyujto v1.10.0: 135 oraja hallgat. Az UTOLSO futas 2026-09-08 18:27 UTC-kor indult es 09-09 00:20-kor ert veget; a helyi masolatban ez az EGYETLEN futasa. Azota semmi. Jambor [személy] gepe HUBUD1WKSL0030, gyujto v1.8.1: 11 oraja hallgat. Elotte har [...]
 #471 [waiting/high] Szervizstat: a gazda hat fejlesztesi kerese (2026-09-14)
     a gazda kerese (2026-09-14 17:57, Seora sav, M909 cimke alatt). Fajl kesz, Manusnak tovabbithato: store/atadando/Szervizstat fejlesztesi keres 2026-09-14.txt (154 sor).  HAT PONT: (1) minden kartyara a mert fogalom + keplet + idoablak; (2) a rendszam melle a nevek a kartyakon ES az Idovonal elso oszlopaban; (3) a kartya alatti lista statusz-anomaliai [...]
-#501 [waiting/high] JamEmail gondolkodási szint: a havi költség 77 százaléka reasoning token
-    FA / K-63 mérése (2026-09-15) nyomán. A besorolás havi 320 millió tokenjéből 207 millió a modell GONDOLKODÁSI tokenje: elemzésenként 8654 a 11171 kimeneti tokenből (77 százalék). A Manus átalányán ez 71,5 ezer Ft/hó helyett 25,4 ezret jelentene, tehát ez a legnagyobb egyetlen tétel, nagyobb, mint a kulcs-kérdés bármelyik ága.  A KAPCSOLÓ MÁR KÉSZEN [...]
+#520 [waiting/high] Salesforce-tisztítás: mely mezők tölthetők fel gépileg a rendszerben már meglévő adatból
+    a gazda kérdése 2026-09-16 (Telegram 7641): hány olyan mező van, ami mindenképpen szükséges lenne és nem töltjük, bár elérhetők lennének az adatok. A 2026-09-16-i audit erre CSAK részben válaszol: megmondja, mi üres (121 mező soha nem töltött, 283 húsz százalék alatt), de nem azt, hogy az adat máshol megvan-e. MÉRENDŐ: minden alig vagy nem töltött me [...]
 #220 [waiting/normal] Anyagigény-lánc: ügyfélértesítés a megrendeléstől a kiadásig ([személy] javaslata)  (felelős: a gazda)
     Forrás: [személy] levele, 2026-08-31 18:45, a JCS jelölő-szál válaszaként (thread 1a05798a8a67b263). Nem kértük, magától küldte.  MIT KÉR: az anyagigény mozgásának minden lépésénél menjen automatikus értesítés az ügyfélnek: alkatrész megrendelve, várható beérkezés dátuma, alkatrész beérkezett. A beérkezés után az anyagigényes feladat átadódik a [...]
 #221 [waiting/normal] Elvégzett munkalapok automatikus ellenőrzése és továbbterelése ([személy] javaslata)  (felelős: a gazda)
@@ -1462,26 +1532,56 @@ Nincs ilyen. (minden kért igény kártyává vált)
     Kiküldve 2026-09-07 19:19, levél id 1a07ce19c96d719a, csatolmány: Szemelyes visszajelzes minta 2026-09-06 v4.pdf ([személy] adataival, a gazda jóváhagyásával, FA / K-88 = a).  a gazda utasítása (DM 6736): ha POZITÍV a válasz, értesítsem a gazdát. Ha NEGATÍV, tisztázzam vele, pontosan mi volt a problémája.  D060 szerint, ha nem jön válasz ésszerű idő [...]
 #402 [waiting/normal] JamEmail export: kulso-felado JELOLO (nem a banner torlese)
     ARPAD PONTOSITASA 2026-09-09 16:16 (M739): ne toroljuk a CAUTION-bannert, hanem legyen belole JELOLO, mert a belsos/kulsos levelek keresese hasznos. Igaza van, es jobb, mint az eredeti tervem. MEGVALOSITAS: (1) kulso_felado mezo MINDEN levelre, a FELADO DOMAINJEBOL szamolva, a sajat domainekhez merve (faactechnologies.com, faacgroup.com, faachungar [...]
-#403 [planned/normal] JamEmail: a kimeneti mappa C:\JamEmail legyen minden gepen
+#403 [waiting/normal] JamEmail: a kimeneti mappa C:\JamEmail legyen minden gepen
     a gazda kerese 2026-09-09 16:24. A makro ma %LOCALAPPDATA%\JamEmail-be ir, ami gepenkent mas utvonal; a feltolto es a tamogatas is egyszerubb, ha mindenutt C:\JamEmail. A VALTOZTATAS EGY SOR (Gyoker() fuggveny), mert minden mas hely azt hivja. HAROM DOLOG KELL MELLE, ezek nelkul hibas: (1) a MappatKeszit ma CSENDBEN bukik -- a C: gyokerebe ceges gepe [...]
 #409 [waiting/normal] JamEmail: 19 elemzésre váró levél törzse CSAK a CAUTION-banner volt
     MERES 2026-09-09 (kartya 535f61fe visszamenoleges banner-levagasa kozben, a helyi taron, 70097 level). A 17560 banneres levelbol 109-nel a torzs a banner UTAN mar nem tartalmaz lathato szoveget: a levelnek gyakorlatilag nincs tartalma. Allapotuk: 86 done, 4 kihagyva, 19 PENDING.  A PROBLEMA A 19 PENDINGGEL. A visszamenoleges levagas utan ezeknek a  [...]
-#442 [planned/normal] JamEmail: két megosztott postafiók ISMERETLEN a szervernek ([cég] Hungary Szerviz, Asszisztens HU)
+#442 [waiting/normal] JamEmail: két megosztott postafiók ISMERETLEN a szervernek ([cég] Hungary Szerviz, Asszisztens HU)
     A gyűjtő-őr 2026-09-13 09:22-i futásán jött fel először: a gazda gépe két, Csabáé egy olyan tároló-nevet küld fel, amit a szerver nem tud postafiókhoz illeszteni. A szerver logikája (server/handlers/vbaUpload.ts, postafiokDontes): ha a név nem e-mail cím alakú és nem illeszkedik ismert fiókra, a köteg levelei POSTAFIÓK NÉLKÜL mennek be. Bekerülnek, d [...]
-#446 [planned/normal] [személy]isztrativ kovetelmenyek mezo: feloldatlan sablon-kod all benne 1615 helyszinen
-    MERVE 2026-09-13 (738ff96d kor): az Account.[személy]isztrativ_kovetelmenyek__c mezo 1615 helyszinen ki van toltve, de MIND A 15 kulonbozo erteke feloldatlan behelyettesito kod, nem emberi szoveg: {!var[személy]ReqPartnerMunkalap} 313, {!var[személy]ReqOpteamus} 301, {!var[személy]ReqPecseteltIgazoloLap} 210, {!var[személy]ReqVerisaeHasznalata};{!var[személy]ReqPecseteltI [...]
-#449 [planned/normal] Javítás és karbantartás ÉRTÉK szerinti összemérése (a gazda gondolkodási feladat)
+#449 [waiting/normal] Javítás és karbantartás ÉRTÉK szerinti összemérése (a gazda gondolkodási feladat)
     a gazda, 2026-09-13 21:41: "Gondolkodj azon, hogy miként lehetne összehasonlítani a javítási és karbantartási munkákat értékük szerint. A javítás nehezebb, időigényesebb, nagyobb szakértelmet igényel, sokszor többet kell utazni miatta, így a sokat javító emberek mutatói gyengébbek lesznek a sok karbantartást végző embereknél. Hogy lehetne ezt igazság [...]
-#450 [planned/normal] Gyűjtő-frissítés automatikus kiküldése a gyűjtőt futtatóknak (M917)
+#450 [in_progress/normal] Gyűjtő-frissítés automatikus kiküldése a gyűjtőt futtatóknak (M917)
     a gazda, 2026-09-13 21:41: "Amikor elkészül egy új módosítás, úgy azt küldd el azoknak az embereknek is, akiknek a leveleit már olvassa a Gyűjtő. Írj hozzá frissítési utasítást lépésről lépésre és küldd meg számukra automatikusan."  MA: a gyűjtőt a gazda és [személy] futtatja, [személy]nél telepítés vár (ad75abb8). A verzió a JamEmail gyujto_futasok táb [...]
-#451 [planned/normal] Levél a szerelőknek a felelősségről és az időre teljesítésről (M903)
+#451 [waiting/normal] Levél a szerelőknek a felelősségről és az időre teljesítésről (M903)
     a gazda, 2026-09-13 21:41: "Írj nekik egy levelet, amelyben a felelősségüket megemlíted olyan vonatkozásban, hogy a javításokat azért csináljuk, hogy nekik könnyebb legyen a munkájukat végezni, így azt gondolod, hogy elvárható a pontos együttműködés és az időre teljesítés."  TISZTÁZANDÓ A MEGÍRÁS ELŐTT: kinek szól pontosan. Az M903 blokk a déli jelen [...]
-#452 [planned/normal] Levél [személy]nek a folytatás-láncról: minták és a módszertan ellenőrzése (M894/M923)
+#452 [in_progress/normal] Levél [személy]nek a folytatás-láncról: minták és a módszertan ellenőrzése (M894/M923)
     a gazda, 2026-09-13 21:41: "Tudsz majd adni pár mintát [személy]nek, hogy leellenőrizze azt? Ő tudja megítélni, hogy jó-e a módszertanod. Úgy írj neki levelet, hogy magyarázd el a feladatot. Miért kell, mit csináltál, miket néztél amelyik alapján összekötöttél dolgokat és kérj rá választ, hogy ez így jó-e."  A TÁRGY: 1686 munkarendelés kapott ParentWorkO [...]
-#453 [planned/normal] A 160 km-helyszín listája [személy]nek + a teszt-helyszínek inaktiválása (M896/M924)
+#453 [in_progress/normal] A 160 km-helyszín listája [személy]nek + a teszt-helyszínek inaktiválása (M896/M924)
     a gazda, 2026-09-13 21:41: "Küldd [személy]nek, de írd meg neki, hogy mivel ez pusztán adminisztratív ellenőrzés, nyugodtan küldje tovább Terinek, vagy Juditnak ellenőrzésre. A teszt helyszíneket nyugodtan inaktiváld."  KÉT RÉSZ: 1. A 11 TESZT-helyszín inaktiválása a Salesforce-ban (Aktiv__c = false). Nevek a store/km-atkotes/km-tavolsag-gyanus-2026-09-1 [...]
-#464 [planned/normal] JamEmail: a visszameno ablak 180 napra (D247) -- az appban meg 730/3650 all
+#464 [in_progress/normal] JamEmail: a visszameno ablak 180 napra (D247) -- az appban meg 730/3650 all
     J-60 = a (a gazda, 2026-09-13): a level-behozatal visszameno ablaka FEL EV, nem ket ev. D247 rogzitve, D108 visszavonva.  MAR MEGVAN: scripts/jamemail-config-visszatoltes.mjs:95 alapertelmezes 730 -> 180; a jamemail-config-mentes.mjs magyarazo szovege is atirva.  HATRA VAN, es ez a JamEmail app oldala: (1) az Outlook csuszkajat 1 evre kell allitani;  [...]
+#513 [planned/normal] Anyagkiadas: a folyamat ket vege nem er ossze (ProductConsumed -> Anyagigeny hivatkozas 3,4%)
+    Az e698c2ba audit 1. javaslata (2026-09-16). A felhasznalt alkatresz rekordjan (ProductConsumed) egyetlen mezo mutat az anyagigenyre (Anyagigeny_mennyiseg__c), es az a 2026-os 3175 felhasznalasbol 109-en (3,4 szazalek) van kitoltve. Emiatt nem lehet megvalaszolni, hogy amit a raktar kiadott, az beepult-e. MERHETO CEL: a kapcsolt felhasznalasok aran [...]
+#515 [planned/normal] Kérdés-sáv ütközés: az SZ prefix a Seora sávra mutat, de a szerviz/Salesforce kérdések viszik
+    MÉRVE 2026-09-16 (munkakör, 116f29df). A store/nyitott-kerdesek.json-ban az SZ prefix a Seora sávhoz (chat_id -5502305889) tartozik, a szerviznek pedig az SM prefix van fenntartva (-5509149162). A gyakorlat viszont évek óta más: a szerviz és Salesforce km-számlázási kérdések mind SZ-kóddal mennek (SZ-31, SZ-124, SZ-146, SZ-163, SZ-189, SZ-195, SZ-1 [...]
+#518 [planned/normal] 11 dontes (D092-D102) sajat kodjat kapta projekt-nevnek, egyik projekt-listaban sem jonnek elo
+    MERVE 2026-09-16 a d6a00f86 kartya kozben. A store/dontesek.json-ban 11 dontesnel a projekt mezo maga a kod: D092..D102, mind 2026-08-30-i rogzites. A hivo a kod helyere irta a projektet (dontes.mjs add <projekt> <szoveg>, es az elso argumentum a projekt). Kovetkezmeny: ez a 11 dontes SEMMILYEN projekt-szuroben nem jon elo, csak a szuro nelkuli tel [...]
+#519 [planned/normal] Diszpecseri level 2026-09-16-an NEM ment ki: a ketszemelyes-mero elszallt, potkor nincs
+    2026-09-16 15:00-kor a diszpecser-level.py elszallt: diszpecser-ketszemelyes.py hibaval allt le (1), ures stderr-rel. A level NEM ment ki. 16:20-kor ugyanaz a parancs (--napok 30) kilepokod 0-val, hibatlanul lefut: 162 nyitott, 18 ketszemelyes munkalap, 14 jelzendo, 19 szallitasi feladat. Tehat mulando hiba volt, es a napi kuldesnek NINCS potkore:  [...]
+#521 [planned/normal] Az audit két hiányzó lapja: picklist-hibák és mezőnév-problémák
+    A 2026-09-08-i, hét lapos audit (store/szervizstat/Salesforce adatminosegi audit 2026-09-08.xlsx) tartalmazott két olyan lapot, ami a mai tizenkét lapos kiadásból hiányzik: Picklist-hibák (8 tétel: Beépítés előtt / Beépítés előtt1, Expired / Expired2, Terminated / Terminated2 ismétlődő értékek, és 5 Salesforce-alapértelmezett További lehetőség sabl [...]
+#522 [planned/normal] Őr: ami a store/atadando/ mappában ül kiküldési nyom nélkül
+    2026-09-16-i lelet: a szeptember 8-i Salesforce adatminőségi audit elkészült, a kártya done lett, a fájl viszont nyolc napig ült a store/atadando/ mappában, és a gazda csak akkor tudott róla, amikor maga rákérdezett. A munkalap aznap ki is mondta: a fájl még nem ment ki. TEENDŐ: gépi őr, ami a store/atadando/ friss fájljaihoz kiküldési nyomot keres ( [...]
+#526 [planned/normal] Salesforce eroforras-modell: allando belso kod azonositsa az autot, a rendszam csak adat legyen (SZ-73 = b)
+    SZ-73 valasza rendel munkat (utolagos kotes, kerdes.mjs kotes). Sav: Seora.  KERDES: A Salesforce-ban ma az AUTOK az eroforrasok, es a szerelok a rendszammal lepnek be. Emiatt autocserenel at kell irni a rendszamot, es az eladott autok licenszei is bent ragadnak (ma negy ilyet talaltunk). Kertel egy javaslatot a kesobbi modositasra. Mielott kidolgo [...]
+#527 [planned/normal] Az ufo (piackutato) ugynok lezarasa (FA / K-113 = b) -- a tmux session 2026-08-17 ota fut
+    FA / K-113 valasza rendel munkat (utolagos kotes, kerdes.mjs kotes). Sav: DM (rendszerszintu).  KERDES: Mi legyen az ufo (piackutató) ügynökkel? VALASZ (2026-09-15 22:59): b) Zárjuk le, nincs rá szükség
+#528 [planned/normal] JamEmail csatolmanyok a kozponti tarolohelyre (SZ-155 = a), es hozza a lemez bovitese (SZ-156 = a)
+    SZ-155 valasza rendel munkat (utolagos kotes, kerdes.mjs kotes). Sav: Seora.  KERDES: A feltöltés után a csatolmányok is menjenek fel a szerverre, vagy maradjanak a gépen? VALASZ (2026-09-09 16:31): a) A csatolmányok is menjenek fel a központi tárolóhelyre. a gazda indoka (Telegram DM 7132, 2026-09-09 16:31): 'a mellékletekre is szükség lesz a közpon [...]
+#529 [planned/normal] Kiszallas-lista: jelolje, melyiken nincs szervezoi visszaigazolas (SZ-148 = b, Danyi [személy] javaslata)
+    SZ-148 valasza rendel munkat (utolagos kotes, kerdes.mjs kotes). Sav: Seora.  KERDES: [személy] szerint a kiküldött érkezés-értesítő levél nem jelenti, hogy a nap le van egyeztetve, és javasolja, hogy telefonos egyeztetés és a szervező e-mailes visszaigazolása után induljon a tervezés. Bevezessük ezt a sorrendet? VALASZ (2026-09-06 12:10): b) N [...]
+#530 [planned/normal] Kozos bejovo: minden beerkezo munka egy helyen -- level, telefon, Salesforce, iSusy (J-54 = a)
+    J-54 valasza rendel munkat (utolagos kotes, kerdes.mjs kotes). Sav: Mail rendezo (jamemail).  KERDES: A teljes körű feladatkezeléshez kilenc dolog hiányzik. Melyikkel kezdjem? VALASZ (2026-09-03 20:20): a) Közös bejövő: minden beérkező munka egy helyen (levél, telefon, Salesforce, iSusy)  (a gazda, a kerdes-lapon, 2026-09-03)
+#531 [planned/normal] A 18 szakaszos lista velemenyezese es a P oszlop kitoltesi javaslata (EA-15), majd az EA-17 ujrafogalmazasa
+    EA-15 valasza rendel munkat (utolagos kotes, kerdes.mjs kotes). Sav: Értékesítési adatok elemzése.  KERDES: Két napja kérted, hogy a Salesforce szakasz-kapuk kérdését csúsztassuk el, amíg a szakaszok kialakítása tart. Készen van már az új szakasz-lista, folytathatjuk? VALASZ (2026-09-08 18:39): a gazda 2026-09-08 18:33-kor elküldte a 18 szakaszos táb [...]
+#532 [planned/normal] Kapcsolodasok: a harom megvalaszolt szabaly beepitese (KF-8 havi 3 kereses, KF-9 ceg nelkuli szemely, KF-10 megkaptam-gomb)
+    KF-8 valasza rendel munkat (utolagos kotes, kerdes.mjs kotes). Sav: Kapcsolatfejlesztő.  KERDES: Hány kapcsolatkeresést engedjen a rendszer egy embernek adott időszakban? VALASZ (2026-09-10 16:42): a) Havi 3 keresés alapból, és minden teljesített segítség eggyel emeli a keretet. (a gazda, kérdés-lap, 2026-09-10)
+#533 [planned/normal] JamEmail: a 4982 visszamenoleges level elemzese (SZ-187 = a, kb. 14 500 Ft egyszeri)
+    SZ-187 valasza rendel munkat (utolagos kotes, kerdes.mjs kotes). Sav: Seora.  KERDES: A JamEmail gyűjtő a gépeden újraindult, és 5484 levél jött be teljes tartalommal; ebből 4982 vár elemzésre, ami 2,92 Ft/levél alapon körülbelül 14 500 Ft, és 91 százaléka visszamenőleges anyag 2026 március és augusztus közöttről. Elemezzük-e a visszamenőleges adag [...]
+#535 [planned/normal] V004 levele soha nem ment ki: a nyilvántartás öt napja olyan válaszra vár, amit nem is kérhettünk
+    MÉRVE 2026-09-17 (munkakör, 6ff2af9d kapcsán). A valaszra-var V004 tétele (Két kérdés: a helyszíni kapcsolattartó és a vállalt válaszidők, [személy], határidő 2026-09-11) olyan levélre vár, ami soha nem ment el. Mérés: Gmail subject:(helyszíni kapcsolattartó) newer_than:30d = 0 találat; a to:csaba.jambor 2026-09-05..09-12 ablak 12 levele közül e [...]
+#537 [planned/normal] Seora: a case_visibility es az email_analysis_archives a schema.ts-ben all, elesben nincs
+    MERVE 2026-09-17 a 9c1df914 munkakorebol, a futo seora sema es az origin/main drizzle/schema.ts osszevetesevel.  A schema.ts 36 mysqlTable-t definial, a seora sema 36 bazistablat tartalmaz, de a ket halmaz NEM azonos. Harom-harom tetel ter el.  A SCHEMA.TS-BEN VAN, ELESBEN NINCS: case_visibility, email_analysis_archives, level_kinyeres. (A level_ki [...]
 
 -- Seora (2 nyitott) --
 #498 [waiting/normal] Level Hegedus Istvannak: SZ-118 (regi naplos ut) es SZ-122 (Hiba kategoria mezo)
@@ -1513,7 +1613,9 @@ Nincs ilyen. (minden kért igény kártyává vált)
 #43 [waiting/high] Teljes atvilagitas: 5 projekt, mukodes + biztonsag
     a gazda kerese 2026-08-14 13:07: minden projekt teljes atvilagitasa es javitasa, mukodesi ES biztonsagi oldalrol. Eloszor projektenkenti atvilagitasi+javitasi terv, utana a javitasok.  ERINTETT KODTARAK (mind, push joggal): missionlock, szervizstat, email-analyzer, faac-quote-form ([cég]HD), bni-meeting-controller (MeetDirector).  SORREND: biztonsag e [...]
 
--- jamemail (9 nyitott) --
+-- jamemail (8 nyitott) --
+#501 [waiting/high] JamEmail gondolkodási szint: a havi költség 77 százaléka reasoning token
+    FA / K-63 mérése (2026-09-15) nyomán. A besorolás havi 320 millió tokenjéből 207 millió a modell GONDOLKODÁSI tokenje: elemzésenként 8654 a 11171 kimeneti tokenből (77 százalék). A Manus átalányán ez 71,5 ezer Ft/hó helyett 25,4 ezret jelentene, tehát ez a legnagyobb egyetlen tétel, nagyobb, mint a kulcs-kérdés bármelyik ága.  A KAPCSOLÓ MÁR KÉSZEN [...]
 #322 [waiting/normal] JamEmail: 25841 levél gépi receivedDate-et visel (2026-08-19), ez a bejövő állomány 45,2 százaléka
     Merve 2026-09-04 22:xx a helyi masolaton.  Az 57226 bejovo levelbol 25841 (45,2 szazalek) receivedDate-je 2026-08-19. Nem valodi nap: aznap 6426 kulonbozo idobelyeg van 25841 levelre, azaz 4,02 level idobelyegenkent, es a legnagyobb csomo 83 level ugyanarra a masodpercre. Osszehasonlitasul 08-18: 1,56 level/idobelyeg, 08-20: 1,00, 09-03: 1,01. A fo [...]
 #386 [waiting/normal] JamEmail gyűjtő: a tiltólistás levél miatt a köteg SOHA nem lesz elszámolt  (felelős: a gazda)
@@ -1522,12 +1624,8 @@ Nincs ilyen. (minden kért igény kártyává vált)
     MÉRVE 2026-09-09 a munkakörben, a külső-feladó jelölő (535f61fe) építése közben. Az öt valódi exportált fájlból HÁROMNÁL a to mező tiszta megjelenítési név ('a gazda Jambor'), kettőnél vegyes (név ÉS SMTP-cím keverve, pontosvesszővel). A régi, Manus-os állományban 705 levélnél nincs @ a toField-ben, 40392-nél van. KÖVETKEZMÉNY: a külső FELADÓ jelölő  [...]
 #419 [waiting/normal] JamEmail: az AI-elemzés a Claude-előfizetésen, hogy a kreditfogyás látsszon (J-55, D231)
     a gazda a J-55-re (2026-09-05): „Ha ezek megoldhatók a claude előfizetésen keresztül, akkor nézzük meg ott, hogy lássam a kredit fogyást.” Ma az elemzés a Manus-szerveren fut gpt-5-mini modellel, a Manus-kreditből.  Mért (helyi másolat, 2026-09-10 03:30): 09-05 óta 4191 elemzés, 55,73 kredit, 0,0133 kredit/levél (kb. 2,9 Ft/levél 216,15 Ft/kredit árf [...]
-#472 [planned/normal] Kérdés [személy]nek: mi a szabály a lejárt szerződéshez kötött élő berendezésekre és a két szerződés mezőre
+#472 [waiting/normal] Kérdés [személy]nek: mi a szabály a lejárt szerződéshez kötött élő berendezésekre és a két szerződés mezőre
     A 8690ee98 kártya leírásának (3) pontja, saját kártyán. Most, hogy a mérés élő, a kérés nem 595 soronkénti igen/nem jelölés, hanem két szabály kérdés.  1. Mi a teendő azzal az 1004 élő berendezéssel, ami lejárt szerződéshez van kötve? A felületen szerződésesnek látszanak. Megújítás, a kötés lezárása, vagy valamilyen automatikus szabály? 2. A két sz [...]
-#473 [planned/normal] A javítandó adatok tábla nem zárja le azt a tételt, aminek a problémája megszűnt
-    Mérve 2026-09-14-én, a 8690ee98 kártya munkája közben. A javitas-gyujtes.mjs felvesz függvénye csak felvesz és frissít: ha egy berendezés szerződését megújítják, vagy a két szerződés mező eltérése megszűnik, a javaslat nyitva marad, és minden nap kimegy az adminisztrátornak.  A mai méréskor ez 2 tételt érint az 1167-ből: JAV-00177 és JAV-00020. Kic [...]
-#483 [planned/normal] jamemail hurok-kapu: a napi 500-as küszöb minden jogos utólagos behozásnál elsül
-    2026-09-15 09:24: a kapu felébresztett, mert a total 49603-ról 54332-re nőtt (napi 4749). Nem volt hurok: a gyűjtő a gazda gépén újraindult és behozta az elmaradást. A küszöb önmagában nem tudja megkülönböztetni a behozást a huroktól. A kapunak a hurok SAJÁT jelét kell néznie: ha a növekmény emailSourceType=vba ÉS a receivedDate szórt (nem az utolsó  [...]
 #504 [planned/normal] J-57 = a: be kell kerni a hianyzo postafiokok Elkuldott mappait
     ARPAD VALASZA (J-57 = a, 2026-09-05): "igen, kerjuk be mind, hogy a lista pontos legyen". A megvalaszolatlan levelek listajan a tetelek 37 szazalekanal nem tudjuk eldonteni, kapott-e valaszt a felado, mert csak harom postafiok Elkuldott mappaja van begyujtve.  MERVE 2026-09-15 a helyi tukron (store/jamemail-helyi.db, 76 568 level): - kimeno level 1 [...]
 #420 [waiting/low] JamEmail: a J-55 = c maradéka, számlázó- és foglaló-értesítő kihagyása az AI előtt (D113 után)
@@ -1549,7 +1647,7 @@ Nincs ilyen. (minden kért igény kártyává vált)
 #292 [waiting/normal] Manus: tud-e PUBLIKALNI egy API-bol inditott projekt-feladat (D069 masik fele)
     MERVE 2026-09-03 (e03013be lezarasabol). A Manus task.create ELFOGADJA a project_id mezot, es az igy inditott feladat task_type-ja "project". Ezzel a D069 surlodas FELE megoldodott: az API-bol inditott munka mostantol a megfelelo projektbe kerul, nem a kulonallo Tasks listaba (scripts/manus-run.mjs --projekt).  AMI NEM DOLT EL: tud-e egy API-bol in [...]
 
--- marveen (19 nyitott) --
+-- marveen (13 nyitott) --
 #367 [waiting/high] A szervizstat Manus-app adatExport vegpontja nincs kiadva, ezert soha nem keszult rola mentes  (felelős: a gazda)
     MERVE 2026-09-07 13:05. A hat mentendo Manus-app kozul otrol keszul mentes, a szervizstatrol EGY SEM: a store/manus-adatbazis-mentes.log-ban 0 darab 'szervizstat: mentes kesz' sor van, es 27 darab hiba, a mentes 2026-09-06-i indulasa ota minden futasban.  AZ OK, MERVE: az adatExport.szerkezet vegpont HTTP 200-at ad, de text/html; charset=UTF-8 tart [...]
 #368 [waiting/high] A Seora ügy-rétege és futtatókörnyezete csak a seora-main ágon van  (felelős: a gazda)
@@ -1564,30 +1662,18 @@ Nincs ilyen. (minden kért igény kártyává vált)
     a gazda kérte 2026-09-15 10:56-kor: al-ügynök monitor, ami naplózza és visszaigazolja minden hívást (ki, mikor, milyen feladat, sikeres-e, idő, költség, és hogy az eredmény ténylegesen visszaérkezett-e). Kikötése: semmi nem épülhet meg jóváhagyás előtt. A terv kész és publikálva: https://claude.ai/code/artifact/03969ec6-ac34-48a0-a77a-2274e4639223 -- [...]
 #425 [waiting/normal] A napi kérdések levele két napja nem megy ki: az ismétlés-kapu fogja meg  (felelős: a gazda)
     Mérés (2026-09-12, reggeli kör). A kikuldes-or napi-kerdesek kötelezettsége [e-mail cím kiszedve] címre szól. A store/kuldes-naplo.jsonl szerint 2026-09-10 07:00 és 2026-09-11 07:00 is MEGTAGADVA, ok: ismetles. A levél tartalma napról napra szinte azonos (Napi kérdések <dátum>: N vár rád + CSV csatolmány), ezért az ismétlés-kapu jogosan fogja meg.  [...]
-#431 [planned/normal] Visszatartott kuldes: nincs 'elintezve' jeloles, a targytalan tetel 21 napig zajong
-    MERVE 2026-09-12 12:15. A visszatartott-kapu (scripts/visszatartott-kapu.py) csak ugy tekint elintezettnek egy megtagadott kuldest, ha UGYANANNAK a cimzettnek UGYANAZZAL a targgyal kesobb tenyleg ment level, vagy ha eltelt 21 nap. Nincs harmadik ut.  A KONKRET ESET: a 'Napi kerdesek 2026-09-10: 10 var rad' es a 'Napi kerdesek 2026-09-11: 8 var rad' [...]
-#432 [planned/normal] dontes.mjs: az ismeretlen parancs nema hamis valaszt ad (mit D234 -> nincs ilyen dontes)
-    MERVE 2026-09-12 a D234 kartya kozben. A dontes.mjs-nek NINCS mit parancsa (a kerdes.mjs-nek es a megjegyzes.mjs-nek van), es az ismeretlen parancs a listazo agra esik, ahol az elso argumentum PROJEKT-szurokent mukodik. Ezert a node scripts/dontes.mjs mit D234 valasza: Nincs ervenyes dontes: D234 -- holott a D234 letezik es ervenyes (store/dontesek [...]
-#458 [planned/normal] A futas-or postalada-jelzese soha nem ment ki: rossz beerkezo.mjs hivas
-    2026-09-14-en merve, a 2d2c1888 kartya munkakorében. A scripts/futas-or.py --eles aga igy hivja a postaladat:      subprocess.run([node, beerkezo.mjs, ir, uzenet], capture_output=True)  EGYETLEN argumentummal. A beerkezo.mjs ir parancsa viszont <tema> ES <szoveg> parost var (scripts/beerkezo.mjs 80-87. sor): egy argumentumnal a tema az EGESZ uzenet [...]
-#460 [planned/normal] A dream-engine utemezes masodszor futott timeoutra (09-07, 09-14)
-    A fresh-task futas mindketszer timeouttal allt le (kilepokod 143). A DREAM.md ezert 2026-09-07 02:07 ota nem frissult, tehat a reggeli napindito Dream Engine szekcioja egy hete ures. Naplok: store/fresh-task-hibak/2026-09-14T00-12-11-449Z-dream-engine.log es a 09-07-i par. Teendo: meg kell nezni, mi viszi el az idokeretet, es vagy szukiteni a promp [...]
-#461 [planned/normal] A tajekoztato-megnyitas utemezett ellenorzes hibaval fut (kilepokod 1, nincs kimenet)
-    A futas-or 2026-09-14 06:10-kor jelezte: a tajekoztato-megnyitas HIBAVAL FUTOTT, kilepokod 1, az utolso sor ures. Nincs kimenet, tehat a hiba nema: az ellenorzes latszolag fut, de semmit nem mer. Teendo: kezzel lefuttatni, megnezni a stderr-t, es a hibat javitani. A reggeli blokk nem nyulhat a kodhoz.
-#476 [planned/normal] D250 gépi őre: lejárt határidő -> emlékeztető, másnap -> levél a gazdának
-    D250 (a gazda, 2026-09-14, SZ-170): lejárt határidőnél a határidő napján emlékeztető a címzettnek, és ha másnap sincs válasz, levél a gazdának a nem válaszolókkal másolatban. Ez ma emlékezetre van bízva, tehát nem hat magától. Kell egy őr, ami a kiküldött kérések határidejét méri (a meglévő kikuldes-or / riport-valasz-or mellé), és a két lépcsőt magátó [...]
-#477 [planned/normal] J-59 és J-60: J-kódú kérdés az EA csatorna azonosítójával
-    MÉRÉS 2026-09-14 (munkakör, a 21cc3c42 kártya mellékleteként). A kerdes-sav-or két kérdésnél talált eltérést a kód és a prefix-mező között: J-59 (2026-09-13 09:14) és J-60 (2026-09-13 20:41) kódja J- (Mail rendezo), a prefix mezőjük viszont EA, a chat_id-jük -5348321189, ami ma az Értékesítési adatok elemzése csatorna. Egyik kérdés sem a kerdes.mjs [...]
-#478 [planned/normal] A válaszra-váró nyilvántartást semmi nem zárja le: gépi válasz-felismerés kell
-    MÉRVE 2026-09-15 03:10 (munkakör, 1c51c5d5 kapcsán). A scripts/valaszra-var.py 'valaszolt' parancsát EGYETLEN őr sem hívja: grep az egész scripts/ fán, a valaszra-var-t csak a blokk-eloszures.py érinti, és az kizárólag listáz ('ma'). Tehát a lezárás kézi lépés, és ha kimarad, a rendszer emlékeztetőt küld olyannak, aki már válaszolt.  Ez nem elvi ko [...]
 #486 [planned/normal] A blokk-SKILL-ek --test - alakja utkozik az outgoing-copy-gate-tel
     A deli-kor (es valoszinuleg a tobbi blokk) SKILL.md-je ezt irja elo: asszisztens-kuld.py --test - (torzs STDIN-rol). Az outgoing-copy-gate PreToolUse hook ezt FAIL-CLOSED megtagadja, mert a torzset nem tudja megvizsgalni -- akkor is, ha a stdin abszolut utvonalu fajlbol jon: a --test - ag a redirect vizsgalata ELOTT ter vissza (outgoing-copy-gate.p [...]
 #487 [planned/normal] Besorolatlan kártyák átnézése + a három csak-előrefelé tölthető mező az audit elé
     A hét naplózási mező (d8ab6738) kész és látható. Két maradék. (1) 92 besorolatlan kártya (az aktív táblán 55): a kanban Típus szűrőjében a "(nincs típus)" opcióval egy kattintással előhozhatók, a holtversenyes 76 azonosítóval: node scripts/kartya-tipus.mjs besorol. (2) A következő auditban KI KELL MONDANI, hogy három mező csak előrefelé tölthető, k [...]
 #511 [planned/normal] A kimenő kapu a kötőjeles fájlnév-prefixet külön magyar szónak látja: kerdes-or.py -> kerdes
     MÉRVE 2026-09-16, 2000 kanban-szövegen (kártyák és kommentek), a de180b49 munkaköre közben. A kapu a TECHNICAL maszkolásnál a 'kerdes-or.py' alakból csak az 'or.py' részt vágja ki (a mintája a pont előtti szórészre illik), ezért a szövegben ott marad egy csupasz 'kerdes-', amit a szóbontó 'kerdes' magyar szónak lát, és HIÁNYZÓ ÉKEZETEK hibát ad rá. [...]
+#534 [planned/normal] A kiküldött kérés magától kerüljön be a válaszra-váró nyilvántartásba (D250 vakfoltja)
+    A hatarido-or (f8463e7d) mukodik, de csak azt latja, ami a store/valaszra-var.json-ban van, es oda ma KEZZEL kerul be tetel: az asszisztens-kuld.py nem regisztral. D250 viszont azt mondja, hogy 'minden hasonlo esetben' jarjak el igy. Merve 2026-09-17: a nyilvantartasban 5 tetel all, mind 2026-09-05-i felvetel, azota egyetlen kikuldott kerdes sem ke [...]
 #166 [planned/low] Rendszeres adatmentes MINDEN elo Manus-appra, ne csak bejelentett leallas elott
     2026-08-26: a JamEmail mentes azert keszult, mert a Manus elore bejelentette a 08-23 -- 08-25 leallast. [cég]HD-re nem volt ilyen jelzes, ezert NINCS rola semmilyen adatmentes -- es most epp az adatbazisa nincs a helyen. A bejelentes tehat rossz kivalto jel: a mentesnek utemezettnek kell lennie, nem esemenyhez kotottnek.  ERINTETT APPOK: faachd.manu [...]
+#523 [planned/low] A munkalap-foto trend.csv ugyanugy duplaz kezi ujrafuttatasnal
+    A 680ba2ed karvan javitott hiba parja: a scripts/munkalap-foto-napi.py a store/munkalap-foto-meres/trend.csv-be VAKON fuz hozza (open(TREND, 'a'), 134. sor), tehat egy kezi ujrafuttatas ugyanarra a napra ket sort ir. A tajekoztato-megnyitas trendjeben ez 2026-09-14-en el is sult el. A foto-trendben MOST MEG NINCS duplikatum (14 sor, 0 ismetlodo dat [...]
 
 -- meetdirector (4 nyitott) --
 #10 [planned/high] MeetDirector: sablonok egysegesitese
@@ -1600,7 +1686,7 @@ Nincs ilyen. (minden kért igény kártyává vált)
     MERVE 2026-08-26, eles rendszeren.  TUNET: a gallery83.uploadPdf 12 oldalas PDF-nel Service Unavailable-t ad vissza, KOZBEN a munka lefut. A 12 kep bekerul az adatbazisba es a tarolora, de a contentData hasPdf jelzoje FALSE marad.  ELLENPROBA (ugyanaz a PDF, maxPages:1): 2,3 masodperc, szabalyos tRPC valasz, hasPdf helyesen TRUE.  MIERT SZAMIT: a k [...]
 
 -- missionlock (1 nyitott) --
-#435 [planned/normal] MissionLock: útvonal menti küldetés nem építhető, a helyszíntár 4 városra szűkül
+#435 [waiting/normal] MissionLock: útvonal menti küldetés nem építhető, a helyszíntár 4 városra szűkül
     A 2. kérés (kiinduló -> cél város között automatikusan keresse meg a használható objektumokat) KÓDBAN kész (discovery.routeDiscovery), de az ADAT nem tartja.  MÉRVE 2026-09-12 22:40, éles tRPC-vel: a "Gabi Győr - Szentendre" küldetés mind a 8 állomása 75,8 és 80,6 km között van Győrtől, egyetlen 9 km-es szakaszon Esztergom környékén; az első 75,8 k [...]
 
 -- otlettar (1 nyitott) --
@@ -1608,12 +1694,10 @@ Nincs ilyen. (minden kért igény kártyává vált)
     MÉRVE 2026-09-10 18:28, élesben, az app saját gépi végpontján (/api/mentes/tabla?tabla=github_sync_runs): sorok=[], összes=0. A napi mentés 09-09-i és 09-10-i példánya ugyanezt mutatja.  A szinkron-naplózás 2026-09-05-én KI VAN ADVA (commit 9feb689: "GitHub-szinkron futási előzmények tartós rögzítése és megjelenítése ... hitelesített ütemezett napl [...]
 
 -- rendszer (1 nyitott) --
-#462 [planned/normal] A válasznak nincs kártyája: a kérdés-kártya kötés kód szerint gyenge
-    LELET (2026-09-14, a 2891f91d bevezetés-őr kártyájának mérése közben): a 2026-09-01 óta megválaszolt 219 kérdésből 113 maradt bevezetés nélkül. Ebből a 113-ból mindössze KETTŐ olyan van, ami egy nyitott kanban-kártya szövegében kódként szerepel (accbb479 / FA / K-88, 21cc3c42 / SZ-147).  Amit ez jelent: a válasz nem azért nem hat, mert a kártyát ne [...]
+#525 [planned/low] Bevezetés-őr: a hátralék-kártya kizárása állapot-mutatón múlik, nem jelölésen
+    MÉRVE (2026-09-16, e087fe55 munkakör közben). A kerdes-bevezetes.mjs a SAJÁT gördülő hátralék-kártyáját a store/kerdes-bevezetes-or.json 'kartya' mezője alapján zárja ki a nyom-keresésből. Amikor a hátralék nullára fogy, az őr lezárja a kártyát ÉS nullázza a mutatót -- a kártya viszont megmarad, a 8 kommentjével és a bennük felsorolt kérdés-kódokka [...]
 
--- sajat (2 nyitott) --
-#495 [in_progress/normal] Bevezetés-hátralék: 40 megválaszolt kérdésből nincs nyom
-    [hatralek-lista] Merve 2026-09-15 18:04: 40 megvalaszolt kerdes all bevezetes nelkul (247 megvalaszolt kozul). A valasz megvan, a valasz DATUMA ota megsem keletkezett rola sem D-kod, sem kartya-komment, sem munkalap-sor.  Savonkent: Seora 22, DM (rendszerszintu) 10, Értékesítési adatok elemzése 3, Mail rendezo (jamemail) 2, [cég]HD 1, Ügyfélportál 1 [...]
+-- sajat (1 nyitott) --
 #500 [planned/normal] Az uzemeltetesi lap es a kikuldes-or FIXEN UTC+2-vel szamol: oktober 25-en minden ido elcsuszik
     Merve 2026-09-15 22:1x, az FA / K-64 bevezetese kozben. Ket helyen all bedrotozva a nyari idoszamitas:  1. scripts/uzemeltetes-lap-adat.py:22 -- BUDAPEST = timezone(timedelta(hours=2)) # CEST 2. scripts/kikuldes-or.py:255 -- ablak_kezd ... - dt.timedelta(hours=2)  2026-10-25 03:00-tol Magyarorszagon CET (UTC+1) lesz. Attol a naptol az uzemeltetesi  [...]
 
@@ -1676,16 +1760,16 @@ Nincs ilyen. (minden kért igény kártyává vált)
     MIÉRT: az Inepex-javaslatok (a52ff995) J6 pontja és a Voyasoft-szűkítés is azon áll, hogy egy kötegelt hívás EGY hívásnak számít-e a napi API-keretben, vagy annyinak, ahány részkérés van benne. A dokumentáció ezt állítja, de a keretet a MI szervezetünk számolja.  AMI NEM MŰKÖDÖTT: megírtam a scripts/sf-composite-meres.mjs mérőt, ami a /limits Daily [...]
 #348 [waiting/normal] SF: a Forum Debrecen helyszin egyetlen mentest sem enged (teruleti vezeto validacio)
     MERVE 2026-09-06 a tavolsag-visszatoltes kozben (d828b624). A [rekord-azonosító kiszedve] (Forum Debrecen - 200085, 208663, 204410) Account-on BARMILYEN mentes elszall: FIELD_FILTER_VALIDATION_EXCEPTION, "Csak a penzugyi ugyfelnel talalhato kapcsolattarto lehet teruleti vezeto!", mezo: Teruleti_vez... A 10 888 rekordos visszatoltesbol EZ AZ EGY buk [...]
-#414 [planned/normal] iSusy: a vaultban levő ISUSY_PASSWORD 2026-08-21 óta nincs lecserélve, pedig Telegramon utazott
-    A b2a08d81 lezárásakor leválasztva, mert az a kártya csak emiatt állt nyitva.  MÉRVE 2026-09-10 17:1x: a store/vault.json ISUSY_PASSWORD bejegyzése createdAt = updatedAt = 2026-08-21T09:09:17Z, tehát a jelszó azóta változatlan. A b2a08d81 leírása szerint a kapott jelszó Telegram-üzenetben utazott, ezért cserélni kell. Más kártya vagy kérdés erről n [...]
-#434 [planned/normal] SF: a T_telek_le_r_sai__c mezőt a szerelő látja, de 15891 kiszállásból 1-ben van benne adat
+#434 [waiting/normal] SF: a T_telek_le_r_sai__c mezőt a szerelő látja, de 15891 kiszállásból 1-ben van benne adat
     MÉRVE 2026-09-12 (a db3055b9 lezáró köre közben, nem kezdtem bele). A ServiceAppointment.T_telek_le_r_sai__c mező 2026-ban 15891 kiszállásból 1-ben kitöltött (0,006%), az utolsó 60 napban 0/2706. A mező mindhárom oldalelrendezésen rajta van, tehát a szerelő egy MINDIG ÜRES mezőt lát a telefonján. A 2026-08-21-i mérés szerint a WorkOrderHandler.copy [...]
-#436 [planned/normal] Km-számlázás: 160 helyszínen a tárolt távolság ellentmond a koordinátának (15 élő szerződés, 763 800 Ft)
+#436 [waiting/normal] Km-számlázás: 160 helyszínen a tárolt távolság ellentmond a koordinátának (15 élő szerződés, 763 800 Ft)
     MÉRVE 2026-09-13 (munkakör, az e014e128 lezárásakor). A helyszínek 99,6 százalékán VAN koordináta (10 872 a 10 917-ből), ezért a tárolt számlázási távolság először ellenőrizhető géppel. A légvonal a szigetszentmiklósi bázisról (Gyári út 56) a tárolt oda-vissza km-nek mediánban 2,67-szerese, a 20 km felettieknél p10 2,36 és p90 3,09 -- tehát a sáv s [...]
-#439 [planned/normal] Kiszállás: 43 None-státuszú kiszállás lemondott munkalap alatt
+#439 [waiting/normal] Kiszállás: 43 None-státuszú kiszállás lemondott munkalap alatt
     MÉRVE 2026-09-13 (élesben és a 02:30-as helyi másolaton, a két forrás egyezik): 4533 None státuszú kiszállásból 43-nak a szülő munkalapja Canceled. A munkalapot lemondták, a kiszállás viszont None maradt, ezért minden nyitott-lista tetejére felúszik.  MIÉRT SZÁMÍT: a b0ddf17f kártya gördülő listájában ma 48 lejárt határidejű találatból 26 pont ilye [...]
 #510 [planned/normal] SF egyiranyu tavolsag: a visszatoltes nem fut magatol, minden uj helyszin uresen marad
     MERVE 2026-09-16 04:40 (munkakor, 5a665615). A sf-tavolsag-egyiranyu-visszatoltes.mjs-re NINCS utemezes es nincs or: sem a scheduled-tasks alatt, sem cronban nem szerepel. Kovetkezmeny mervw: a szeptember 7-i utolso futas ota 11 UJ helyszin keletkezett kitoltott Tavolsag_km__c-vel es URES Tavolsag_egyiranyu_km__c-vel (DERBY-TUR iroda, Nagyigmand, T [...]
+#516 [planned/normal] SF: a napi halasztó folyamat nem zárja ki az 'Új' státuszt, ezért végtelen körben tolja a határidőket
+    MÉRVE 2026-09-16 (a Metadata API-val letöltött flow-törzsből, nem a felületről): az SA_DueDate_flow ütemezett folyamat minden nap ráfut azokra a kiszállásokra, ahol a 'Ma esedékes' jelölő igaz, és a határidőt +2 héttel előretolja, közben növeli a 'Hányszor lett elhalasztva' mezőt.  A folyamat ÖT státuszt zár ki: Completed, Munkalapok kiküldve, Jóvá [...]
 #153 [planned/low] Munkalap: TEORETIKUS penzugyi eredmeny szamitasa (SZ-42 valasza)
     a gazda valasza SZ-42-re, 2026-08-25 06:10. A munkalapra a penzugyi ertek csak kesobb, a penzugynek torteno atadaskor kerul ra, ezert a Vegosszeg mezo joggal 0 a lezart munkalapok 100 szazalekan (87603/87603). Helyette TEORETIKUS penzugyi eredmenyt kell szamolni:  1) VARHATO BEVETEL 0 Ft, ha (a) a kiszallas garancialis, VAGY (b) az elmult 14 nap beav [...]
 #441 [planned/low] Salesforce fotó-törlés maradéka: 7 fájl (14,1 MB) iSusy-pár nélkül, nem törölhető
@@ -1748,6 +1832,8 @@ Nincs ilyen. (minden kért igény kártyává vált)
     MÉRVE 2026-09-14 03:00-03:20 (élesben, a futó rendszeren).  AMI ÁLL: a docker példány (email-analyzer-app-1) 2026-09-06 07:29-es képből fut, az origin/main azóta 20 commit-tal ment tovább. A 7ede4474 kártya teljes javítása (nyitólap gyorsítás + betöltés-visszajelzés) BENNE VAN a főágban (7570858 checkpoint), de a gazdánál nem látszik, mert nem lett k [...]
 #475 [waiting/high] SZ-170 végrehajtása: levél a gazdának a jelölő-rendszerterv nem válaszolóiról
     SZ-170 válasza megjött (2026-09-14 18:53), a döntés D250 néven rögzítve. A VÉGREHAJTÁS áll: levél a gazdának az [e-mail cím kiszedve] címére, a többiek másolatban, tételesen felsorolva ki-milyen témájú levélre nem válaszolt (a jelölő-rendszerterv 10 kérdése, kiküldés után 14 nappal egyedül [személy] válaszolt, a másik négy kolléga nem), és a kérd [...]
+#538 [planned/high] A helyszin-csapda tovabbi fogyasztoi: technikus-meres ugyfel-oszlopa es a szerzodes-berendezes egyezes-szamlalo
+    A f96c5c8a kartya javitasa kozben merve (2026-09-17), ugyanaz a csapda, harom masik helyen.  1. scripts/lib/technikus-meres.mjs:85 -- LEFT JOIN customer c ON c.sf_id = sa.ugyfel_sf_id. A service_appointment.ugyfel_sf_id is a HELYSZIN rekordra mutat: 103 530 kiszallasbol 18 (0,017%) old fel kozvetlenul ugyfelre, 103 363 helyszinre. Az 'ugyfel' oszlo [...]
 #84 [in_progress/normal] jamemail: boilerplate_patterns beszúrás elszáll (4 levél)
     MERVE 2026-08-19 00:10, az ures levelek torlese utan: a maradek 352 hibas levelbol 4-nek NEM a rate limit az oka, hanem ez: "Failed query: insert into boilerplate_patterns (id, pattern_hash, sample_text, pattern_type, occurrence_count, created_at) values (default, ?, ?, ?, default, default) on duplicate key update occurrence_cou...". Sajat kod-hiba [...]
 #102 [waiting/normal] jamemail ZAJSZŰRÉS: a költség fele automata értesítésre megy
@@ -1772,14 +1858,12 @@ Nincs ilyen. (minden kért igény kártyává vált)
     A D079 sorrend harmadik eleme, és eddig NEM VOLT rá kártya: a sorrend csak a D-kódban élt, miután a 0a06686f (1-2. lépés) lezárult. Előzmény: a 2. lépés kész és élesben fut (a Ma-képernyő négy determinisztikus jele, végpont plusz felület, 62/62 zöld teszt, konténer 127.0.0.1:3430). Az 1. lépés (zajszűrés) két kártyán fut: 7601a6b2 kiadásra vár, 65b [...]
 #325 [waiting/normal] email-analyzer: a kihagyando-elszamolas ág beolvasztása -- 14 fájlos konfliktus, köztük a drizzle napló  (felelős: a gazda)
     Mérve 2026-09-05 02:2x (munkakör, a 943e1954 kártya közben, próba-merge-dzsel).  A marveen/kihagyando-elszamolas-2026-09-04 ág beolvasztására eddig nem volt kártya. A migráció-sorrend hibája (943e1954) javítva: a két migráció 0020_kihagyando_akcio (1788520000000) és 0021_gyujto_elszamolas (1788520300000) sorszámon áll, tehát a beolvasztás sorrendjé [...]
-#466 [planned/normal] sf_munkalap_blokkok: 7643 sor él, de a főágon sehol nincs definiálva
-    MÉRVE 2026-09-14 a futó adatbázison, a migrációs futtató mellékleleteként.  A seora sémában áll egy sf_munkalap_blokkok tábla 7643 sorral. Az origin/main-en SEHOL nem szerepel: nincs a drizzle/schema.ts-ben, nem hozza létre egyetlen migráció sem, és a szerverkód sem hivatkozik rá. A marveen/seora-pontszam-besorolas beolvasztatlan ágon él (server/db [...]
-#479 [planned/normal] seora: a cegprofil-lekerdezes hibaja is elviszi a kifizetett elemzest (84 level)
+#479 [in_progress/normal] seora: a cegprofil-lekerdezes hibaja is elviszi a kifizetett elemzest (84 level)
     MERVE 2026-09-15 04:30, a 4ca53e4f kartya kozben. Az emails tabla 14474 error-allapotu levelebol 84-nek ez a hibaja: "Failed query: select `id`, `name`, `domain`, `additional_domains`, ... from `companies` where ...". Ugyanaz az osztaly, mint a boilerplate-nel: a levelelemzes 9b lepese (cegprofil) a fo try-blokkban all, a mentes viszont csak a 10.  [...]
-#480 [planned/normal] customer_service_history.munkalap_db a munkalapok 0,02 szazalekat latja
-    A szarmaztatott ugyfel-tabla a munkalapokat a work_order.ugyfel_sf_id mezon szamolja, de a munkalapok a HELYSZINEN lognak: 103 800-bol 103 642 olyan helyszinre mutat, aminek a szuloje az ugyfel. Ezert a customer_service_history.munkalap_db osszege ma 18, azaz a teljes allomany 0,02 szazaleka -- barmely ugyfel-oldali munkalap-mutato, ami innen olvas [...]
 #506 [planned/normal] FA / K-84 = Agnes donti el: milyen szabaly zarja le a regi Seora ugyeket
     ARPAD VALASZA (FA / K-84, 2026-09-08 06:24, DM 6756): "Kerdezd Agnest." Az ugy-lezarasi szabalyt Szabo Agnes donti el, nem a gazda.  A KERDES, AHOGY AGNESNEK FEL KELL TENNI. A Seora ugytablan 21 539 visszamenolegesen feltoltott ugy all, mind nyitva: egyetlen lezart sincs. Ezert az ugytabla fejleceben a 'nyitott ugy' szam minden ugyet jelent, es nem m [...]
+#536 [planned/normal] jamemail: a 11-12. lepes hibaja visszairja error-ba a MAR ELMENTETT elemzest
+    MERVE 2026-09-17, a 764d58cf kartya kozben. A server/services/emailAnalysis.ts egyetlen nagy try-blokkjaban a 10. lepes elmenti az elemzest ES kiirja az 'done' statuszt (1178. sor), de UTANA meg ket lepes fut ugyanabban a try-ban: a 11. (getPreviousEmailsFromSender + updateEmailHandledStatus a korabbi levelekre) es a 12. (notifyManagerIfNeeded). Ha [...]
 
 -- szerelo (3 nyitott) --
 #474 [planned/normal] Brief-feltöltés: a menet közben törölt munkalap hibának számít, és este riasztást csinál
@@ -1789,7 +1873,7 @@ Nincs ilyen. (minden kért igény kártyává vált)
 #377 [planned/low] Megnyitás és meghiúsulás: újramérés, ha 2000 kiszállás összegyűlt
     A 7ab3e012 folytatása. 2026-09-08-án a vizsgálat 156 kiszállásra futott, ebből 24 volt értékelhető visszatérésre, Fisher p=1,0: az összefüggés nem eldönthető. Szimuláció szerint 10 vs 5 százalékos visszatérési különbséghez 13,5 százalékos megnyitási arány mellett 2000 kiszállás ad 78 százalék erőt. A napi kör azóta elteszi a tételes JSON-t a store/ [...]
 
--- szerviz (31 nyitott) --
+-- szerviz (30 nyitott) --
 #174 [waiting/high] iSusy foto-kapu: a foto-feltoltottseg jelzese SF/FS-be, ami engedi vagy megakasztja a folytatast
     ARPAD KERESE 2026-08-28 03:44 (az SZ-43 valaszaval egyutt): a fotokat az iSusy rendszerben keszitik es ott tortenik a mentes. Az iSusy oldalan kell ellenorizni a fotok feltoltottseget, es egy olyan jelzest elhelyezni a Field Service altal LATOTT helyen, aminek a meglete engedi a tovabblepest; ha nincs jelzes, a FS nem lep tovabb. Tehat egy SF/FS-be [...]
 #175 [waiting/high] Szereloi tajekoztato lap: [személy] visszajelzese alapjan javitani
@@ -1832,12 +1916,10 @@ Nincs ilyen. (minden kért igény kártyává vált)
     MÉRVE 2026-09-12 16:11-kor, éles Salesforce-on, 11 munkalapos mintán (SZ-160 próba, be093e6b kártya).  A TÜNET: ha egy 2026 előtti, berendezés nélküli munkalap Állapota Jóváhagyva lesz, a mentés 8/11 esetben (73%) elutasításra kerül, CANNOT_EXECUTE_FLOW_TRIGGER hibával. A hibaüzenet: a WorkOrder_Handler folyamat nem sikerült, mert rekord-létrehozás [...]
 #488 [waiting/high] Km-szerzodes, ahol a Ft/km mezoben ATALANYDIJ all: 73 szerzodes, 399 kiszallas MIND a 40 000-es plafonon (15,96 M Ft)
     Merve 2026-09-15 16:20, munkakor, a 919ac781 kartya kozben.  A MERES. Az elo, nem pszeudo km-alapu szerzodesek szama 1879, ebbol 1811-en van kitoltve a Normal_dij__c (a kilometerdij). A mezo medianja 135 Ft/km, a minimuma 90. HETVENHAROM szerzodesen viszont 1000 Ft/km FELETT all az ertek: 33 000 (2 db, AVL-ZalaZONE), 28 900 (a tobbseg) es koztes er [...]
-#491 [planned/high] D256 bevezetese: a ServiceAppointment.Kiszallas_dij__c keplet vegye figyelembe a szerzodeses min-max mezot (SZ-124 = c)
+#491 [waiting/high] D256 bevezetese: a ServiceAppointment.Kiszallas_dij__c keplet vegye figyelembe a szerzodeses min-max mezot (SZ-124 = c)
     FORRAS: SZ-124 = c (a gazda, 2026-09-03), D256. Merve 2026-09-15, a 578939e3 kartya kozben.  MA. A ServiceAppointment.Kiszallas_dij__c keplet-mezobe a 16 825 Ft-os padlo es a 40 000 Ft-os plafon BE VAN EGETVE, minden km-alapu szerzodesre egyformán. A szerzodes sajat Normal_dij_min__c / Normal_dij_max__c mezoit a keplet nem nezi.  A DONTES (D256). A s [...]
 #497 [waiting/high] Fotohiany-ertesito: a kimarado 304 munkalap neveit a RENDSZAMHOZ kell kotni (alvallalkozok)
     a gazda valasza a fotohiany-ertesito szalaban (2026-09-15 16:00, level 1a09ace7d21c7bd2): 'A kimarado 304 munkalaphoz hasznalando neveket a RENDSZAMOKHOZ kell kotni, mert ezek alvallalkozok es mindig neki kell megkapniuk, mindig ugyanaz az ember hasznalja az autot.' Tehat a cimzett-feloldas nem a szerelo-nevbol, hanem a jarmu rendszamabol jon. Meg ke [...]
-#503 [waiting/high] Munkaszervezés-elemzés újraszámolása a gazda definíciójával (a 94,9 százalék rossz alapon áll)
-    a gazda 2026-09-15 23:42 (M1032): a szervezési hiba AZ, ha a feladat anyagigényes, az ember nem vette fel a kikészített alkatrészt, és úgy szállt ki. Ha egyszerűen nincs anyag a javításhoz, az előfordul, de NEM szervezési hiba. A Kell_e_alkatresz__c mező NEM az anyagigény; az anyagigény külön objektum (Anyagigeny__c, 9303 rekord), jelölői: Osszekeszi [...]
 #507 [planned/high] Hibabejelentes PDF-bol: csatolt dokumentum elemzese es urlap-kitoltes (D277)
     FORRAS: UP-1 = d (a gazda, 2026-09-12), rogzitve D277-kent. A 65abd6ca kartya a HITELESITETT LINKES agat viszi, es az ket uzleti dontesre var (UP-2 kedvezmeny, UP-3 telefonalok). EZ AZ AG NEM FUGG AZOKTOL, ezert kulon kartya.  A KOVETELMENY, a gazda szavaival: 1. Ugyfelenkent, a Salesforce feluleten beallithato legyen, hogy az adott Ugyfel tolthet-e fe [...]
 #213 [waiting/normal] A szereloi brief generator 15 felesleges lapot gyart naponta (szallitasi feladatok)  (felelős: [személy])
@@ -1862,25 +1944,7 @@ Nincs ilyen. (minden kért igény kártyává vált)
 5. NAPLÓ -- 24 óra teljesen, előtte címszavakban
 ========================================================================
 
--- 2026-09-13 (csak a bejegyzések címe) --
-08:47 -- Technikusi lapok: alvallalkozok kiszurve, uj ablakok, nevlista
-09:08 -- Technikusi besorolás: a gazda listája lett a kanonikus forrás
-09:28 -- A kérdés-lap kártya-üzenetei egy napig elvesztek
-12:07 -- DELI KOR kikuldve (M894-M903)
-13:50 -- Beépítés-kiváltás: az idegen helyszín gépileg látszik
-15:20 -- Fotóhiány-értesítő: a két szöveg kiment a gazdának, és az időablak megvan
-15:34 -- Munkakör: M5 Salesforce-mezők (d58e7272)
-16:10 -- Adószám-átvilágítás: átadható lista [személy]nek (munkakör, e9321d1c)
-16:55 -- Az önjáró munkakör echo-ébresztése megszűnt
-17:35 -- Manus augusztusi számlák (d76a8137) lezárva
-20:05 -- A nap lezárása (esti kör)
-21:35 -- A technikusi lap 11 pontos átalakítása kész
-21:40 -- A várakozó blokk takarítója kész, és nyolc tétel megválaszolva
-21:45 -- Munkakör: automatikus ügyfél-értesítés (53f535e2)
-23:50 -- Munkakör: a Manus 2. fiók kreditje (kártya 0dd84197)
 -- 2026-09-14 (csak a bejegyzések címe) --
-Kotegeles-mero -- 2026-09-14 (FEGYELMEZETLEN)
-03:05 -- MUNKAKOR: Seora nyitolap (7ede4474)
 06:05 -- Tiszta lap, a nap lezárása
 06:25 -- Reggeli kor lezarva
 08:18 -- Salesforce adathibak Excel (a gazda kerese, M938)
@@ -1894,72 +1958,60 @@ Kotegeles-mero -- 2026-09-14 (FEGYELMEZETLEN)
 -- 2026-09-15 (csak a bejegyzések címe) --
 Kotegeles-mero -- 2026-09-15 (FEGYELMEZETLEN)
 05:50 -- 294eb603 lezárva: a friss futások timeoutjának oka megmérve és javítva
-## 07:45 -- Teljes együttműködési audit
-a gazda kérésére végigmértem a 44 napot a saját nyilvántartásból: 1355 bejövő üzenet, 480 kártya (289 kész, 191 nyitott), 446 kérdés (medián válaszidő 5,2 óra), 250 döntés, 15,45 Mrd token (91,7% Opus 5), 38 ütemezés 4984 futással, 538 szkript, 52 skill, 3 társ-ágens.
-Kilenc visszatérő feladattípus, 97,3% fedettséggel. Négy mért torlódás: a kártya nem jut a gazda elé kérdésként (42 kártya rajta, medián 13,5 nap, miközben kérdésre 5,2 óra alatt válaszol); 71 nyitott kártya 14 napnál régebbi; a munkakör 3998 ébresztésből 390-szer indult; az ufo áll.
-Javaslat: 4 új állandó ügynök (Adatőr/Sonnet, Kiadásfelelős/Opus, Listás/Haiku, Könyvelő/Haiku), 5 párhuzamosítási helyzet, 4 tiltott, 9 jóváhagyás-köteles művelet, 8 naplózási hiány + 7 felveendő mező.
-Lap: https://claude.ai/code/artifact/8c810232-d482-4854-9fb2-fd9e0c171712 | M988-M993 | kérdések: FA/K-112, [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+07:45 -- Teljes együttműködési audit
+11:20 -- Ügynökhívás-napló terve
+12:00 -- DELI KOR kikuldve
+16:35 -- Munkakör: 919ac781 lezárva, km-távolság a helyszín nélküli szerződéseknél
+16:10 -- Delutani kor 16:00 kikuldve
+16:45 -- Munkaidő-kalkulátor: a kitétel elmaradt, ma pótoltam
+18:40 -- Neo Property átkötés felmérése
+20:00 -- A nap lezárása (esti kör)
+23:45 -- a gazda 16 M-kódos válasza feldolgozva
+00:00 -- A nap vege: harom sav valaszai feldolgozva
+00:25 -- Vágás előtt: az alkatrész-mérés helyesbítése
+-- 2026-09-16 (csak a bejegyzések címe) --
+Kotegeles-mero -- 2026-09-16 (FEGYELMEZETLEN)
+## 07:25 -- M1036: a munkaszervezés hivatalos aránya 96,5 százalék
+a gazda megadta az anyagigényes munkák szervezésének teljes szabályát (öt eset). Beépítve a mérésbe, D280 rögzítve, a D274 visszavonva. 257 rosszul szervezett kiszállás a 7261 értékelhetőből: 219 a kiszállás ágán, 57 az anyagigény ágán, 19 átfedés. Nem eldönthető 1004, mert nincs feljegyezve, ki vette át az anyagot. Teszt 25/25 zöld. Alexandrának kiment a levél a helyes számmal.
 
-## 11:20 -- Ügynökhívás-napló terve
-a gazda kérésére megterveztem az al-ügynök monitort. Kikötése: semmi nem épülhet meg jóváhagyás előtt, először terv és naplóformátum. Betartva, semmi nem él.
-MÉRÉS a tervhez: 608 ügynökhívásból kézbesítés 98%, befejezés 14%, eredmény 11%; 522 ragadt delivered állapotban, medián 38 nap, legrégebbi 42,5; otel_spans 235-ből 233 running lezáratlanul és 2026-08-30 óta új sem keletkezik; tool_call_log 1504 sorában nulla Agent-hívás; background_tasks 0 sor. A task_runs viszont ma reggel óta ad eredményt, ez a minta a többi csatornára.
-TERV: négy hívási út (flotta, belső al-ügynök, háttérfutás, ütemezés), 17 mezős naplótábla, öt állapot (indult/fut/megjott/elveszett/bukott). Kulcs-elv: a HÍVÓ nyit sort a hívás előtt, és a megjott-e a vart_kimenet helyén talált fájlból dől el, nem a hívott jelentéséből. A ma reggeli kilőtt háttérfutás ELVESZETT lett volna, nem BU [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+## 08:30 -- M1038, M1039: diszpécseri levél, ifj. a gazda, 2026-os adatkorlát
+A délutáni diszpécseri levél két új szakaszt kapott (holnapi veszélyben lévő munkák, tegnapi szerencsés megoldások), a külön Másnapi ellenőrzés levél megszűnt. Kiment a levél ifj. a gazdanak az átvevő-név igényről. Minden [cég] dolgozó felkerült a stílus-táblába (29 -> 144). D282: szabály és visszaellenőrzés csak 2026-os adaton, gépi őrrel. Tesztek: 20/20 és 25/25 zöld.
 
-## 12:00 -- DELI KOR kikuldve
-DM 7551 (M995-M1001) + csatolt Allapotjelzes 2026-09-15 1200, level 1a0a48a7200371ac. Temak: beepites-tervezo lap SF-bol olvas es irhato (84,2 szazalek cella-kotes), JamEmail gyujto ujraindult (5484 level, 4982 var elemzesre, kb. 14 500 Ft), Seora kiadas all (3 kesz javitas, 25 commit), szervizstat+foto-szabalyrendszer kikuldve, audit+ugynoknaplo ket lapja, [személy]-fiok level meg nem ment ki, lejart hataridok es 19 visszatartott kuldes.
-Kanban-audit: 4 db 7+ napos done archivalva (a5a4c920, 7ab3e012, 7ca71404, 6b93adf4), 8 gazdatlan kartya marveenre allitva (PUT, nem PATCH), beakadt in_progress nincs.
-Szamla: nincs uj Anthropic-nyugta; ket csatolmanyos level atnezve (Kapu-Centrum rollup, Movik voucher), egyik sem szamla, Szamla-Attekintve cimke rajta, tovabbitas nem volt.
-Uj kerdes: SZ-187 (JamEmail visszamenoleges elemzes). Uj cold emlek 726 (idobeli kozelseg [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+## 08:58 -- Raktári anyagkiadás audit (a gazda kérése)
+Három réteg mérve 2026-os adaton: 2529 anyagigény-fej, 5001 tétel (éles SOQL), 3175 felhasznált alkatrész. 14 illogikus pont, 10 javítási javaslat. Fő lelet: a ProductConsumed -> Anyagigeny hivatkozás 3,4 százalékon áll, ezért a folyamat két vége nem vezethető össze. A fájl kiment Telegramon, kártya e698c2ba lezárva, új kártya a fő javaslatra.
 
-## 16:35 -- Munkakör: 919ac781 lezárva, km-távolság a helyszín nélküli szerződéseknél
-A 12 helyszín-rekord nélküli km-szerződésből 10-re beírtam a távolságot (9 ügyfél), a döntés az SZ-163 és az FA / K-78 = a válaszából már megvolt. Új szkript: scripts/km-ugyfel-cim-tavolsag.py, Nominatim + OSRM, negatív kontroll 25 meglévő helyszínen (medián arány 0,998). Írás 9/9, visszaolvasva 0 eltérés, a távolság nélküli km-szerződések 177-ről 167-re. Visszamenőleges díjváltozás nincs: 0 kiszállás ezeken a szerződéseken. Két új kártya: 578939e3 (73 szerződésen átalánydíj a Ft/km mezőben, 399 kiszállás mind a 40 000-es plafonon, 15,96 M Ft) és c9b50bee (a Szerzodeses_Aktiv__c mind az 5811 élő szerződésen true).
+## 09:30 -- A gyűjtő-őr két csatornája (helyesbítés)
+a gazda jelezte, hogy két külön csatornán várom az adatot. Igaza volt: a gyűjtő a leveleket és a futás-összegzőt külön küldi fel, az őr csak az összegzőt nézte, és ezért két hamis riasztást adott ma reggel. A gyűjtő végig futott mindkét gépen. Az őr javítva (életjel a levél-feltöltés, pozitív jel only), új teszt 10/10 zöld. A raktári audit PDF-ben kiment négy címzettnek.
 
-## 16:10 -- Delutani kor 16:00 kikuldve
-DM 7557 (M1007-M1009) + csatolt Allapotjelzes 2026-09-15 1600, level 1a0a5652c6d5de23. A szakmai reszletek SAVONKENT mentek, nem a DM-be: Szerviz 7553 (M1002-M1004: km-atalanydij 73 szerzodes / 399 kiszallas a plafonon 15,96 M Ft, km-tavolsag 10 szerzodesre, Szerzodeses_Aktiv 5811/5811 true), Seora 7554 (M1005: helyszin-entitas kesz, Manus-vegpont nincs kiadva), Kozos 7555 (M1006: 115 utkozo e-mail osztalyozva). Kanban-audit: 0 archivalando done, 0 gazdatlan, 3 beakadt in_progress mind sajat -- feb6c8dc in_progress -> waiting (a holnapi SF-naplora var), a masik ketto jogosan fut. Memoria: uj cold emlek a plafonos keplet hamis egyontetusegerol.
+## 09:45 -- A stílus-tábla köre visszavágva (D284)
+a gazda jelezte, hogy az olasz és más külföldi kollégák nem kerülhetnek a listára: csak az, aki a magyar névjegyzékben vagy az alvállalkozói listán szerepel. A táblát visszaállítottam a mentésből (144 -> 29), majd a kollégák nyilvántartása alapján újraépítettem: 53 sor, 30 a névjegyzékből, 23 indokolt kivétel. Minden külföldi kikerült. Ma egyetlen levél sem ment külföldi címre. Új gépi őr negatív kontrollal.
 
-## 16:45 -- Munkaidő-kalkulátor: a kitétel elmaradt, ma pótoltam
-a gazda kérdezte, melyik csatornán ment a kalkulátor, mi lett a vége, frissültek-e a weboldalon az értékek, és mekkora az eltérés.
-CSATORNA: SEORA sáv (SZ-1, SZ-3, SZ-6, SZ-7, SZ-8, SZ-112), majd Szerviz munkák elemzése (SM-5, SM-9, SM-10, SM-11, SM-15).
-MÉRT ÁLLAPOT: a publikált artifact (f88acd78) bájtra azonos volt a 2026-08-18-i helyi fájllal. 48 közös alkatrészből 26-nál (54%) régi perc; hiányzott a Munkalap-szintű többlet tétel; nem volt benne a verzió-kapu (nincs bik_data_version). a gazda 09-12-én RÁKÉRDEZETT (megkaptam-e a jóváhagyott időket) -- megkaptam és beírtam 09-11-én, de nem tettem ki. A javítás megléte nem szállítás.
-MA: build a marveen/kalkulator-percek-2026-09-11 ágról (0b2370f), egyoldalas kitétel router nélkül, 20 beágyazott betűtípus, nulla külső hivatkozás, Playwright: 0 pageerror, 0 konzolhiba, valódi k [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+## 09:35 -- Tiszta lap, a gazda kérésére
+A nap eddigi munkája lezárva. Kiment hat levél (raktári audit PDF négy címzettnek, Voyasoft kétszer, [személy] négy döntése, [személy] munkaszervezés, ifj. a gazda). Négy tartós döntés ma: D280 a munkaszervezés megítélése, D281 a visszamenőleges levél-elemzés, D282 a 2026-os adatkorlát, D283 a diszpécseri levél két új szakasza, D284 a stílus-tábla köre. Három új gépi őr, mind negatív kontrollal. Projekt-állapot: store/projekt-allapot-2026-09-16.txt, 781 sor.
 
-## 18:40 -- Neo Property átkötés felmérése
-a gazda kérdezte, megoldható-e: a Neo Property alatt a két lejárt Elmu-Eon szerződésről (14964. 2 alk és 4 alk) át kellene kötni a helyszíneket a Nincs szerződés - Budapest / vidék szerződésre, a berendezéseket a helyszín nincs-szerződésére, és a karbantartási összegeket törölni.
-A VÁLASZ: megoldható. SEMMIT nem írtam a Salesforce-ba, mert SF-írás = jóváhagyás-köteles.
-MÉRT SZERKEZET (a kulcs): a berendezés Service_Contract__c mezője NEM a fő szerződésre mutat, hanem a helyszín saját GYEREK-szerződésére. A két lejárt fő-szerződés alatt 77 gyerek áll, mind Expired, 64 egyedi helyszín-Accounton. A Nincs szerződés - Budapest ([rekord-azonosító kiszedve]) ma 37, a - vidék ([rekord-azonosító kiszedve]) 28 ilyen gyereket visz. A helyszín-Accounton és a ServiceContracton NINCS egymásra mutató mező, a kötés kizárólag a gyerek-szerződés AccountId-jén keres [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+## 09:50 -- A névjegyzék 88 alvállalkozója valójában 83
+a gazda jelezte, hogy a szám magas. Mérve az xlsx-ből: 5 duplikátum (személyi igazolvány számmal bizonyítva), 1 sor egyáltalán nem ember (három IT&Coffee e-mail cím egy cellában), és egy valódi ember kimaradt a 2026-08-30-i beolvasásból (Fodor Tibor Sándor, a lap 2. sora, fejlécnek vette a beolvasó). A saját kollégáknál is volt egy duplikátum: 70 helyett 69. Javítva, őrrel és negatív kontrollal megfogva. A lista valójában beléptetési adatlapokat gyűjt, nincs benne kilépés vagy státusz; a mai alvállalkozói kört a D242 (a gazda 09-13-i listája) mondja meg. A 83-ból 8-nak van 2026-os kiszállás-nyoma. Új kérdés: FA / K-119.
 
-## 20:00 -- A nap lezárása (esti kör)
+## 12:10 -- Déli kör kiküldve
+DM 7635 (M1058-M1064) + Állapotjelzés 2026-09-16 1208, levél 1a0a9b1e483f9131.
+MÉRVE: a szerelői brief NEM állt le, ahogy a futás-őr jelezte -- holnapra 49 lapból 47 fent van, 1 szállítási feladat, 1 sérült tétel (SA-133349, HTTP 500, ötödik napja). A Seora terhelés-lap ma kétszer elszállt SF 503-mal, újrafuttatva sikeres (4030 tétel). Kanban-audit: 6 archiválva, 7 gazdátlan besorolva, gazdátlan most 0; az assignee-t PUT-tal kell állítani, a PATCH 404. Számla-kapu: 1 csatolmányos levél (Kapu-Centrum) átnézve, nem számla, címkézve.
+A FŐ ABLAKRA MARAD: kérdés-lap publikálás (14 nyitott, a publikált 10-et mutat), a válaszok kollekció beolvasása, a Seora terhelés-lap újrapublikálása, három elmaradt levél (cégadat-eltérés, reggeli jelentés, [személy] hibatípus-listája 12:00-s határidővel), 22 visszatartott küldés, V001-V004 emlékeztetők, 19 kollégai válasz.
 
-MI KÉSZÜLT EL MA, AMI NÁLA LÁTHATÓ
-- Munkaidő-kalkulátor: a jóváhagyott percek kikerültek az artifact-lapra (build a jóváhagyott ágról, verzió-kapu benne). Mérve: a korábbi lap bájtra azonos volt a 2026-08-18-ival, 48 közös alkatrészből 26-nál régi perc állt.
-- Központi e-mail ütközések osztályozva: 115 tételből 28 valódi duplikátum, 85 két külön cég egy címen, 2 érvénytelen. Új xlsx Kingának és Áginak (még nem ment ki).
-- Neo Property átkötés felmérése: 64 helyszín, 412 berendezés, 309 díjtörlés, 4 359 755 Ft. A tábla 18:40-kor kiment DM-ben. Salesforce-írás nem történt.
-- Km-átalánydíj lelet: 72 szerződés, 399 kiszállás mind a 40 000 Ft-os plafonon, 15 960 000 Ft. D256 rögzítve, kimutatás 3 lapon kész, kártya 1f8a7224. Levél nem ment ki.
-- Hibatípus-lista berendezés-fajtánként Danyi [személy]nek: tábla kész, levél nem ment ki (6392029e).
-- [cég]HD ka [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+## 13:40 -- "Térjünk rá vissza" gomb a kérdés-lapon (D285)
+a gazda kérése (Telegram 7636). Minden kérdésnél ott a gomb: gyors választás 3 / 7 / 14 / 30 nap, plusz szabad mező 1-365 között. A halasztott kérdés állapota halasztva, nem nyitott, ezért mind a 17 fogyasztóból magától kiesik. Két helyen a szűrő nem megválaszolt volt, nem nyitott: a döntési csomag javítva (a gazda saját AI-jába menő anyag újra megkérdezte volna), és a kérdés-tárba a halasztott sor lezártként megy, különben a Lap frissítése gomb visszahozná. A lejáratot cron hozza vissza 05:30-kor, és a postaládán át kéri a lap újrapublikálását. Teszt: 38 állítás zöld, két negatív kontroll élesben bizonyítva (mindkét visszarontás bukást adott). A lap publikálva.
 
-## 23:45 -- a gazda 16 M-kódos válasza feldolgozva
-Mind a 16 válasz rögzítve a megjegyzés-nyilvántartásban (M990-M1015).
-NÉGY ÚJ TARTÓS DÖNTÉS: D269 modell-lépcső (alapból a legkisebb, feljebb csak ha kell vagy torlódik, a legdrágább csak indokolt esetben és rövid feladatra); D270 Manus-programozást magamtól adom ki; D271 a kolléga válaszából következő munkát azonnal elvégezni; D272 ami több embert érint, ne a gazdán álljon.
-A LAP VÁLASZAI visszaolvasva és bevezetve: FA/K-111 ([személy] állítását ellenőrizzem), FA/K-112 (én javasoljak, melyik ügynökkel kezdjek), FA/K-113 = b (ufo lezárása), FA/K-114 = a (mind a négy lépés az ügynökhívás-naplóból). A write_db visszaírás megtörtént, doc_id kötőjeles alakban (FA-K-112), mert a szóköz és a / nem érvényes azonosító.
-KIADVA: Manus-task PwmtbP6vphxjrqLrVHTeku a jamemail helyszín-végpontra, a D270 első alkalmazása. Mérve: sites.list No procedure found, [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+## 16:00 -- MUNKAKOR: javitas es karbantartas kozos nevezore hozasa (0a700d11)
+Megvan a suly, meresbol: 1 javitasi tetel = 2,42 karbantartasi (85,4 kontra 35,3 perc/tetel), nyolc evre stabil 2,12 es 2,44 kozott. A mai darabszam-mutato -0,62-vel korrelal a javitasi aranyval, tehat 38 szazalekban a munkatipus-osszetetelt meri, nem a teljesitmenyt; a darabszam szerinti elso helyezett idoraforditasban a 19. A meglepetes: a javitasi tetel maga csak 1,46-szoros, a tobbi onnan jon, hogy a javitasi kiszallas nem kotegelheto (1,20 kontra 2,47 tetel egy uton) es 2,45-szoros az odaut. Elkeszult scripts/javitas-karbantartas-suly.py (2019-2026 vegigfutott, kilepokod 0) es store/munkaertek/javitas-karbantartas-suly-2026-09-16.md. A kartya WAITING, SM-18 (melyik mutato legyen az ervenyes). Mellekesen: a mai diszpecseri level 15:00-kor elszallt es nem ment ki, mulando hiba, potkor nincs -- kartya 13205e [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
 
-## 00:00 -- A nap vege: harom sav valaszai feldolgozva
-a gazda három sávban válaszolt egyszerre: DM (16 M-kód), Szerviz munkák elemzése (12), [cég]HD (2), plusz a Seora sávban két külön kérés.
-ELVÉGEZVE MA ÉJJEL:
-- D273 rögzítve: teljesítési időpont + háromfokozatú számonkérés (másnap rákérdezés, harmadszorra levél a gazdának a nem teljesítővel másolatban).
-- [cég]HD: a kalkulátor beállítás-fix ága beolvasztva és pusholva (78951a7..4f2130f). A délutáni premisszám lejárt volt: a percek ága este már bent volt a main-ben. Negatív kontrollal igazolva, hogy a 11 piros teszt env-hiányból jön, nem a merge-ből.
-- Voyasoft-levél megírva a gazda stílus-táblája szerint; a külsős kapu megállította, ezért a gazda gmail címére ment továbbküldhető alakban, SZ-193 kérdi, feloldja-e az egy esetre.
-- [személy] [személy] felvéve a stílus-táblába ([e-mail cím kiszedve], az SZ-173 szabálya alapján), levél kiment neki az alka [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+## 17:30 -- A Salesforce adatminőségi audit végre kiment
+a gazda rákérdezett, készült-e audit. Készült, szeptember 8-án, és soha nem küldtem el neki: a saját munkalapom mondja ki aznap 07:30-kor, a levelek között sincs nyoma. Ma újramértem és Telegramon csatolva kiküldtem (12 lap, 388 kB). 1221 mező 16 objektumon: 121 soha nem töltött, 283 húsz százalék alatt, 248 kitöltött de mindenhol ugyanaz, 40 formátum-keveredés. Rekord-szinten 7227 ellentmondás és 6640 hiányzó kapcsolat. Közben a saját mérőmben elsült egy néma bukás: az első mai futásnál az Ellentmondás és az Ellentmondó tételek lap üresen jött ki, mert a mérő és a lap más kulcsnevet használt, és egy or [] kötötte össze. Javítva, teszttel és negatív kontrollal. a gazda kérdésének második felére (mely mező szükséges és tölthető fel a meglévő adatból) az audit nem válaszol: külön kártya nyílt rá (c09ca6b2). Új kérdés: SZ-200.
 
-## 00:25 -- Vágás előtt: az alkatrész-mérés helyesbítése
-a gazda M1032-ben pontosított, és igaza volt: rossz mezőt mértem. A szervezési hiba AZ, ha a feladat anyagigényes, az ember nem vette fel a kikészített alkatrészt, és úgy szállt ki. Ha nincs anyag a javításhoz, az előfordul, de nem szervezési hiba.
-ÚJRAMÉRVE: az anyagigény külön objektum (Anyagigeny__c, 9303 rekord), jelölői Osszekeszitve/Atadva/Felhasznalva. Az Atadva jelölő 2026-tól él: 2019-2023 összesen 1, 2024: 1, 2025: 24, 2026: 1614 -- a gazdának abban is igaza volt, hogy máshol jelölik, mint korábban, és visszamenőleg nem mérhető. 2026-ban 981 kiszálláshoz kötött anyagigény: 417 rendes út, 186 átadás-jelölés nélkül de felhasználva (adminisztráció), 92 összekészítve + nem átadva + nem felhasználva -- EZ a valódi jelölt. A Megvan_az_alkatresz__c halott: 4 kitöltés 103 483-ból.
-KÖVETKEZMÉNY: a 94,9 százalékos hivatalos arány rossz [...a bejegyzés tovább tart; a teljes szöveg Marveennél van]
+## 18:52 -- Salesforce-tisztítás: mely mezők tölthetők fel gépileg (c09ca6b2, munkakör)
+Kész a mezőnkénti lista. 26 mező tölthető fel a rendszerben már meglévő adatból, 1 464 850 rekord-értékre; ebből 5 mező méréssel bizonyított (557 362 érték, 98,2-100 százalék egyezés a közös rekordokon). 612 mezőhöz nincs belső forrás. A mérés három hamis javaslatot szűrt ki, együtt 466 570 rekordnyi rossz írást: WOLI.Subtotal/TotalPrice nem írható (describe updateable=false), Asset.ParentId más objektumra hivatkozik, ProductConsumed.Description 0 százalék egyezés 814 közös rekordon. a gazda példája (WorkOrder.AssetId): 103 838 üresből 67 208-ra egyértelmű a berendezés, 29 456-ra több különböző. Fájl: store/atadando/Salesforce gepileg feltoltheto mezok 2026-09-16.xlsx. A kártya WAITING, az SZ-200 válaszára vár.
 
--- 2026-09-16 (teljes szöveggel) --
-## Kotegeles-mero -- 2026-09-16 (FEGYELMEZETLEN)
-Osszes tool-hivas: 178. Egymas utani azonos-tool lanc: 3, ezekben elvileg osszevonhato lett volna 175 hivas (98.3 szazalek). Leghosszabb lanc: 86. Legtobb osszevonhato: Bash 175.
+-- 2026-09-17 (teljes szöveggel) --
+## Kotegeles-mero -- 2026-09-17 (FEGYELMEZETLEN)
+Osszes tool-hivas: 78. Egymas utani azonos-tool lanc: 4, ezekben elvileg osszevonhato lett volna 74 hivas (94.9 szazalek). Leghosszabb lanc: 31. Legtobb osszevonhato: Bash 74.
 FELSO BECSLES, nem a valos veszteseg: a lancok egy reszeben az elozo kimenete dontotte el a kovetkezot, azok nem vonhatok ossze.
 
 
@@ -1967,26 +2019,26 @@ FELSO BECSLES, nem a valos veszteseg: a lancok egy reszeben az elozo kimenete do
 6. ÉRVÉNYES MÉRÉSEK (keret, kötegelés, költség)
 ========================================================================
 
-Kötegelés (2026-09-16, merve 2026-09-16T05:50:01+02:00): FEGYELMEZETLEN
-  485 tool-hivas, ebbol 465 lett volna összevonható (95.9%). Leghosszabb összevonható lánc: 86.
+Kötegelés (2026-09-17, merve 2026-09-17T05:50:02+02:00): FEGYELMEZETLEN
+  338 tool-hivas, ebbol 327 lett volna összevonható (96.7%). Leghosszabb összevonható lánc: 49.
 
 Keret-őr utolsó mérései:
-  2026-09-15 14:00:10Z Current week (Fable): OK 0% -- a felhasznalas 0 szazalek, ami a 25 szazalekos also kuszob alatt van -- ilyenkor az utem-becsles zajbol all, ezert abbol nem fekezek
-  2026-09-15 21:00:09Z Current session: OK 2% -- periodusfordulo eszlelve (a szazalek visszaesett) -- az utem-szamitas ujrakezdve
-  2026-09-15 21:00:09Z Current week (all models): OK 7% -- a felhasznalas 7 szazalek, ami a 25 szazalekos also kuszob alatt van -- ilyenkor az utem-becsles zajbol all, ezert abbol nem fekezek
-  2026-09-15 21:00:09Z Current week (Fable): OK 0% -- a felhasznalas 0 szazalek, ami a 25 szazalekos also kuszob alatt van -- ilyenkor az utem-becsles zajbol all, ezert abbol nem fekezek
+  2026-09-16 14:00:09Z Current week (Fable): OK 0% -- a felhasznalas 0 szazalek, ami a 25 szazalekos also kuszob alatt van -- ilyenkor az utem-becsles zajbol all, ezert abbol nem fekezek
+  2026-09-16 21:00:09Z Current session: OK 7% -- a felhasznalas 7 szazalek, ami a 25 szazalekos also kuszob alatt van -- ilyenkor az utem-becsles zajbol all, ezert abbol nem fekezek
+  2026-09-16 21:00:09Z Current week (all models): OK 14% -- a valtozas (1 szazalekpont) a meresi felbontason belul van, ebbol nem szamolok utemet
+  2026-09-16 21:00:09Z Current week (Fable): OK 0% -- a felhasznalas 0 szazalek, ami a 25 szazalekos also kuszob alatt van -- ilyenkor az utem-becsles zajbol all, ezert abbol nem fekezek
 
 Keret-fék utolsó mérései:
-  2026-09-16 00:00:10Z OK -- a keret nincs kifutas-veszelyben: Current session=8%, Current week (all models)=8%, Current week (Fable)=0%
-  2026-09-16 01:00:08Z OK -- a keret nincs kifutas-veszelyben: Current session=10%, Current week (all models)=8%, Current week (Fable)=0%
-  2026-09-16 02:00:09Z OK -- a keret nincs kifutas-veszelyben: Current session=1%, Current week (all models)=9%, Current week (Fable)=0%
-  2026-09-16 03:00:10Z OK -- a keret nincs kifutas-veszelyben: Current session=3%, Current week (all models)=9%, Current week (Fable)=0%
+  2026-09-17 00:00:10Z OK -- a keret nincs kifutas-veszelyben: Current session=3%, Current week (all models)=15%, Current week (Fable)=0%
+  2026-09-17 01:00:10Z OK -- a keret nincs kifutas-veszelyben: Current session=5%, Current week (all models)=15%, Current week (Fable)=0%
+  2026-09-17 02:00:08Z OK -- a keret nincs kifutas-veszelyben: Current session=7%, Current week (all models)=15%, Current week (Fable)=0%
+  2026-09-17 03:00:09Z OK -- a keret nincs kifutas-veszelyben: Current session=0%, Current week (all models)=16%, Current week (Fable)=0%
 
 Árfolyam: {
- "usdHuf": 316.66,
+ "usdHuf": 317.09,
  "forras": "open.er-api.com",
- "frissitve": "Tue, 15 Sep 2026 00:02:31 +0000",
- "lekerve": "2026-09-15T04:05:06.804Z"
+ "frissitve": "Wed, 16 Sep 2026 00:02:31 +0000",
+ "lekerve": "2026-09-16T04:05:05.147Z"
 }
 
 
@@ -2032,8 +2084,8 @@ Keret-fék utolsó mérései:
     Mire var: A JAMEMAIL-GYUJTO MINDKET GEPEN ALL (merve 2026-09-14 15:45, gyujto-or).  a gazda laptopja HUBUD1LPTL0051, gyujto v1.10.0: 135 oraja hallgat. Az UTOLSO futas 2026-09-08 18:27 UTC-kor indult es 09-09 00:20-kor ert veget; a helyi masolatban ez az EGYETLEN futasa. Azota semmi. Jambor [személy] gepe HUBUD1WKSL0030, gyujto v1.8.1: 11 oraja hallgat. Elotte haromoranként rendben futott, az utolso 2026-09-14 00 [...]
 #471 [nincs projekt/high] Szervizstat: a gazda hat fejlesztesi kerese (2026-09-14)
     Mire var: a gazda kerese (2026-09-14 17:57, Seora sav, M909 cimke alatt). Fajl kesz, Manusnak tovabbithato: store/atadando/Szervizstat fejlesztesi keres 2026-09-14.txt (154 sor).  HAT PONT: (1) minden kartyara a mert fogalom + keplet + idoablak; (2) a rendszam melle a nevek a kartyakon ES az Idovonal elso oszlopaban; (3) a kartya alatti lista statusz-anomaliai; (4) SA-szam -> Salesforce link + kulon iSusy lin [...]
-#501 [nincs projekt/high] JamEmail gondolkodási szint: a havi költség 77 százaléka reasoning token
-    Mire var: FA / K-63 mérése (2026-09-15) nyomán. A besorolás havi 320 millió tokenjéből 207 millió a modell GONDOLKODÁSI tokenje: elemzésenként 8654 a 11171 kimeneti tokenből (77 százalék). A Manus átalányán ez 71,5 ezer Ft/hó helyett 25,4 ezret jelentene, tehát ez a legnagyobb egyetlen tétel, nagyobb, mint a kulcs-kérdés bármelyik ága.  A KAPCSOLÓ MÁR KÉSZEN ÁLL, KIADÁS NÉLKÜL. Az ai.reasoning.effort config [...]
+#520 [nincs projekt/high] Salesforce-tisztítás: mely mezők tölthetők fel gépileg a rendszerben már meglévő adatból
+    Mire var: a gazda kérdése 2026-09-16 (Telegram 7641): hány olyan mező van, ami mindenképpen szükséges lenne és nem töltjük, bár elérhetők lennének az adatok. A 2026-09-16-i audit erre CSAK részben válaszol: megmondja, mi üres (121 mező soha nem töltött, 283 húsz százalék alatt), de nem azt, hogy az adat máshol megvan-e. MÉRENDŐ: minden alig vagy nem töltött mezőre, hogy ugyanaz az adat szerepel-e (a) másik me [...]
 #220 [nincs projekt/normal] Anyagigény-lánc: ügyfélértesítés a megrendeléstől a kiadásig ([személy] javaslata)
     Mire var: Forrás: [személy] levele, 2026-08-31 18:45, a JCS jelölő-szál válaszaként (thread 1a05798a8a67b263). Nem kértük, magától küldte.  MIT KÉR: az anyagigény mozgásának minden lépésénél menjen automatikus értesítés az ügyfélnek: alkatrész megrendelve, várható beérkezés dátuma, alkatrész beérkezett. A beérkezés után az anyagigényes feladat átadódik a szervezésre.  MEGLÉVŐ ALAP: az anyagigény-riasztá [...]
 #221 [nincs projekt/normal] Elvégzett munkalapok automatikus ellenőrzése és továbbterelése ([személy] javaslata)
@@ -2052,8 +2104,16 @@ Keret-fék utolsó mérései:
     Mire var: Kiküldve 2026-09-07 19:19, levél id 1a07ce19c96d719a, csatolmány: Szemelyes visszajelzes minta 2026-09-06 v4.pdf ([személy] adataival, a gazda jóváhagyásával, FA / K-88 = a).  a gazda utasítása (DM 6736): ha POZITÍV a válasz, értesítsem a gazdát. Ha NEGATÍV, tisztázzam vele, pontosan mi volt a problémája.  D060 szerint, ha nem jön válasz ésszerű időn belül, magamtól emlékeztetek.
 #402 [nincs projekt/normal] JamEmail export: kulso-felado JELOLO (nem a banner torlese)
     Mire var: ARPAD PONTOSITASA 2026-09-09 16:16 (M739): ne toroljuk a CAUTION-bannert, hanem legyen belole JELOLO, mert a belsos/kulsos levelek keresese hasznos. Igaza van, es jobb, mint az eredeti tervem. MEGVALOSITAS: (1) kulso_felado mezo MINDEN levelre, a FELADO DOMAINJEBOL szamolva, a sajat domainekhez merve (faactechnologies.com, faacgroup.com, faachungary.hu) -- NEM a banner meglete alapjan, mert azt a  [...]
+#403 [nincs projekt/normal] JamEmail: a kimeneti mappa C:\JamEmail legyen minden gepen
+    Mire var: a gazda kerese 2026-09-09 16:24. A makro ma %LOCALAPPDATA%\JamEmail-be ir, ami gepenkent mas utvonal; a feltolto es a tamogatas is egyszerubb, ha mindenutt C:\JamEmail. A VALTOZTATAS EGY SOR (Gyoker() fuggveny), mert minden mas hely azt hivja. HAROM DOLOG KELL MELLE, ezek nelkul hibas: (1) a MappatKeszit ma CSENDBEN bukik -- a C: gyokerebe ceges gepen nem biztos, hogy van irasi jog, es akkor minden  [...]
 #409 [nincs projekt/normal] JamEmail: 19 elemzésre váró levél törzse CSAK a CAUTION-banner volt
     Mire var: MERES 2026-09-09 (kartya 535f61fe visszamenoleges banner-levagasa kozben, a helyi taron, 70097 level). A 17560 banneres levelbol 109-nel a torzs a banner UTAN mar nem tartalmaz lathato szoveget: a levelnek gyakorlatilag nincs tartalma. Allapotuk: 86 done, 4 kihagyva, 19 PENDING.  A PROBLEMA A 19 PENDINGGEL. A visszamenoleges levagas utan ezeknek a torzse URES lesz. A csonka-level ore (shared/csonk [...]
+#442 [nincs projekt/normal] JamEmail: két megosztott postafiók ISMERETLEN a szervernek ([cég] Hungary Szerviz, Asszisztens HU)
+    Mire var: A gyűjtő-őr 2026-09-13 09:22-i futásán jött fel először: a gazda gépe két, Csabáé egy olyan tároló-nevet küld fel, amit a szerver nem tud postafiókhoz illeszteni. A szerver logikája (server/handlers/vbaUpload.ts, postafiokDontes): ha a név nem e-mail cím alakú és nem illeszkedik ismert fiókra, a köteg levelei POSTAFIÓK NÉLKÜL mennek be. Bekerülnek, de egyetlen postafiók-bontás sem látja őket -- közt [...]
+#449 [nincs projekt/normal] Javítás és karbantartás ÉRTÉK szerinti összemérése (a gazda gondolkodási feladat)
+    Mire var: a gazda, 2026-09-13 21:41: "Gondolkodj azon, hogy miként lehetne összehasonlítani a javítási és karbantartási munkákat értékük szerint. A javítás nehezebb, időigényesebb, nagyobb szakértelmet igényel, sokszor többet kell utazni miatta, így a sokat javító emberek mutatói gyengébbek lesznek a sok karbantartást végző embereknél. Hogy lehetne ezt igazságosan mérni?"  AMI MÉRHETŐ ÉS MÁR MEGVAN: munkatípu [...]
+#451 [nincs projekt/normal] Levél a szerelőknek a felelősségről és az időre teljesítésről (M903)
+    Mire var: a gazda, 2026-09-13 21:41: "Írj nekik egy levelet, amelyben a felelősségüket megemlíted olyan vonatkozásban, hogy a javításokat azért csináljuk, hogy nekik könnyebb legyen a munkájukat végezni, így azt gondolod, hogy elvárható a pontos együttműködés és az időre teljesítés."  TISZTÁZANDÓ A MEGÍRÁS ELŐTT: kinek szól pontosan. Az M903 blokk a déli jelentésben ment ki, azt vissza kell olvasni (megjegyze [...]
 #498 [Seora/normal] Level Hegedus Istvannak: SZ-118 (regi naplos ut) es SZ-122 (Hiba kategoria mezo)
     Mire var: A level szovege KESZ: store/asszisztens/piszkozat/istvan-sz118-sz122-2026-09-15.txt  KIKULDES (csak a fo beszelgetesbol, onjaro kor nem kuld kifele): python3 scripts/asszisztens-kuld.py --cimzett [e-mail cím kiszedve] --targy "Ket szerviz-adat kerdes: a regi naplos ut es a Hiba kategoria mezo" --test "store/asszisztens/piszkozat/istvan-sz118-sz122-2026-09-15.txt"  Stilus-tabla: tegezodes, Szia!, j [...]
 #499 [Seora/normal] Level Szabo Agnesnek: hol allnak a dijak (SZ-106) + a 12 dontesi pont formaja (SZ-108)
@@ -2074,6 +2134,8 @@ Keret-fék utolsó mérései:
     Mire var: a gazda panasza 2026-08-09 (msg 602): nem tudja kovetni a Telegram-savot, elveszett a mail-elemzo konkluzio. Ma 25 uzenetet kuldtem ot projektrol. *** TECHNIKAI KORLAT: a Telegram szal (topic) CSAK csoportban mukodik, DM-ben nem (a plugin server.ts-ben nincs message_thread_id). Tehat projekt-fulek DM-ben nem lehetnek. *** HAROM VALLALAS: (1) minden uzenet elso sora a PROJEKT nagy betuvel -> kereshet [...]
 #43 [infra/high] Teljes atvilagitas: 5 projekt, mukodes + biztonsag
     Mire var: a gazda kerese 2026-08-14 13:07: minden projekt teljes atvilagitasa es javitasa, mukodesi ES biztonsagi oldalrol. Eloszor projektenkenti atvilagitasi+javitasi terv, utana a javitasok.  ERINTETT KODTARAK (mind, push joggal): missionlock, szervizstat, email-analyzer, faac-quote-form ([cég]HD), bni-meeting-controller (MeetDirector).  SORREND: biztonsag eloszor (a szervizstat mintaja: mukodo beleptetes m [...]
+#501 [jamemail/high] JamEmail gondolkodási szint: a havi költség 77 százaléka reasoning token
+    Mire var: FA / K-63 mérése (2026-09-15) nyomán. A besorolás havi 320 millió tokenjéből 207 millió a modell GONDOLKODÁSI tokenje: elemzésenként 8654 a 11171 kimeneti tokenből (77 százalék). A Manus átalányán ez 71,5 ezer Ft/hó helyett 25,4 ezret jelentene, tehát ez a legnagyobb egyetlen tétel, nagyobb, mint a kulcs-kérdés bármelyik ága.  A KAPCSOLÓ MÁR KÉSZEN ÁLL, KIADÁS NÉLKÜL. Az ai.reasoning.effort config [...]
 #420 [jamemail/low] JamEmail: a J-55 = c maradéka, számlázó- és foglaló-értesítő kihagyása az AI előtt (D113 után)
     Mire var: A D231 szerint a harmadik fél gépi értesítője nem mehet AI-elemzésre. Mért 2026-09-10 (helyi másolat): a 09-05 óta elemzett 4191 levélből 47 ilyen (1,1%): salesforce.com 24 (szabály-úton megy, az AI csak az ismeretlen sablont látja, marad), szamlazz.hu 15, noreply-payments@/[e-mail cím kiszedve] 8. Költség kb. 0,06 kredit/nap, kb. 13 Ft/nap.  Teendő: kihagyandó minta felado_domain szamlazz.hu és b [...]
 #322 [jamemail/normal] JamEmail: 25841 levél gépi receivedDate-et visel (2026-08-19), ez a bejövő állomány 45,2 százaléka
@@ -2084,6 +2146,8 @@ Keret-fék utolsó mérései:
     Mire var: MÉRVE 2026-09-09 a munkakörben, a külső-feladó jelölő (535f61fe) építése közben. Az öt valódi exportált fájlból HÁROMNÁL a to mező tiszta megjelenítési név ('a gazda Jambor'), kettőnél vegyes (név ÉS SMTP-cím keverve, pontosvesszővel). A régi, Manus-os állományban 705 levélnél nincs @ a toField-ben, 40392-nél van. KÖVETKEZMÉNY: a külső FELADÓ jelölő minden levélre megvan, de a 11269 KIMENŐ (isSent=1 [...]
 #419 [jamemail/normal] JamEmail: az AI-elemzés a Claude-előfizetésen, hogy a kreditfogyás látsszon (J-55, D231)
     Mire var: a gazda a J-55-re (2026-09-05): „Ha ezek megoldhatók a claude előfizetésen keresztül, akkor nézzük meg ott, hogy lássam a kredit fogyást.” Ma az elemzés a Manus-szerveren fut gpt-5-mini modellel, a Manus-kreditből.  Mért (helyi másolat, 2026-09-10 03:30): 09-05 óta 4191 elemzés, 55,73 kredit, 0,0133 kredit/levél (kb. 2,9 Ft/levél 216,15 Ft/kredit árfolyamon); napi 738-950 elemzés, 10,2-12,6 kredit,  [...]
+#472 [jamemail/normal] Kérdés [személy]nek: mi a szabály a lejárt szerződéshez kötött élő berendezésekre és a két szerződés mezőre
+    Mire var: A 8690ee98 kártya leírásának (3) pontja, saját kártyán. Most, hogy a mérés élő, a kérés nem 595 soronkénti igen/nem jelölés, hanem két szabály kérdés.  1. Mi a teendő azzal az 1004 élő berendezéssel, ami lejárt szerződéshez van kötve? A felületen szerződésesnek látszanak. Megújítás, a kötés lezárása, vagy valamilyen automatikus szabály? 2. A két szerződés mező közül melyik a hiteles ott, ahol elté [...]
 #232 [koltseg/high] Anthropic Stripe-szamlak: a 2073,68 euro KET kartyarol ment (-4959 ceges, -0937 ismeretlen), a ceges nev mind a 40 PDF-en rajta van
     Mire var: MERVE 2026-09-01 05:40, a d51e2398 kartya kore kozben. Az [e-mail cím kiszedve] feladotol 2026-08-06 es 2026-08-21 kozott 45 Stripe-szamla erkezett a [e-mail cím kiszedve] cimre, folytonos sorszamozassal (SFIU4VIA-0001 ... SFIU4VIA-0045), mind a -4959 vegu kartyara, tetel: "Prepaid extra usage, Individual plan". Ket mert osszeg: 38,25 euro (0001) es 212,50 euro (0045). A teljes osszeget nem szamol [...]
 #286 [koltseg/normal] GPT-5.6-luna mint olcsó előszűrő: mit tud valójában
@@ -2112,6 +2176,8 @@ Keret-fék utolsó mérései:
     Mire var: a gazda 2026-08-12-en mind a haromra igent mondott. (1) MD-05: a vedelem KOZPONTI szabalykent, ne vegpontonkent -- ez a gyokere annak, hogy egy elfelejtett sor miatt kiesett az egesz csoport-elkulonites; egyszer kell megcsinalni. (2) M-4: hatterkep-valtas 3 mp -> 30-45 mp. (3) M-5: a szoveg-mogotti fatyol egyetlen kapcsolora. *** UTEMEZVE: 2026-08-13. *** NYITOTT KERDES, amit elore jeleztem neki: ne [...]
 #170 [meetdirector/normal] MeetDirector: hosszu PDF-nel elvesz a valasz, a hasPdf jelzo beallitatlan marad
     Mire var: MERVE 2026-08-26, eles rendszeren.  TUNET: a gallery83.uploadPdf 12 oldalas PDF-nel Service Unavailable-t ad vissza, KOZBEN a munka lefut. A 12 kep bekerul az adatbazisba es a tarolora, de a contentData hasPdf jelzoje FALSE marad.  ELLENPROBA (ugyanaz a PDF, maxPages:1): 2,3 masodperc, szabalyos tRPC valasz, hasPdf helyesen TRUE.  MIERT SZAMIT: a kod megjegyzese szerint a hasPdf alapjan dont a Pre [...]
+#435 [missionlock/normal] MissionLock: útvonal menti küldetés nem építhető, a helyszíntár 4 városra szűkül
+    Mire var: A 2. kérés (kiinduló -> cél város között automatikusan keresse meg a használható objektumokat) KÓDBAN kész (discovery.routeDiscovery), de az ADAT nem tartja.  MÉRVE 2026-09-12 22:40, éles tRPC-vel: a "Gabi Győr - Szentendre" küldetés mind a 8 állomása 75,8 és 80,6 km között van Győrtől, egyetlen 9 km-es szakaszon Esztergom környékén; az első 75,8 km és az utolsó 30,7 km állomás nélkül maradt.  OK: [...]
 #13 [salesforce/high] SF: napi admin-ellenőrző levél (3 minta a gazdának)
     Mire var: A harom email-minta 2026-08-08 delben kikuldve (Gmail id-k a shared memoriaban), a gazda reszletesen velemenyezte 13:30-13:50 kozott, majd 5 pontban korrigalta a kotelezo mezok javaslatat (msg 520). A javaslat MEGMERVE es atirva: store/salesforce/kotelezo-mezok-javaslat.md. MOST NEM a gazdán mulik: a meres inditasat az a nyitott kerdes blokkolja, hogy mi valtozott 2026 februarjaban (kulon kartya).
 #19 [salesforce/high] SF: szulo-gyerek kapcsolat bevezetese (folytatas-lanc)
@@ -2164,6 +2230,12 @@ Keret-fék utolsó mérései:
     Mire var: MIÉRT: az Inepex-javaslatok (a52ff995) J6 pontja és a Voyasoft-szűkítés is azon áll, hogy egy kötegelt hívás EGY hívásnak számít-e a napi API-keretben, vagy annyinak, ahány részkérés van benne. A dokumentáció ezt állítja, de a keretet a MI szervezetünk számolja.  AMI NEM MŰKÖDÖTT: megírtam a scripts/sf-composite-meres.mjs mérőt, ami a /limits DailyApiRequests számlálóját olvassa hívás előtt és utá [...]
 #348 [salesforce/normal] SF: a Forum Debrecen helyszin egyetlen mentest sem enged (teruleti vezeto validacio)
     Mire var: MERVE 2026-09-06 a tavolsag-visszatoltes kozben (d828b624). A [rekord-azonosító kiszedve] (Forum Debrecen - 200085, 208663, 204410) Account-on BARMILYEN mentes elszall: FIELD_FILTER_VALIDATION_EXCEPTION, "Csak a penzugyi ugyfelnel talalhato kapcsolattarto lehet teruleti vezeto!", mezo: Teruleti_vez... A 10 888 rekordos visszatoltesbol EZ AZ EGY bukott el, a tobbi 10 887 sikeres. Nem a mi irasunk h [...]
+#434 [salesforce/normal] SF: a T_telek_le_r_sai__c mezőt a szerelő látja, de 15891 kiszállásból 1-ben van benne adat
+    Mire var: MÉRVE 2026-09-12 (a db3055b9 lezáró köre közben, nem kezdtem bele). A ServiceAppointment.T_telek_le_r_sai__c mező 2026-ban 15891 kiszállásból 1-ben kitöltött (0,006%), az utolsó 60 napban 0/2706. A mező mindhárom oldalelrendezésen rajta van, tehát a szerelő egy MINDIG ÜRES mezőt lát a telefonján. A 2026-08-21-i mérés szerint a WorkOrderHandler.copyWorkorderDescriptionToServiceAppointment nem fut l [...]
+#436 [salesforce/normal] Km-számlázás: 160 helyszínen a tárolt távolság ellentmond a koordinátának (15 élő szerződés, 763 800 Ft)
+    Mire var: MÉRVE 2026-09-13 (munkakör, az e014e128 lezárásakor). A helyszínek 99,6 százalékán VAN koordináta (10 872 a 10 917-ből), ezért a tárolt számlázási távolság először ellenőrizhető géppel. A légvonal a szigetszentmiklósi bázisról (Gyári út 56) a tárolt oda-vissza km-nek mediánban 2,67-szerese, a 20 km felettieknél p10 2,36 és p90 3,09 -- tehát a sáv szűk, és a kilógó eset valódi jelzés.  A TALÁLAT: 1 [...]
+#439 [salesforce/normal] Kiszállás: 43 None-státuszú kiszállás lemondott munkalap alatt
+    Mire var: MÉRVE 2026-09-13 (élesben és a 02:30-as helyi másolaton, a két forrás egyezik): 4533 None státuszú kiszállásból 43-nak a szülő munkalapja Canceled. A munkalapot lemondták, a kiszállás viszont None maradt, ezért minden nyitott-lista tetejére felúszik.  MIÉRT SZÁMÍT: a b0ddf17f kártya gördülő listájában ma 48 lejárt határidejű találatból 26 pont ilyen volt, tehát a találatok több mint fele hulladék. [...]
 #182 [salesforce/urgent] Voyasoft (SAP-konnektor) API-terhelés: a napi Salesforce-keret 76 százaléka, ebből 83 százalék lezárt tételre megy
     Mire var: MÉRVE 2026-08-27-i teljes Event Monitoring naplón (243190 hívás), a gazda kérdésére 2026-08-28 06:36.  A SZÁMOK. A Voyasoft connected app ([e-mail cím kiszedve], [személy], IP 80.77.122.43) 97491 hívást futtatott egy nap alatt. A keretbe számító hívásoknak ez a 76 százaléka (97491 / 128296). A szervezet napi kerete 156200; a gördülő 24 órás felhasználás ma 08:44-kor 132325 volt, tehát 23875 mar [...]
 #36 [seora/high] Napi levelezes-brief a gazdának (Gabriella mint kezbesito, jamemail elemzesbol + ics)
@@ -2286,10 +2358,10 @@ Keret-fék utolsó mérései:
     Mire var: MÉRVE 2026-09-12 16:11-kor, éles Salesforce-on, 11 munkalapos mintán (SZ-160 próba, be093e6b kártya).  A TÜNET: ha egy 2026 előtti, berendezés nélküli munkalap Állapota Jóváhagyva lesz, a mentés 8/11 esetben (73%) elutasításra kerül, CANNOT_EXECUTE_FLOW_TRIGGER hibával. A hibaüzenet: a WorkOrder_Handler folyamat nem sikerült, mert rekord-létrehozáskor FIELD_INTEGRITY_EXCEPTION: TotalPrice (total p [...]
 #488 [szerviz/high] Km-szerzodes, ahol a Ft/km mezoben ATALANYDIJ all: 73 szerzodes, 399 kiszallas MIND a 40 000-es plafonon (15,96 M Ft)
     Mire var: Merve 2026-09-15 16:20, munkakor, a 919ac781 kartya kozben.  A MERES. Az elo, nem pszeudo km-alapu szerzodesek szama 1879, ebbol 1811-en van kitoltve a Normal_dij__c (a kilometerdij). A mezo medianja 135 Ft/km, a minimuma 90. HETVENHAROM szerzodesen viszont 1000 Ft/km FELETT all az ertek: 33 000 (2 db, AVL-ZalaZONE), 28 900 (a tobbseg) es koztes ertekek. Ezek nem lehetnek kilometerdijak: 28 900 Ft [...]
+#491 [szerviz/high] D256 bevezetese: a ServiceAppointment.Kiszallas_dij__c keplet vegye figyelembe a szerzodeses min-max mezot (SZ-124 = c)
+    Mire var: FORRAS: SZ-124 = c (a gazda, 2026-09-03), D256. Merve 2026-09-15, a 578939e3 kartya kozben.  MA. A ServiceAppointment.Kiszallas_dij__c keplet-mezobe a 16 825 Ft-os padlo es a 40 000 Ft-os plafon BE VAN EGETVE, minden km-alapu szerzodesre egyformán. A szerzodes sajat Normal_dij_min__c / Normal_dij_max__c mezoit a keplet nem nezi.  A DONTES (D256). A szerzodeses ertek kot, ha ki van toltve; a beegetet [...]
 #497 [szerviz/high] Fotohiany-ertesito: a kimarado 304 munkalap neveit a RENDSZAMHOZ kell kotni (alvallalkozok)
     Mire var: a gazda valasza a fotohiany-ertesito szalaban (2026-09-15 16:00, level 1a09ace7d21c7bd2): 'A kimarado 304 munkalaphoz hasznalando neveket a RENDSZAMOKHOZ kell kotni, mert ezek alvallalkozok es mindig neki kell megkapniuk, mindig ugyanaz az ember hasznalja az autot.' Tehat a cimzett-feloldas nem a szerelo-nevbol, hanem a jarmu rendszamabol jon. Meg kell merni, hany munkalapon all rendszam, es hol all [...]
-#503 [szerviz/high] Munkaszervezés-elemzés újraszámolása a gazda definíciójával (a 94,9 százalék rossz alapon áll)
-    Mire var: a gazda 2026-09-15 23:42 (M1032): a szervezési hiba AZ, ha a feladat anyagigényes, az ember nem vette fel a kikészített alkatrészt, és úgy szállt ki. Ha egyszerűen nincs anyag a javításhoz, az előfordul, de NEM szervezési hiba. A Kell_e_alkatresz__c mező NEM az anyagigény; az anyagigény külön objektum (Anyagigeny__c, 9303 rekord), jelölői: Osszekeszitve__c, Atadva__c, Felhasznalva__c. MÉRVE 2026-09- [...]
 #213 [szerviz/normal] A szereloi brief generator 15 felesleges lapot gyart naponta (szallitasi feladatok)
     Mire var: Merve 2026-08-31: a napi generalas 48 lapot keszitett, es ebbol 15-nek NINCS hova felkerulnie -- mind szallitasi feladat, amelyeknek nincs iSusy-megrendelesuk (a /sf/workorder lapon nincs munkarendeles_id). 13 [személy] telephely, 1 Decathlon, 1 Tesco Isaszeg.  KET KERDES: 1. Kell-e egyaltalan szereloi tajekoztato a SZALLITASI feladatokhoz? [személy] levele szerint a szallitasi feladat maskepp mukodi [...]
 #262 [szerviz/normal] Napi diszpecser-level a regi elfelejtett feladatokrol: megvan a hianyzo valasz
